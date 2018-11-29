@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://gls.ddo.com/GLS.DataCenterServer/Service.asmx?wsdl" docRef="http://gls.ddo.com/GLS.DataCenterServer/Service.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://gls.ddo.com/GLS.DataCenterServer/Service.asmx" xmlns:q1="http://www.turbine.com/SE/GLS" binding="q1:GLS_x005F_x0020_Datacenter_x005F_x0020_Info_x005F_x0020_ServerSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://gls.ddo.com/GLS.DataCenterServer/Service.asmx" xmlns:q2="http://www.turbine.com/SE/GLS" binding="q2:GLS_x005F_x0020_Datacenter_x005F_x0020_Info_x005F_x0020_ServerSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.turbine.com/SE/GLS" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.turbine.com/SE/GLS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provies front end clients with a description of the services that comprise a game</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.turbine.com/SE/GLS">
+      <s:element name="GetDatacenters">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="game" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDatacentersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDatacentersResult" type="tns:ArrayOfDatacenter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDatacenter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Datacenter" nillable="true" type="tns:Datacenter" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Datacenter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Worlds" type="tns:ArrayOfWorld" />
+          <s:element minOccurs="0" maxOccurs="1" name="AuthServer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PatchServer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LauncherConfigurationServer" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfWorld">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="World" nillable="true" type="tns:World" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="World">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LoginServerUrl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChatServerUrl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusServerUrl" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Order" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Language" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ServerInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServerInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServerInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DumpCache">
+        <s:complexType />
+      </s:element>
+      <s:element name="DumpCacheResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DumpCacheResult" type="tns:ArrayOfStatusServerResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStatusServerResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="StatusServerResult" nillable="true" type="tns:StatusServerResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="StatusServerResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="LastUpdated" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Results" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Updating" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServerName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDatacenterStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="game" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDatacenterStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDatacenterStatusResult" type="tns:ArrayOfStatusServerResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetDatacentersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDatacenters" />
+  </wsdl:message>
+  <wsdl:message name="GetDatacentersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDatacentersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServerInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ServerInfo" />
+  </wsdl:message>
+  <wsdl:message name="ServerInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ServerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DumpCacheSoapIn">
+    <wsdl:part name="parameters" element="tns:DumpCache" />
+  </wsdl:message>
+  <wsdl:message name="DumpCacheSoapOut">
+    <wsdl:part name="parameters" element="tns:DumpCacheResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDatacenterStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDatacenterStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetDatacenterStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDatacenterStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="GLS_x0020_Datacenter_x0020_Info_x0020_ServerSoap">
+    <wsdl:operation name="GetDatacenters">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a description of the services related to a particular game. An array of
+                            datacenter structures will be returned that contain information about game worlds and services related to them
+                            ( chat servers, patch servers, etc. ). This information can be used to find the access points necessary to
+                            access all game related services.</wsdl:documentation>
+      <wsdl:input message="tns:GetDatacentersSoapIn" />
+      <wsdl:output message="tns:GetDatacentersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServerInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the server status of the given server. The 's' parameter should be the IP or servername of the backend status server.</wsdl:documentation>
+      <wsdl:input message="tns:ServerInfoSoapIn" />
+      <wsdl:output message="tns:ServerInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DumpCache">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Dumps the server status cache.</wsdl:documentation>
+      <wsdl:input message="tns:DumpCacheSoapIn" />
+      <wsdl:output message="tns:DumpCacheSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatacenterStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the status of the services related to a particular game. 
+                            A list of StatusServerResult structures will be returned that contain information about game worlds and services related to them</wsdl:documentation>
+      <wsdl:input message="tns:GetDatacenterStatusSoapIn" />
+      <wsdl:output message="tns:GetDatacenterStatusSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GLS_x0020_Datacenter_x0020_Info_x0020_ServerSoap" type="tns:GLS_x0020_Datacenter_x0020_Info_x0020_ServerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDatacenters">
+      <soap:operation soapAction="http://www.turbine.com/SE/GLS/GetDatacenters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServerInfo">
+      <soap:operation soapAction="http://www.turbine.com/SE/GLS/ServerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DumpCache">
+      <soap:operation soapAction="http://www.turbine.com/SE/GLS/DumpCache" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatacenterStatus">
+      <soap:operation soapAction="http://www.turbine.com/SE/GLS/GetDatacenterStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GLS_x0020_Datacenter_x0020_Info_x0020_ServerSoap12" type="tns:GLS_x0020_Datacenter_x0020_Info_x0020_ServerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDatacenters">
+      <soap12:operation soapAction="http://www.turbine.com/SE/GLS/GetDatacenters" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServerInfo">
+      <soap12:operation soapAction="http://www.turbine.com/SE/GLS/ServerInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DumpCache">
+      <soap12:operation soapAction="http://www.turbine.com/SE/GLS/DumpCache" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatacenterStatus">
+      <soap12:operation soapAction="http://www.turbine.com/SE/GLS/GetDatacenterStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GLS_x0020_Datacenter_x0020_Info_x0020_Server">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provies front end clients with a description of the services that comprise a game</wsdl:documentation>
+    <wsdl:port name="GLS_x0020_Datacenter_x0020_Info_x0020_ServerSoap" binding="tns:GLS_x0020_Datacenter_x0020_Info_x0020_ServerSoap">
+      <soap:address location="http://gls.ddo.com/GLS.DataCenterServer/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GLS_x0020_Datacenter_x0020_Info_x0020_ServerSoap12" binding="tns:GLS_x0020_Datacenter_x0020_Info_x0020_ServerSoap12">
+      <soap12:address location="http://gls.ddo.com/GLS.DataCenterServer/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
