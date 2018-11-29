@@ -8,6 +8,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "23.DataMaping", "DataMaping
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "24.Utilities", "Utilities\24.Utilities.csproj", "{06E28E76-2220-4515-B16B-624655B9EF74}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DOC", "DOC", "{FD0BEA20-DBED-44FF-8B9B-D0541DB926A2}"
+	ProjectSection(SolutionItems) = preProject
+		DOC\1.png = DOC\1.png
+		DOC\2.png = DOC\2.png
+		DOC\3.png = DOC\3.png
+		DOC\ServerStatus.xml = DOC\ServerStatus.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
