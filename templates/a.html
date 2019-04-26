@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../Js/plugins/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="./Js/plugins/hogan.min.js"></script>
+    <script type="application/javascript">
+
+        $(document).ready(function() {
+            var data={"a":[{"value":"yes"},{"value":"yes"},{"value":"yes"},{"value":"yes"}]}
+            var data2={"b":[{"value":"aa"},{"value":"aa"},{"value":"aa"},{"value":"aa"}]}
+            var Temp2 = Hogan.compile(' {{#C}}.{{#a}}{{value}}.{{/a}}{{/C}} ');
+            var temp1=Hogan.compile('.{{#D}}{{#b}}{{value}}.{{/b}}{{/D}}');
+            var main = Hogan.compile('temp1: {{>tempName1}}564564 temp2:{{>tempName2}}');
+            var s = main.render({"C":data,"D":data2}, {'tempName2': Temp2,'tempName1':temp1 } );
+            $("body").html(s);
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

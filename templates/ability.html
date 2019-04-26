@@ -1,0 +1,15 @@
+<a data-ranks="{{ranks}}" data-required="{{required}}" data-postion="right" user-selected="0"
+   data-points="{{AP}}" {{#prereq}}data-req="{{prereq}}"{{/prereq}}>
+<div class="toggleTooltip"></div></a>{{#passive}}
+<div class="passive">
+    <div class="inner-passive"></div>
+</div>{{/passive}}{{^passive}}
+<div class="active"></div>{{/passive}}
+
+
+{{> autogrant-tooltip}}{{#passive}}
+<div class="passive">
+    <div class="inner-passive"></div>
+</div>{{/passive}}{{^passive}}
+<div class="active"></div>{{/passive}}
+  
