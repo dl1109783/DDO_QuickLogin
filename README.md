@@ -1,7 +1,7 @@
 ﻿# DDO_QuickLogin
 + Dungeons and Dragons Online Quick Login Client
 + 龙与地下城OL 快速登陆客户端
-+ [打包下载](https://github.com/dl1109783/DDO_QuickLogin/raw/master/dist/DDO_QuickLogint.zip)
++ [打包下载(DDO_QuickLogint.zip)](https://github.com/dl1109783/DDO_QuickLogin/raw/master/dist/DDO_QuickLogint.zip)
 
 ### 功能
 + 跳过下载壁纸及检查更新,快速进入游戏
@@ -10,7 +10,7 @@
 
 ### 天赋及天命模拟器
 + GitHub可以存放静态网站, 遂将天赋模拟器汉化版的代码一起上传了, 新版本构思中, 更新随缘.
-+ [天赋及天命模拟器](https://dl1109783.github.io/DDO_QuickLogin/)
++ [天赋及天命模拟器(https://dl1109783.github.io/DDO_QuickLogin/)](https://dl1109783.github.io/DDO_QuickLogin/)
 
 ### V2.3 更新
 + 源码存于GitHub
