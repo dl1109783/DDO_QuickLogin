@@ -11,6 +11,10 @@ Dungeons and Dragons Online Quick Login Client
 + 将压缩包中所有文件复制到游戏根目录,如图:![img](https://raw.githubusercontent.com/dl1109783/DDO_QuickLogin/master/DOC/1.png)
 + 运行![img](https://raw.githubusercontent.com/dl1109783/DDO_QuickLogin/master/DOC/3.png) 即可
 
+### 天赋及天命模拟器
++GitHub可以存放静态网站, 遂将天赋模拟器汉化版的代码一起上传了, 新版本构思中, 更新随缘.
+[天赋及天命模拟器](https://dl1109783.github.io/DDO_QuickLogin/)
+
 ### V2.3 更新
 + 源码存于GitHub
 + 账号信息存于Sqlite数据库,避免XML文件损坏造成的无法运行
