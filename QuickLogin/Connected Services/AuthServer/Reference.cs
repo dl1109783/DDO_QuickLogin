@@ -19,15 +19,9 @@ namespace QuickLogin.AuthServer {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         QuickLogin.AuthServer.UserProfile LoginAccount(string username, string password, string additionalInfo);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.turbine.com/SE/GLS/LoginAccount", ReplyAction="*")]
-        System.Threading.Tasks.Task<QuickLogin.AuthServer.UserProfile> LoginAccountAsync(string username, string password, string additionalInfo);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://www.turbine.com/SE/GLS/RefreshTicket", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         string RefreshTicket(string ticket);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.turbine.com/SE/GLS/RefreshTicket", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> RefreshTicketAsync(string ticket);
     }
     
     /// <remarks/>
@@ -294,16 +288,8 @@ namespace QuickLogin.AuthServer {
             return base.Channel.LoginAccount(username, password, additionalInfo);
         }
         
-        public System.Threading.Tasks.Task<QuickLogin.AuthServer.UserProfile> LoginAccountAsync(string username, string password, string additionalInfo) {
-            return base.Channel.LoginAccountAsync(username, password, additionalInfo);
-        }
-        
         public string RefreshTicket(string ticket) {
             return base.Channel.RefreshTicket(ticket);
-        }
-        
-        public System.Threading.Tasks.Task<string> RefreshTicketAsync(string ticket) {
-            return base.Channel.RefreshTicketAsync(ticket);
         }
     }
 }

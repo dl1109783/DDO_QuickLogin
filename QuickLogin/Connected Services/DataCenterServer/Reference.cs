@@ -345,29 +345,17 @@ namespace QuickLogin.DataCenterServer {
         [System.ServiceModel.OperationContractAttribute(Action="http://www.turbine.com/SE/GLS/GetDatacenters", ReplyAction="*")]
         QuickLogin.DataCenterServer.GetDatacentersResponse GetDatacenters(QuickLogin.DataCenterServer.GetDatacentersRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.turbine.com/SE/GLS/GetDatacenters", ReplyAction="*")]
-        System.Threading.Tasks.Task<QuickLogin.DataCenterServer.GetDatacentersResponse> GetDatacentersAsync(QuickLogin.DataCenterServer.GetDatacentersRequest request);
-        
         // CODEGEN: 命名空间 http://www.turbine.com/SE/GLS 的元素名称 s 以后生成的消息协定未标记为 nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.turbine.com/SE/GLS/ServerInfo", ReplyAction="*")]
         QuickLogin.DataCenterServer.ServerInfoResponse ServerInfo(QuickLogin.DataCenterServer.ServerInfoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.turbine.com/SE/GLS/ServerInfo", ReplyAction="*")]
-        System.Threading.Tasks.Task<QuickLogin.DataCenterServer.ServerInfoResponse> ServerInfoAsync(QuickLogin.DataCenterServer.ServerInfoRequest request);
         
         // CODEGEN: 命名空间 http://www.turbine.com/SE/GLS 的元素名称 DumpCacheResult 以后生成的消息协定未标记为 nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.turbine.com/SE/GLS/DumpCache", ReplyAction="*")]
         QuickLogin.DataCenterServer.DumpCacheResponse DumpCache(QuickLogin.DataCenterServer.DumpCacheRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.turbine.com/SE/GLS/DumpCache", ReplyAction="*")]
-        System.Threading.Tasks.Task<QuickLogin.DataCenterServer.DumpCacheResponse> DumpCacheAsync(QuickLogin.DataCenterServer.DumpCacheRequest request);
-        
         // CODEGEN: 命名空间 http://www.turbine.com/SE/GLS 的元素名称 game 以后生成的消息协定未标记为 nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.turbine.com/SE/GLS/GetDatacenterStatus", ReplyAction="*")]
         QuickLogin.DataCenterServer.GetDatacenterStatusResponse GetDatacenterStatus(QuickLogin.DataCenterServer.GetDatacenterStatusRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.turbine.com/SE/GLS/GetDatacenterStatus", ReplyAction="*")]
-        System.Threading.Tasks.Task<QuickLogin.DataCenterServer.GetDatacenterStatusResponse> GetDatacenterStatusAsync(QuickLogin.DataCenterServer.GetDatacenterStatusRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -676,18 +664,6 @@ namespace QuickLogin.DataCenterServer {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<QuickLogin.DataCenterServer.GetDatacentersResponse> QuickLogin.DataCenterServer.GLSDatacenterInfoServerSoap.GetDatacentersAsync(QuickLogin.DataCenterServer.GetDatacentersRequest request) {
-            return base.Channel.GetDatacentersAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<QuickLogin.DataCenterServer.GetDatacentersResponse> GetDatacentersAsync(string game) {
-            QuickLogin.DataCenterServer.GetDatacentersRequest inValue = new QuickLogin.DataCenterServer.GetDatacentersRequest();
-            inValue.Body = new QuickLogin.DataCenterServer.GetDatacentersRequestBody();
-            inValue.Body.game = game;
-            return ((QuickLogin.DataCenterServer.GLSDatacenterInfoServerSoap)(this)).GetDatacentersAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         QuickLogin.DataCenterServer.ServerInfoResponse QuickLogin.DataCenterServer.GLSDatacenterInfoServerSoap.ServerInfo(QuickLogin.DataCenterServer.ServerInfoRequest request) {
             return base.Channel.ServerInfo(request);
         }
@@ -698,18 +674,6 @@ namespace QuickLogin.DataCenterServer {
             inValue.Body.s = s;
             QuickLogin.DataCenterServer.ServerInfoResponse retVal = ((QuickLogin.DataCenterServer.GLSDatacenterInfoServerSoap)(this)).ServerInfo(inValue);
             return retVal.Body.ServerInfoResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<QuickLogin.DataCenterServer.ServerInfoResponse> QuickLogin.DataCenterServer.GLSDatacenterInfoServerSoap.ServerInfoAsync(QuickLogin.DataCenterServer.ServerInfoRequest request) {
-            return base.Channel.ServerInfoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<QuickLogin.DataCenterServer.ServerInfoResponse> ServerInfoAsync(string s) {
-            QuickLogin.DataCenterServer.ServerInfoRequest inValue = new QuickLogin.DataCenterServer.ServerInfoRequest();
-            inValue.Body = new QuickLogin.DataCenterServer.ServerInfoRequestBody();
-            inValue.Body.s = s;
-            return ((QuickLogin.DataCenterServer.GLSDatacenterInfoServerSoap)(this)).ServerInfoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -725,17 +689,6 @@ namespace QuickLogin.DataCenterServer {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<QuickLogin.DataCenterServer.DumpCacheResponse> QuickLogin.DataCenterServer.GLSDatacenterInfoServerSoap.DumpCacheAsync(QuickLogin.DataCenterServer.DumpCacheRequest request) {
-            return base.Channel.DumpCacheAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<QuickLogin.DataCenterServer.DumpCacheResponse> DumpCacheAsync() {
-            QuickLogin.DataCenterServer.DumpCacheRequest inValue = new QuickLogin.DataCenterServer.DumpCacheRequest();
-            inValue.Body = new QuickLogin.DataCenterServer.DumpCacheRequestBody();
-            return ((QuickLogin.DataCenterServer.GLSDatacenterInfoServerSoap)(this)).DumpCacheAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         QuickLogin.DataCenterServer.GetDatacenterStatusResponse QuickLogin.DataCenterServer.GLSDatacenterInfoServerSoap.GetDatacenterStatus(QuickLogin.DataCenterServer.GetDatacenterStatusRequest request) {
             return base.Channel.GetDatacenterStatus(request);
         }
@@ -746,18 +699,6 @@ namespace QuickLogin.DataCenterServer {
             inValue.Body.game = game;
             QuickLogin.DataCenterServer.GetDatacenterStatusResponse retVal = ((QuickLogin.DataCenterServer.GLSDatacenterInfoServerSoap)(this)).GetDatacenterStatus(inValue);
             return retVal.Body.GetDatacenterStatusResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<QuickLogin.DataCenterServer.GetDatacenterStatusResponse> QuickLogin.DataCenterServer.GLSDatacenterInfoServerSoap.GetDatacenterStatusAsync(QuickLogin.DataCenterServer.GetDatacenterStatusRequest request) {
-            return base.Channel.GetDatacenterStatusAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<QuickLogin.DataCenterServer.GetDatacenterStatusResponse> GetDatacenterStatusAsync(string game) {
-            QuickLogin.DataCenterServer.GetDatacenterStatusRequest inValue = new QuickLogin.DataCenterServer.GetDatacenterStatusRequest();
-            inValue.Body = new QuickLogin.DataCenterServer.GetDatacenterStatusRequestBody();
-            inValue.Body.game = game;
-            return ((QuickLogin.DataCenterServer.GLSDatacenterInfoServerSoap)(this)).GetDatacenterStatusAsync(inValue);
         }
     }
 }
