@@ -5,6 +5,7 @@ using System.Net;
 using System.Text;
 using System.Web;
 using System.Xml;
+using QuickLogin.Properties;
 
 namespace QuickLogin.Connect
 {
@@ -87,7 +88,7 @@ namespace QuickLogin.Connect
                 this.queueName = string.Empty;
                 string takeANumberParameters = "command=TakeANumber&subscription={0}&ticket={1}&ticket_type=GLS&queue_url={2}";
                 string postData = string.Format(takeANumberParameters, HttpUtility.UrlEncode(p_strSubscriptionName, Encoding.ASCII), HttpUtility.UrlEncode(p_strGlsTicket, Encoding.ASCII), HttpUtility.UrlEncode(p_strQueueURL, Encoding.ASCII));
-                XmlDocument document = this.LoginQueuePostRequest(global::QuickLogin.Properties.Resources.loginQueueUrl, postData);
+                XmlDocument document = this.LoginQueuePostRequest(Settings.Default.LoginQueueUrl, postData);
                 if (document.InnerText != string.Empty)
                 {
                     string innerText = document["Result"]["HResult"].InnerText;

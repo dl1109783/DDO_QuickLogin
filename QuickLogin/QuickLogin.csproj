@@ -17,7 +17,7 @@
     </AssemblyOriginatorKeyFile>
     <SignManifests>false</SignManifests>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -121,12 +121,6 @@
     <Compile Include="Connect\RSSReader.cs" />
     <Compile Include="Connect\ServerStatus.cs" />
     <Compile Include="Connect\UserList.cs" />
-    <Compile Include="DesPassword.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DesPassword.Designer.cs">
-      <DependentUpon>DesPassword.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,9 +132,6 @@
     <EmbeddedResource Include="CheckUser.resx">
       <SubType>Designer</SubType>
       <DependentUpon>CheckUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DesPassword.resx">
-      <DependentUpon>DesPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -164,30 +155,14 @@
     <None Include="Connected Services\DataCenterServer\QuickLogin.DataCenterServer.Datacenter.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\DataCenterServer\QuickLogin.DataCenterServer.DumpCacheResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\DataCenterServer\QuickLogin.DataCenterServer.GetDatacentersResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\DataCenterServer\QuickLogin.DataCenterServer.GetDatacenterStatusResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\DataCenterServer\QuickLogin.DataCenterServer.ServerInfoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\DataCenterServer\QuickLogin.DataCenterServer.StatusServerResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\DataCenterServer\Service.wsdl" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="RichTextBoxLinks.cs">
       <SubType>Component</SubType>
@@ -237,19 +212,13 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="icon.ico" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Resources\MainBackground.bmp" />
     <None Include="Resources\X.bmp" />
     <None Include="Resources\M.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DataMaping\23.DataMaping.csproj">
-      <Project>{d7e57301-2d16-4416-9a40-9235b0fe224c}</Project>
-      <Name>23.DataMaping</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Utilities\24.Utilities.csproj">
-      <Project>{06e28e76-2220-4515-b16b-624655b9ef74}</Project>
-      <Name>24.Utilities</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

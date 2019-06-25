@@ -19,7 +19,7 @@ namespace QuickLogin.Properties {
     // 类通过类似于 ResGen 或 Visual Studio 的工具自动生成的。
     // 若要添加或移除成员，请编辑 .ResX 文件，然后重新运行 ResGen
     // (以 /str 作为命令选项)，或重新生成 VS 项目。
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -61,15 +61,6 @@ namespace QuickLogin.Properties {
         }
         
         /// <summary>
-        ///   查找类似 http://gls.DDO.com/GLS.AuthServer/LoginQueue.aspx 的本地化字符串。
-        /// </summary>
-        public static string loginQueueUrl {
-            get {
-                return ResourceManager.GetString("loginQueueUrl", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
         public static System.Drawing.Bitmap M {
@@ -86,60 +77,6 @@ namespace QuickLogin.Properties {
             get {
                 object obj = ResourceManager.GetObject("MainBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 http://ddoplaner.duapp.com/ 的本地化字符串。
-        /// </summary>
-        public static string strUrl1 {
-            get {
-                return ResourceManager.GetString("strUrl1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 http://tieba.baidu.com/f?kw=%C1%FA%D3%EB%B5%D8%CF%C2%B3%C7# 的本地化字符串。
-        /// </summary>
-        public static string strUrl2 {
-            get {
-                return ResourceManager.GetString("strUrl2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 http://ddowiki.com/ 的本地化字符串。
-        /// </summary>
-        public static string strUrl3 {
-            get {
-                return ResourceManager.GetString("strUrl3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 http://www.ddo.com/ 的本地化字符串。
-        /// </summary>
-        public static string strUrl4 {
-            get {
-                return ResourceManager.GetString("strUrl4", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 http://myaccount.turbine.com/ 的本地化字符串。
-        /// </summary>
-        public static string strUrl5 {
-            get {
-                return ResourceManager.GetString("strUrl5", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 http://www.myddo.tk/ 的本地化字符串。
-        /// </summary>
-        public static string strUrl6 {
-            get {
-                return ResourceManager.GetString("strUrl6", resourceCulture);
             }
         }
         

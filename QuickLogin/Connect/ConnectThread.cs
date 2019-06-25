@@ -368,6 +368,7 @@ namespace QuickLogin.Connect
             try
             {
                 userLists.Save(builder.ToString());
+                //登录太快服务器来不及响应，休眠1秒再登录
                 Thread.Sleep(1000);
                 Process.Start(new ProcessStartInfo("dndclient.exe", builder.ToString()));
                 OnCallBack(ConnectType.LoginSuccess, GetProductTokens(_userGSB.ProductTokens));

@@ -2,130 +2,24 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 using QuickLogin.Connect;
 using QuickLogin.DataCenterServer;
+using QuickLogin.Properties;
 
 namespace QuickLogin
 {
     public partial class frmMain : Form
     {
-        #region 基本
-        private void OpenUrl(string p_strUrl)
-        {
-            try
-            {
-                Process.Start(p_strUrl);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-        private void lbBBS_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Process.Start(new ProcessStartInfo("DNDlauncher.exe", " -invoker -nosplash -skiprawdownload "));
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
 
-        }
-        private void lbBaidu_Click(object sender, EventArgs e)
-        {
-            OpenUrl(global::QuickLogin.Properties.Resources.strUrl2);
-        }
-        private void lbWiki_Click(object sender, EventArgs e)
-        {
-            OpenUrl(global::QuickLogin.Properties.Resources.strUrl3);
-        }
-        private void lbDDO_Click(object sender, EventArgs e)
-        {
-            OpenUrl(global::QuickLogin.Properties.Resources.strUrl4);
-        }
-        private void lbAccount_Click(object sender, EventArgs e)
-        {
-            OpenUrl(global::QuickLogin.Properties.Resources.strUrl5);
-        }
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-        private void btnMin_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-        protected void ConnectThread_OnCallBack(ConnectType p_Type, object p_str)
-        {
-            if (!connThread.isClosed)
-            {
-                this.Invoke(new CallBackInvokeDelegate(DelegateCallBack), new Object[] { p_Type, p_str });
-            }
-        }
-        private void txtInfo_LinkClicked(object sender, LinkClickedEventArgs e)
-        {
-            if (e.LinkText.IndexOf('#') > 0)
-            {
-                OpenUrl(e.LinkText.Split('#')[1]);
-            }
-        }
-        //界面拖动
-        private Point mousePoint;
-        private Point formPoint;
-        public void MouseDownEvent(object sender, MouseEventArgs e)
-        {
-            mousePoint = Control.MousePosition;
-            formPoint = this.Location;
-        }
-        public void MouseMoveEvent(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                Point mousePos = Control.MousePosition;
-                this.Location = new Point(mousePos.X - mousePoint.X + formPoint.X, mousePos.Y - mousePoint.Y + formPoint.Y);
-            }
-        }
-        #endregion
-
-        ConnectThread connThread;
-        UserList userLists;
-        public frmMain()
-        {
-            InitializeComponent();
-            tcServicePanel.Location = new Point(-6, -25);
-            tcServicePanel.Appearance = TabAppearance.FlatButtons;
-            connThread = new ConnectThread(new CallBackHandler(ConnectThread_OnCallBack));
-        }
-        private void Main_Load(object sender, EventArgs e)
-        {
-            userLists = new UserList();
-            Thread td = new Thread(connThread.GetDataCenter);
-            td.IsBackground = true;//后台线程,程序关闭自动退出
-            td.Start();
-            Thread td2 = new Thread(connThread.GetNews);
-            td2.IsBackground = true;//后台线程,程序关闭自动退出
-            td2.Start();
-
-            if (userLists.AllUser != null && userLists.AllUser.Count > 0)
-            {
-                cblUsername.Items.Clear();
-                foreach (User user in userLists.AllUser)
-                {
-                    cblUsername.Items.Add(user);
-                }
-                if (userLists.DefaultUser != null)
-                {
-                    cblUsername.SelectedItem = userLists.DefaultUser;
-                    txtPassword.Text = userLists.DefaultUser.PassWord;
-                }
-            }
-        }
-
+        /// <summary>
+        /// 登录信息
+        /// </summary>
+        /// <param name="p_Type"></param>
+        /// <param name="p_Value"></param>
         private void DelegateCallBack(ConnectType p_Type, object p_Value)
         {
             try
@@ -255,9 +149,14 @@ namespace QuickLogin
                 MessageBox.Show(exx.Message);
             }
         }
-
+        /// <summary>
+        /// 登录按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            if (!File.Exists("dndclient.exe")) MessageBox.Show("请将本程序放在DDO游戏目录!");
             connThread._strUserName = cblUsername.Text.Trim();
             connThread._strPassWord = txtPassword.Text.Trim();
             connThread._worldSelect = (World)cblServerList.SelectedItem;
@@ -272,11 +171,53 @@ namespace QuickLogin
             //dh.LoginAccount(lUser);
         }
 
-        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        ConnectThread connThread;
+        UserList userLists;
+        public frmMain()
         {
-            connThread.isClosed = true;
+            InitializeComponent();
+            tcServicePanel.Location = new Point(-6, -25);
+            tcServicePanel.Appearance = TabAppearance.FlatButtons;
+            connThread = new ConnectThread(new CallBackHandler(ConnectThread_OnCallBack));
         }
 
+        private void Main_Load(object sender, EventArgs e)
+        {
+            BindLableText(lbUrl1, Settings.Default.Url1);
+            BindLableText(lbUrl2, Settings.Default.Url2);
+            BindLableText(lbUrl3, Settings.Default.Url3);
+            BindLableText(lbUrl4, Settings.Default.Url4);
+            BindLableText(lbUrl5, Settings.Default.Url5);
+           
+            //获得服务器状态
+            Thread td = new Thread(connThread.GetDataCenter);
+            td.IsBackground = true;//后台线程,程序关闭自动退出
+            td.Start();
+            //获得新闻
+            Thread td2 = new Thread(connThread.GetNews);
+            td2.IsBackground = true;//后台线程,程序关闭自动退出
+            td2.Start();
+
+            userLists = new UserList();
+            if (userLists.AllUser != null && userLists.AllUser.Count > 0)
+            {
+                cblUsername.Items.Clear();
+                foreach (User user in userLists.AllUser)
+                {
+                    cblUsername.Items.Add(user);
+                }
+                if (userLists.DefaultUser != null)
+                {
+                    cblUsername.SelectedItem = userLists.DefaultUser;
+                    txtPassword.Text = userLists.DefaultUser.PassWord;
+                }
+            }
+        }
+        /// <summary>
+        /// 下拉框选项改变
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cblUsername_TextChanged(object sender, EventArgs e)
         {
             txtPassword.Text = string.Empty;
@@ -296,5 +237,126 @@ namespace QuickLogin
             }
 
         }
+
+        #region 基本方法
+        /// <summary>
+        /// 调用官方客户端更新游戏
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (File.Exists("DNDLauncher.exe"))
+                {
+                    Process.Start(new ProcessStartInfo("DNDLauncher.exe", " -invoker -nosplash -skiprawdownload "));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        /// <summary>
+        /// 显示密码
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CbxShowPassWord_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = !cbxShowPassWord.Checked;
+        }
+        protected void ConnectThread_OnCallBack(ConnectType p_Type, object p_str)
+        {
+            if (!connThread.isClosed)
+            {
+                this.Invoke(new CallBackInvokeDelegate(DelegateCallBack), new Object[] { p_Type, p_str });
+            }
+        }
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            connThread.isClosed = true;
+        }
+        private void lbUrl_Click(object sender, EventArgs e)
+        {
+            OpenUrl(((Label)sender).Tag.ToString());
+        }
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        private void btnMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        //界面拖动
+        private Point mousePoint;
+        private Point formPoint;
+        public void MouseDownEvent(object sender, MouseEventArgs e)
+        {
+            mousePoint = Control.MousePosition;
+            formPoint = this.Location;
+        }
+        public void MouseMoveEvent(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point mousePos = Control.MousePosition;
+                this.Location = new Point(mousePos.X - mousePoint.X + formPoint.X, mousePos.Y - mousePoint.Y + formPoint.Y);
+            }
+        }
+        /// <summary>
+        /// 新闻中的链接点击
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtInfo_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            if (e.LinkText.IndexOf('#') > 0 && e.LinkText.Split('#').Length > 1)
+            {
+                OpenUrl(e.LinkText.Split('#')[1]);
+            }
+        }
+        /// <summary>
+        /// 调用默认浏览器打开链接
+        /// </summary>
+        /// <param name="p_strUrl"></param>
+        private void OpenUrl(string p_strUrl)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(p_strUrl)) return;
+                Process.Start(p_strUrl);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        /// <summary>
+        /// 绑定标签链接和名字
+        /// </summary>
+        /// <param name="label"></param>
+        /// <param name="str"></param>
+        private void BindLableText(Label label, string str)
+        {
+            if (!string.IsNullOrWhiteSpace(str) && str.Contains("|"))
+            {
+                var aryInfo = str.Split('|');
+                if (aryInfo.Length > 1)
+                {
+                    label.Text = aryInfo[0];
+                    label.Tag = aryInfo[1];
+                    return;
+                }
+            }
+            label.Text = string.Empty;
+            label.Tag = string.Empty;
+        }
+
+        #endregion
+
+
     }
 }

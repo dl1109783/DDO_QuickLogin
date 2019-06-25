@@ -30,18 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.lbVersion = new System.Windows.Forms.Label();
-            this.lbBBS = new System.Windows.Forms.Label();
-            this.lbBaidu = new System.Windows.Forms.Label();
-            this.lbDDO = new System.Windows.Forms.Label();
-            this.lbWiki = new System.Windows.Forms.Label();
-            this.lbAccount = new System.Windows.Forms.Label();
+            this.lbUrl1 = new System.Windows.Forms.Label();
             this.btnMin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.pnlLogin = new System.Windows.Forms.Panel();
             this.tcServicePanel = new System.Windows.Forms.TabControl();
             this.tpConn = new System.Windows.Forms.TabPage();
             this.rtxtInfo = new System.Windows.Forms.RichTextBox();
-            this.tpUpdate = new System.Windows.Forms.TabPage();
             this.tpLogin = new System.Windows.Forms.TabPage();
+            this.cbxShowPassWord = new System.Windows.Forms.CheckBox();
             this.cbxRemember = new System.Windows.Forms.CheckBox();
             this.lbSev = new System.Windows.Forms.Label();
             this.lbPWD = new System.Windows.Forms.Label();
@@ -50,13 +47,15 @@
             this.cblUsername = new System.Windows.Forms.ComboBox();
             this.cblServerList = new System.Windows.Forms.ComboBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.pnlLogin = new System.Windows.Forms.Panel();
-            this.txtServerInfo = new QuickLogin.RichTextBoxEx();
-            this.txtInfo = new QuickLogin.RichTextBoxEx();
+            this.lbUrl2 = new System.Windows.Forms.Label();
+            this.lbUrl3 = new System.Windows.Forms.Label();
+            this.lbUrl4 = new System.Windows.Forms.Label();
+            this.lbUrl5 = new System.Windows.Forms.Label();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.pnlLogin.SuspendLayout();
             this.tcServicePanel.SuspendLayout();
             this.tpConn.SuspendLayout();
             this.tpLogin.SuspendLayout();
-            this.pnlLogin.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbVersion
@@ -71,75 +70,19 @@
             this.lbVersion.TabIndex = 1;
             this.lbVersion.Text = "2.3";
             // 
-            // lbBBS
+            // lbUrl1
             // 
-            this.lbBBS.AutoSize = true;
-            this.lbBBS.BackColor = System.Drawing.Color.Transparent;
-            this.lbBBS.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbBBS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbBBS.ForeColor = System.Drawing.Color.White;
-            this.lbBBS.Location = new System.Drawing.Point(238, 22);
-            this.lbBBS.Name = "lbBBS";
-            this.lbBBS.Size = new System.Drawing.Size(43, 20);
-            this.lbBBS.TabIndex = 2;
-            this.lbBBS.Text = "更新";
-            this.lbBBS.Click += new System.EventHandler(this.lbBBS_Click);
-            // 
-            // lbBaidu
-            // 
-            this.lbBaidu.AutoSize = true;
-            this.lbBaidu.BackColor = System.Drawing.Color.Transparent;
-            this.lbBaidu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbBaidu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbBaidu.ForeColor = System.Drawing.Color.White;
-            this.lbBaidu.Location = new System.Drawing.Point(323, 22);
-            this.lbBaidu.Name = "lbBaidu";
-            this.lbBaidu.Size = new System.Drawing.Size(77, 20);
-            this.lbBaidu.TabIndex = 3;
-            this.lbBaidu.Text = "百度贴吧";
-            this.lbBaidu.Click += new System.EventHandler(this.lbBaidu_Click);
-            // 
-            // lbDDO
-            // 
-            this.lbDDO.AutoSize = true;
-            this.lbDDO.BackColor = System.Drawing.Color.Transparent;
-            this.lbDDO.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbDDO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbDDO.ForeColor = System.Drawing.Color.White;
-            this.lbDDO.Location = new System.Drawing.Point(515, 22);
-            this.lbDDO.Name = "lbDDO";
-            this.lbDDO.Size = new System.Drawing.Size(82, 20);
-            this.lbDDO.TabIndex = 4;
-            this.lbDDO.Text = "DDO官网";
-            this.lbDDO.Click += new System.EventHandler(this.lbDDO_Click);
-            // 
-            // lbWiki
-            // 
-            this.lbWiki.AutoSize = true;
-            this.lbWiki.BackColor = System.Drawing.Color.Transparent;
-            this.lbWiki.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbWiki.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbWiki.ForeColor = System.Drawing.Color.White;
-            this.lbWiki.Location = new System.Drawing.Point(417, 22);
-            this.lbWiki.Name = "lbWiki";
-            this.lbWiki.Size = new System.Drawing.Size(86, 20);
-            this.lbWiki.TabIndex = 5;
-            this.lbWiki.Text = "DDO Wiki";
-            this.lbWiki.Click += new System.EventHandler(this.lbWiki_Click);
-            // 
-            // lbAccount
-            // 
-            this.lbAccount.AutoSize = true;
-            this.lbAccount.BackColor = System.Drawing.Color.Transparent;
-            this.lbAccount.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbAccount.ForeColor = System.Drawing.Color.White;
-            this.lbAccount.Location = new System.Drawing.Point(602, 22);
-            this.lbAccount.Name = "lbAccount";
-            this.lbAccount.Size = new System.Drawing.Size(87, 20);
-            this.lbAccount.TabIndex = 6;
-            this.lbAccount.Text = "DDO 账户";
-            this.lbAccount.Click += new System.EventHandler(this.lbAccount_Click);
+            this.lbUrl1.AutoSize = true;
+            this.lbUrl1.BackColor = System.Drawing.Color.Transparent;
+            this.lbUrl1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbUrl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbUrl1.ForeColor = System.Drawing.Color.White;
+            this.lbUrl1.Location = new System.Drawing.Point(238, 22);
+            this.lbUrl1.Name = "lbUrl1";
+            this.lbUrl1.Size = new System.Drawing.Size(43, 20);
+            this.lbUrl1.TabIndex = 2;
+            this.lbUrl1.Text = "地址";
+            this.lbUrl1.Click += new System.EventHandler(this.lbUrl_Click);
             // 
             // btnMin
             // 
@@ -164,10 +107,19 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // pnlLogin
+            // 
+            this.pnlLogin.BackColor = System.Drawing.Color.Transparent;
+            this.pnlLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlLogin.Controls.Add(this.tcServicePanel);
+            this.pnlLogin.Location = new System.Drawing.Point(395, 96);
+            this.pnlLogin.Name = "pnlLogin";
+            this.pnlLogin.Size = new System.Drawing.Size(322, 193);
+            this.pnlLogin.TabIndex = 10;
+            // 
             // tcServicePanel
             // 
             this.tcServicePanel.Controls.Add(this.tpConn);
-            this.tcServicePanel.Controls.Add(this.tpUpdate);
             this.tcServicePanel.Controls.Add(this.tpLogin);
             this.tcServicePanel.Location = new System.Drawing.Point(0, -3);
             this.tcServicePanel.Margin = new System.Windows.Forms.Padding(0);
@@ -202,20 +154,12 @@
             this.rtxtInfo.TabStop = false;
             this.rtxtInfo.Text = "";
             // 
-            // tpUpdate
-            // 
-            this.tpUpdate.BackColor = System.Drawing.Color.Black;
-            this.tpUpdate.Location = new System.Drawing.Point(4, 22);
-            this.tpUpdate.Margin = new System.Windows.Forms.Padding(0);
-            this.tpUpdate.Name = "tpUpdate";
-            this.tpUpdate.Size = new System.Drawing.Size(340, 210);
-            this.tpUpdate.TabIndex = 1;
-            this.tpUpdate.Text = "更新";
-            // 
             // tpLogin
             // 
             this.tpLogin.BackColor = System.Drawing.Color.Black;
             this.tpLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tpLogin.Controls.Add(this.btnUpdate);
+            this.tpLogin.Controls.Add(this.cbxShowPassWord);
             this.tpLogin.Controls.Add(this.cbxRemember);
             this.tpLogin.Controls.Add(this.lbSev);
             this.tpLogin.Controls.Add(this.lbPWD);
@@ -230,6 +174,22 @@
             this.tpLogin.Size = new System.Drawing.Size(340, 210);
             this.tpLogin.TabIndex = 2;
             this.tpLogin.Text = "登录";
+            // 
+            // cbxShowPassWord
+            // 
+            this.cbxShowPassWord.AutoSize = true;
+            this.cbxShowPassWord.BackColor = System.Drawing.Color.Transparent;
+            this.cbxShowPassWord.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cbxShowPassWord.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.cbxShowPassWord.ForeColor = System.Drawing.Color.White;
+            this.cbxShowPassWord.Location = new System.Drawing.Point(181, 128);
+            this.cbxShowPassWord.Name = "cbxShowPassWord";
+            this.cbxShowPassWord.Size = new System.Drawing.Size(78, 16);
+            this.cbxShowPassWord.TabIndex = 15;
+            this.cbxShowPassWord.TabStop = false;
+            this.cbxShowPassWord.Text = "显示密码?";
+            this.cbxShowPassWord.UseVisualStyleBackColor = false;
+            this.cbxShowPassWord.CheckedChanged += new System.EventHandler(this.CbxShowPassWord_CheckedChanged);
             // 
             // cbxRemember
             // 
@@ -290,9 +250,9 @@
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.btnLogin.Location = new System.Drawing.Point(60, 142);
+            this.btnLogin.Location = new System.Drawing.Point(107, 142);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(184, 37);
+            this.btnLogin.Size = new System.Drawing.Size(152, 37);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "登录";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -331,49 +291,73 @@
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.WordWrap = false;
             // 
-            // pnlLogin
+            // lbUrl2
             // 
-            this.pnlLogin.BackColor = System.Drawing.Color.Transparent;
-            this.pnlLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlLogin.Controls.Add(this.tcServicePanel);
-            this.pnlLogin.Location = new System.Drawing.Point(395, 96);
-            this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(322, 193);
-            this.pnlLogin.TabIndex = 10;
+            this.lbUrl2.AutoSize = true;
+            this.lbUrl2.BackColor = System.Drawing.Color.Transparent;
+            this.lbUrl2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbUrl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbUrl2.ForeColor = System.Drawing.Color.White;
+            this.lbUrl2.Location = new System.Drawing.Point(327, 22);
+            this.lbUrl2.Name = "lbUrl2";
+            this.lbUrl2.Size = new System.Drawing.Size(43, 20);
+            this.lbUrl2.TabIndex = 11;
+            this.lbUrl2.Tag = "";
+            this.lbUrl2.Text = "地址";
+            this.lbUrl2.Click += new System.EventHandler(this.lbUrl_Click);
             // 
-            // txtServerInfo
+            // lbUrl3
             // 
-            this.txtServerInfo.BackColor = System.Drawing.Color.Black;
-            this.txtServerInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtServerInfo.Font = new System.Drawing.Font("宋体", 12F);
-            this.txtServerInfo.ForeColor = System.Drawing.Color.Lime;
-            this.txtServerInfo.Location = new System.Drawing.Point(45, 96);
-            this.txtServerInfo.Margin = new System.Windows.Forms.Padding(0);
-            this.txtServerInfo.Name = "txtServerInfo";
-            this.txtServerInfo.ReadOnly = true;
-            this.txtServerInfo.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.txtServerInfo.Size = new System.Drawing.Size(235, 360);
-            this.txtServerInfo.TabIndex = 12;
-            this.txtServerInfo.TabStop = false;
-            this.txtServerInfo.Text = "";
-            this.txtServerInfo.Visible = false;
+            this.lbUrl3.AutoSize = true;
+            this.lbUrl3.BackColor = System.Drawing.Color.Transparent;
+            this.lbUrl3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbUrl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbUrl3.ForeColor = System.Drawing.Color.White;
+            this.lbUrl3.Location = new System.Drawing.Point(416, 22);
+            this.lbUrl3.Name = "lbUrl3";
+            this.lbUrl3.Size = new System.Drawing.Size(43, 20);
+            this.lbUrl3.TabIndex = 12;
+            this.lbUrl3.Text = "地址";
+            this.lbUrl3.Click += new System.EventHandler(this.lbUrl_Click);
             // 
-            // txtInfo
+            // lbUrl4
             // 
-            this.txtInfo.BackColor = System.Drawing.Color.Black;
-            this.txtInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtInfo.Font = new System.Drawing.Font("Verdana", 8F);
-            this.txtInfo.ForeColor = System.Drawing.Color.Lime;
-            this.txtInfo.Location = new System.Drawing.Point(284, 311);
-            this.txtInfo.Margin = new System.Windows.Forms.Padding(0);
-            this.txtInfo.Name = "txtInfo";
-            this.txtInfo.ReadOnly = true;
-            this.txtInfo.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.txtInfo.Size = new System.Drawing.Size(433, 215);
-            this.txtInfo.TabIndex = 11;
-            this.txtInfo.TabStop = false;
-            this.txtInfo.Text = "";
-            this.txtInfo.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.txtInfo_LinkClicked);
+            this.lbUrl4.AutoSize = true;
+            this.lbUrl4.BackColor = System.Drawing.Color.Transparent;
+            this.lbUrl4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbUrl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbUrl4.ForeColor = System.Drawing.Color.White;
+            this.lbUrl4.Location = new System.Drawing.Point(505, 22);
+            this.lbUrl4.Name = "lbUrl4";
+            this.lbUrl4.Size = new System.Drawing.Size(43, 20);
+            this.lbUrl4.TabIndex = 13;
+            this.lbUrl4.Text = "地址";
+            this.lbUrl4.Click += new System.EventHandler(this.lbUrl_Click);
+            // 
+            // lbUrl5
+            // 
+            this.lbUrl5.AutoSize = true;
+            this.lbUrl5.BackColor = System.Drawing.Color.Transparent;
+            this.lbUrl5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbUrl5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbUrl5.ForeColor = System.Drawing.Color.White;
+            this.lbUrl5.Location = new System.Drawing.Point(594, 22);
+            this.lbUrl5.Name = "lbUrl5";
+            this.lbUrl5.Size = new System.Drawing.Size(43, 20);
+            this.lbUrl5.TabIndex = 14;
+            this.lbUrl5.Text = "地址";
+            this.lbUrl5.Click += new System.EventHandler(this.lbUrl_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.btnUpdate.Location = new System.Drawing.Point(31, 142);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(64, 37);
+            this.btnUpdate.TabIndex = 16;
+            this.btnUpdate.Text = "更新";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // frmMain
             // 
@@ -384,16 +368,14 @@
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(756, 542);
             this.ControlBox = false;
-            this.Controls.Add(this.txtServerInfo);
-            this.Controls.Add(this.txtInfo);
+            this.Controls.Add(this.lbUrl5);
+            this.Controls.Add(this.lbUrl4);
+            this.Controls.Add(this.lbUrl3);
+            this.Controls.Add(this.lbUrl2);
             this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnMin);
-            this.Controls.Add(this.lbAccount);
-            this.Controls.Add(this.lbWiki);
-            this.Controls.Add(this.lbDDO);
-            this.Controls.Add(this.lbBaidu);
-            this.Controls.Add(this.lbBBS);
+            this.Controls.Add(this.lbUrl1);
             this.Controls.Add(this.lbVersion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -406,11 +388,11 @@
             this.Load += new System.EventHandler(this.Main_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownEvent);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseMoveEvent);
+            this.pnlLogin.ResumeLayout(false);
             this.tcServicePanel.ResumeLayout(false);
             this.tpConn.ResumeLayout(false);
             this.tpLogin.ResumeLayout(false);
             this.tpLogin.PerformLayout();
-            this.pnlLogin.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -419,30 +401,29 @@
         #endregion
 
         private System.Windows.Forms.Label lbVersion;
-        private System.Windows.Forms.Label lbBBS;
-        private System.Windows.Forms.Label lbBaidu;
-        private System.Windows.Forms.Label lbDDO;
-        private System.Windows.Forms.Label lbWiki;
-        private System.Windows.Forms.Label lbAccount;
+        private System.Windows.Forms.Label lbUrl1;
         private System.Windows.Forms.Button btnMin;
         private System.Windows.Forms.Button btnClose;
+        private RichTextBoxEx txtInfo;
+        private System.Windows.Forms.Panel pnlLogin;
+        private RichTextBoxEx txtServerInfo;
         private System.Windows.Forms.TabControl tcServicePanel;
         private System.Windows.Forms.TabPage tpConn;
-        private System.Windows.Forms.TabPage tpUpdate;
-        private System.Windows.Forms.TabPage tpLogin;
         private System.Windows.Forms.RichTextBox rtxtInfo;
+        private System.Windows.Forms.TabPage tpLogin;
+        private System.Windows.Forms.CheckBox cbxRemember;
+        private System.Windows.Forms.Label lbSev;
+        private System.Windows.Forms.Label lbPWD;
+        private System.Windows.Forms.Label lbID;
+        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.ComboBox cblUsername;
         private System.Windows.Forms.ComboBox cblServerList;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Button btnLogin;
-        private RichTextBoxEx txtInfo;
-        private System.Windows.Forms.Label lbID;
-        private System.Windows.Forms.Label lbPWD;
-        private System.Windows.Forms.Label lbSev;
-        private System.Windows.Forms.CheckBox cbxRemember;
-        private System.Windows.Forms.Panel pnlLogin;
-        private RichTextBoxEx txtServerInfo;
-
-
+        private System.Windows.Forms.Label lbUrl2;
+        private System.Windows.Forms.Label lbUrl3;
+        private System.Windows.Forms.Label lbUrl4;
+        private System.Windows.Forms.Label lbUrl5;
+        private System.Windows.Forms.CheckBox cbxShowPassWord;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
