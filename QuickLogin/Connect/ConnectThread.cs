@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using System.Threading;
-using QuickLogin.AuthServer;
-using QuickLogin.DataCenterServer;
 
 namespace QuickLogin.Connect
 {
@@ -22,18 +20,11 @@ namespace QuickLogin.Connect
     public delegate void CallBackInvokeDelegate(ConnectType p_Type, object p_str);
     public class ConnectThread
     {
-        /// <summary>
-        /// 数据中心
-        /// </summary>
-        GLSDatacenterInfoServerSoapClient _datacenter;
-        /// <summary>
-        /// 登陆服务器
-        /// </summary>
-        GlobalLoginSystemAuthenticationServiceSoapClient _loginServer;
+
 
         public bool isClosed;
         public World _worldSelect;
-
+        public Datacenter _Datacenter;
         public bool isGetNews;
         public string _strUserName;
         public string _strPassWord;
@@ -41,8 +32,6 @@ namespace QuickLogin.Connect
         {
             isClosed = false;
             isGetNews = false;
-            _datacenter = new GLSDatacenterInfoServerSoapClient();
-            _loginServer = new GlobalLoginSystemAuthenticationServiceSoapClient();
             OnCallBack += CallBak;
         }
         public event CallBackHandler OnCallBack;
@@ -53,12 +42,12 @@ namespace QuickLogin.Connect
                 try
                 {
                     OnCallBack(ConnectType.Message, "正在获取新闻信息..");
-                    OnCallBack(ConnectType.GetNewsSuccess, new RSSReader().itemList);
+                    OnCallBack(ConnectType.GetNewsSuccess, new RSSReader().NewsList);
                     return;
                 }
-                catch
+                catch (Exception ex)
                 {
-                    // OnCallBack(ConnectType.Error, ex); 
+                    Trace.WriteLine(ex.ToString());
                 }
                 OnCallBack(ConnectType.Message, "无法获取新闻 , 5秒后重试 !");
                 Thread.Sleep(5000);
@@ -71,18 +60,12 @@ namespace QuickLogin.Connect
                 try
                 {
                     OnCallBack(ConnectType.Message, "正在获取服务器信息..");
-                    foreach (Datacenter datacenter in _datacenter.GetDatacenters("DDO"))
-                    {
-                        if ((datacenter != null) && datacenter.Name.Equals("DDO"))
-                        {
-                            OnCallBack(ConnectType.GetDataCenterSuccess, datacenter.Worlds);
-                            return;
-                        }
-                    }
+                    _Datacenter = WebServiceComm.GetDatacenter();
+                    OnCallBack(ConnectType.GetDataCenterSuccess, _Datacenter.Worlds);
                 }
-                catch
+                catch (Exception ex)
                 {
-                    //OnCallBack(ConnectType.Error, exxx.ToString());
+                    Trace.WriteLine(ex.ToString());
                 }
                 OnCallBack(ConnectType.Message, "无法连接到服务器 , 3秒后重试 !");
                 Thread.Sleep(1000);
@@ -102,7 +85,7 @@ namespace QuickLogin.Connect
             hs.Add("StormreachGuest", "试用权限");
             hs.Add("StormreachStandard", "标准权限");
             hs.Add("TREATED_AS_SUBSCRIBER", "订阅用户");
-            hs.Add("XP2_CharacterSlot_Premium", "角色曹赠送");
+            hs.Add("XP2_CharacterSlot_Premium", "角色槽赠送");
             hs.Add("XP2_Premium", "U20赠品");
 
             hs.Add("eStore_Content_Catacombs", "陵墓");
@@ -175,6 +158,9 @@ namespace QuickLogin.Connect
             hs.Add("eStore_Feature_PurpleDragonKnight", "紫龙骑士");
             hs.Add("eStore_Feature_Shadarkai", "影灵");
             hs.Add("eStore_Feature_Warforged", "机关人");
+            hs.Add("eStore_Feature_DeepGnome", "深渊侏儒");
+            hs.Add("eStore_Feature_Warlock", "邪术师(老王)");
+
             hs.Add("Community_Offer_YellowCube", "黄果冻");
 
 
@@ -183,14 +169,20 @@ namespace QuickLogin.Connect
             {
                 return hs[sKey].ToString() + "\n";
             }
+            NoMatch.Add(strKey);
+
+            if (sKey.Contains("eStore_Feature_AccountBank_SharedPlatUpgrade")) return sKey.Replace("eStore_Feature_AccountBank_SharedPlatUpgrade", "共享银行铂币") + "\n";
+            if (sKey.Contains("CharacterSlot")) return sKey.Replace("CharacterSlot", "角色槽") + "\n";
             return strKey;
         }
+        List<string> NoMatch = new List<string>();
         /// <summary>
         /// 获得并处理用户权限信息
         /// </summary>
         /// <param name="p_strProductTokens"></param>
-        private string GetProductTokens(string[] p_strProductTokens)
+        private string GetProductTokens(List<string> p_strProductTokens)
         {
+            if (p_strProductTokens == null) return "";
             StringBuilder sbShow = new StringBuilder();
             List<string> listContent = new List<string>();
             List<string> listFeature = new List<string>();
@@ -234,93 +226,59 @@ namespace QuickLogin.Connect
         public void LoginUser()
         {
             UserProfile _loginUser = null;
-            GameSubscription _userGSB = null;
-            ServerStatus _worldSelectStatus;
-            bool blGet = true;
-            int i = 0;
-            while (blGet)
+            ServerStatus serverStatus = null;
+            try
             {
-                i++;
                 try
                 {
-                    #region 登陆验证
-                    StatusServerResult[] _worldStatus = _datacenter.GetDatacenterStatus("DDO");//取服务器状态 
-                    if (_worldStatus != null && _worldSelect.StatusServerUrl.LastIndexOf('=') > 0)
-                    {
-                        //http://gls.ddo.com/GLS.DataCenterServer/StatusServer.aspx?s=10.192.145.41
-                        string strServerIP = _worldSelect.StatusServerUrl.Split('=')[1];
-                        foreach (StatusServerResult sr in _worldStatus)
-                        {
-                            if (sr.ServerName == strServerIP)
-                            {
-                                if (sr.Results.Trim() == string.Empty)
-                                {
-                                    OnCallBack(ConnectType.LoginFaild, "服务器无响应 !");
-                                    return;
-                                }
-                                _worldSelectStatus = new ServerStatus(sr.Results);
-                                if (_worldSelectStatus != null && !_worldSelectStatus.IsFull && !_worldSelectStatus.IsOpen)
-                                {
-                                    _worldSelect.LoginServerUrl = _worldSelectStatus.LoginServer;//74.201.106.22:9004;74.201.106.22:9003;
-                                    _loginUser = _loginServer.LoginAccount(_strUserName, _strPassWord, null);
+                    serverStatus = WebServiceComm.GetServerStatus(_worldSelect.StatusServerUrl);
+                }
+                catch
+                {
+                    OnCallBack(ConnectType.LoginFaild, "获取服务器状态出错 !");
+                    return;
+                }
+                if (serverStatus.IsFull)
+                {
+                    OnCallBack(ConnectType.LoginFaild, "服务器已满!");
+                    return;
+                }
+                try
+                {
+                    _loginUser = WebServiceComm.LoginAccount(_Datacenter.AuthServer, _strUserName, _strPassWord);
+                }
+                catch
+                {
+                    OnCallBack(ConnectType.LoginFaild, "登录失败!");
+                    return;
+                }
+                if (_loginUser.SubscriptionUser == null || _loginUser.SubscriptionUser.Count < 1)
+                {
+                    OnCallBack(ConnectType.LoginFaild, "未找到账户!");
+                    return;
+                }
+                else if (_loginUser.SubscriptionUser.Count > 1)
+                {
+                    CheckUser cu = new CheckUser(_loginUser.SubscriptionUser);
+                    cu.ShowDialog();
+                    _loginUser.SelectUser = cu.SelectUser;
+                    cu.Dispose();
 
-                                    if (_loginUser != null && _loginUser.Subscriptions != null)
-                                    {
-                                        ArrayList al = new ArrayList();
-                                        foreach (GameSubscription gsb in _loginUser.Subscriptions)
-                                        {
-                                            if (gsb.Game == "DDO")
-                                            {
-                                                al.Add(gsb);
-                                            }
-                                        }
-                                        if (al.Count == 1) _userGSB = (GameSubscription)al[0];
-                                        else if (al.Count > 1)
-                                        {
-                                            CheckUser cu = new CheckUser(al);
-                                            cu.ShowDialog();
-                                            _userGSB = cu.checkGsb;
-                                            cu.Dispose();
-                                        }
-                                    }
-                                    if (_userGSB != null)
-                                    {
-                                        string[] strQueueURLs = _worldSelectStatus.queueURLs.TrimEnd(';').Split(';');
-                                        _worldSelectStatus.TakeANumber(_userGSB.Name, _loginUser.Ticket, strQueueURLs[strQueueURLs.Length - 1]);//http://10.67.112.22:7082/LoginQueue;http://10.67.112.22:7081/LoginQueue;
-                                        blGet = false;
-                                        break;
-                                    }
-                                    else
-                                    {
-                                        OnCallBack(ConnectType.LoginFaild, "没有找到DDO账户");
-                                        return;
-                                    }
-                                }
-                                else break;
-                            }
-                        }
-                    }
-                    #endregion
                 }
-                catch (Exception ex)
+                if (_loginUser.SelectUser == null) _loginUser.SelectUser = _loginUser.SubscriptionUser[0];
+
+                if (_loginUser.SelectUser.Status.Equals("Banned"))
                 {
-                    OnCallBack(ConnectType.Error, ex);
-                    //登录失败，服务器无法连接！
-                    blGet = false;
+                    //被禁用用户
+                    OnCallBack(ConnectType.LoginFaild, "用户已被停用 !");
                     return;
                 }
-                if (i > 10)
-                {
-                    OnCallBack(ConnectType.LoginFaild, "服务器无响应 !");
-                    blGet = false;
-                    return;
-                }
+                WebServiceComm.TakeANumber(_loginUser.SelectUser.SubscriptionName, _loginUser.Ticket, serverStatus.QueueURLs.GetRandom());
             }
-            if (_userGSB != null && _userGSB.Status.Equals("Banned"))
+            catch (Exception ex)
             {
-                //被禁用用户
-                OnCallBack(ConnectType.LoginFaild, "用户已被停用 !");
-                blGet = false;
+                OnCallBack(ConnectType.Error, ex);
+                //登录失败，服务器无法连接！ 
                 return;
             }
             UserList userLists = new UserList();
@@ -328,50 +286,54 @@ namespace QuickLogin.Connect
             userLists.DefaultUser.UserName = _strUserName;
             userLists.DefaultUser.PassWord = _strPassWord;
             userLists.DefaultUser.WorldName = _worldSelect.Name;
+            userLists.Save();
+            OnCallBack(ConnectType.LoginSuccess, GetProductTokens(_loginUser.SelectUser.ProductTokens));
 
-            //数据中心?
-            //http://gls.DDO.com/GLS.DataCenterServer/Service.asmx
-            StringBuilder builder = new StringBuilder();
+            Dictionary<string, string> dicArg = new Dictionary<string, string>();
+
             //加密后的用户名
-            builder.Append("-a " + _userGSB.Name);
+            dicArg.Add("-a", _loginUser.SelectUser.SubscriptionName);
+
             //服务器地址
-            builder.Append(" -h " + _worldSelect.LoginServerUrl);
+            dicArg.Add("-h", serverStatus.LoginServers.GetRandom());
             //猜测是加密后的角色信息
-            builder.Append(" --glsticketdirect " + _loginUser.Ticket);
+            dicArg.Add("--glsticketdirect", _loginUser.Ticket);
             //聊天服务器 198.252.160.45:2900 
-            builder.Append(" --chatserver " + _worldSelect.ChatServerUrl.Split(';')[0]);
+            dicArg.Add("--chatserver", _worldSelect.ChatServerUrl);
             //未知
-            builder.Append(" --rodat on ");
+            dicArg.Add("--rodat", "on");
 
             //语言
-            builder.Append(" --language English ");
-            //builder.Append(" --language ZH_CN ");
+            dicArg.Add("--language", "English");
+            //dicArg.Add(" --language ZH_CN ");
 
             //游戏类型--或许和指环王用的一样的引擎
-            builder.Append(" --gametype DDO ");
+            dicArg.Add("--gametype", "DDO");
 
             //角色登录验证服务器
-            builder.Append(" --authserverurl https://gls.ddo.com/GLS.AuthServer/Service.asmx  ");
+            dicArg.Add("--authserverurl", "https://gls.ddo.com/GLS.AuthServer/Service.asmx");
             //验证存活时间?
-            builder.Append(" --glsticketlifetime 21600");
+            dicArg.Add("--glsticketlifetime", "21600");
 
             //貌似是客服地址
-            builder.Append(" --supporturl https://tss.turbine.com/TSSTrowser/trowser.aspx  ");
+            dicArg.Add("--supporturl", "https://tss.turbine.com/TSSTrowser/trowser.aspx");
 
             //BUG提交地址2018-11-29新加
-            builder.Append("  --bugurl http://ddobugs.turbine.com?task=ticket  ");
+            dicArg.Add("--bugurl", "http://ddobugs.turbine.com?task=ticket");
 
             //未知
-            builder.Append(" --supportserviceurl https://tss.turbine.com/TSSTrowser/SubmitTicket.asmx ");
+            dicArg.Add("--supportserviceurl", "https://tss.turbine.com/TSSTrowser/SubmitTicket.asmx");
 
-            builder.Append("");
             try
             {
-                userLists.Save(builder.ToString());
+                string arguments = "";
+                foreach (var item in dicArg)
+                {
+                    arguments += item.Key.Trim() + " " + item.Value.Trim() + " ";
+                }
                 //登录太快服务器来不及响应，休眠1秒再登录
                 Thread.Sleep(1000);
-                Process.Start(new ProcessStartInfo("dndclient.exe", builder.ToString()));
-                OnCallBack(ConnectType.LoginSuccess, GetProductTokens(_userGSB.ProductTokens));
+                Process.Start("dndclient.exe", arguments.Trim());
             }
             catch (Exception ex)
             {

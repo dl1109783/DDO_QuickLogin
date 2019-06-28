@@ -7,7 +7,17 @@ namespace QuickLogin.Connect
 {
     public static class Comm
     {
+        public static string UrlEncode(string str, Encoding eCoding)
+        {
+            StringBuilder sb = new StringBuilder();
+            byte[] byStr = eCoding.GetBytes(str); //默认是System.Text.Encoding.Default.GetBytes(str)
+            for (int i = 0; i < byStr.Length; i++)
+            {
+                sb.Append(@"%" + Convert.ToString(byStr[i], 16));
+            }
 
+            return (sb.ToString());
+        }
         #region 加密解密字符串
         //默认密钥向量
         private static byte[] Keys = { 0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF };

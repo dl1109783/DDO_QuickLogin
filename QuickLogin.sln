@@ -1,22 +1,9 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickLogin", "QuickLogin\QuickLogin.csproj", "{A498658A-70D6-443D-A411-AF7F855D79C3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "23.DataMaping", "DataMaping\23.DataMaping.csproj", "{D7E57301-2D16-4416-9A40-9235B0FE224C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "24.Utilities", "Utilities\24.Utilities.csproj", "{06E28E76-2220-4515-B16B-624655B9EF74}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DOC", "DOC", "{FD0BEA20-DBED-44FF-8B9B-D0541DB926A2}"
-	ProjectSection(SolutionItems) = preProject
-		DOC\1.png = DOC\1.png
-		DOC\2.png = DOC\2.png
-		DOC\3.png = DOC\3.png
-		DOC\ServerStatus.xml = DOC\ServerStatus.xml
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{76024B49-0D08-4A20-86FF-789ABAA2C974}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickLogin", "QuickLogin\QuickLogin.csproj", "{17C6B04F-062A-4FA9-A797-B9DDCD896119}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,27 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A498658A-70D6-443D-A411-AF7F855D79C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A498658A-70D6-443D-A411-AF7F855D79C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A498658A-70D6-443D-A411-AF7F855D79C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A498658A-70D6-443D-A411-AF7F855D79C3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D7E57301-2D16-4416-9A40-9235B0FE224C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D7E57301-2D16-4416-9A40-9235B0FE224C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D7E57301-2D16-4416-9A40-9235B0FE224C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D7E57301-2D16-4416-9A40-9235B0FE224C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{06E28E76-2220-4515-B16B-624655B9EF74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{06E28E76-2220-4515-B16B-624655B9EF74}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{06E28E76-2220-4515-B16B-624655B9EF74}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{06E28E76-2220-4515-B16B-624655B9EF74}.Release|Any CPU.Build.0 = Release|Any CPU
-		{76024B49-0D08-4A20-86FF-789ABAA2C974}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{76024B49-0D08-4A20-86FF-789ABAA2C974}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{76024B49-0D08-4A20-86FF-789ABAA2C974}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{76024B49-0D08-4A20-86FF-789ABAA2C974}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17C6B04F-062A-4FA9-A797-B9DDCD896119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17C6B04F-062A-4FA9-A797-B9DDCD896119}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17C6B04F-062A-4FA9-A797-B9DDCD896119}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17C6B04F-062A-4FA9-A797-B9DDCD896119}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {770F38D7-A598-4321-878D-71160B8A71E4}
+		SolutionGuid = {B6569C17-8B6B-47CD-8378-ED95E8621854}
 	EndGlobalSection
 EndGlobal

@@ -22,7 +22,7 @@ namespace QuickLogin.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Resources {
+    internal class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace QuickLogin.Properties {
         ///   返回此类使用的缓存的 ResourceManager 实例。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("QuickLogin.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace QuickLogin.Properties {
         ///   重写当前线程的 CurrentUICulture 属性。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,9 +61,81 @@ namespace QuickLogin.Properties {
         }
         
         /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;soap12:Envelope xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:soap12=&quot;http://www.w3.org/2003/05/soap-envelope&quot;&gt;
+        ///  &lt;soap12:Body&gt;
+        ///    &lt;GetDatacenters xmlns=&quot;http://www.turbine.com/SE/GLS&quot;&gt;
+        ///      &lt;game&gt;DDO&lt;/game&gt;
+        ///    &lt;/GetDatacenters&gt;
+        ///  &lt;/soap12:Body&gt;
+        ///&lt;/soap12:Envelope&gt; 的本地化字符串。
+        /// </summary>
+        internal static string GetDatacenters {
+            get {
+                return ResourceManager.GetString("GetDatacenters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;soap:Envelope xmlns:soap=&quot;http://www.w3.org/2003/05/soap-envelope&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+        ///  &lt;soap:Body&gt;
+        ///    &lt;GetDatacentersResponse xmlns=&quot;http://www.turbine.com/SE/GLS&quot;&gt;
+        ///      &lt;GetDatacentersResult&gt;
+        ///        &lt;Datacenter&gt;
+        ///          &lt;Name&gt;DDO&lt;/Name&gt;
+        ///          &lt;Worlds&gt;
+        ///            &lt;World&gt;
+        ///              &lt;Name&gt;Cannith&lt;/Name&gt;
+        ///              &lt;LoginServerUrl&gt;(invalid service specified)&lt;/LoginServerUrl&gt;
+        ///              &lt;ChatServerUr [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        internal static string GetDatacenters_feedback {
+            get {
+                return ResourceManager.GetString("GetDatacenters_feedback", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;soap12:Envelope xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:soap12=&quot;http://www.w3.org/2003/05/soap-envelope&quot;&gt;
+        ///  &lt;soap12:Body&gt;
+        ///    &lt;LoginAccount xmlns=&quot;http://www.turbine.com/SE/GLS&quot;&gt;
+        ///      &lt;username&gt;{0}&lt;/username&gt;
+        ///      &lt;password&gt;{1}&lt;/password&gt;
+        ///      &lt;additionalInfo&gt;&lt;/additionalInfo&gt;
+        ///    &lt;/LoginAccount&gt;
+        ///  &lt;/soap12:Body&gt;
+        ///&lt;/soap12:Envelope&gt; 的本地化字符串。
+        /// </summary>
+        internal static string LoginAccount {
+            get {
+                return ResourceManager.GetString("LoginAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;soap:Envelope xmlns:soap=&quot;http://www.w3.org/2003/05/soap-envelope&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+        ///  &lt;soap:Body&gt;
+        ///    &lt;LoginAccountResponse xmlns=&quot;http://www.turbine.com/SE/GLS&quot;&gt;
+        ///      &lt;LoginAccountResult&gt;
+        ///        &lt;Subscriptions&gt;
+        ///          &lt;GameSubscription&gt;
+        ///            &lt;Game&gt;DDO&lt;/Game&gt;
+        ///            &lt;Name&gt;CZ3D2JE9RWXZLFPWWXJJQNPAY&lt;/Name&gt;
+        ///            &lt;Description&gt;admin&lt;/Description&gt;
+        ///            &lt;ProductTokens&gt;
+        ///              &lt;string&gt; [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        internal static string LoginAccount_feedback {
+            get {
+                return ResourceManager.GetString("LoginAccount_feedback", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        public static System.Drawing.Bitmap M {
+        internal static System.Drawing.Bitmap M {
             get {
                 object obj = ResourceManager.GetObject("M", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +145,7 @@ namespace QuickLogin.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        public static System.Drawing.Bitmap MainBackground {
+        internal static System.Drawing.Bitmap MainBackground {
             get {
                 object obj = ResourceManager.GetObject("MainBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -81,9 +153,26 @@ namespace QuickLogin.Properties {
         }
         
         /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+        ///&lt;Status&gt;
+        ///  &lt;logintiers&gt;0;1;2;&lt;/logintiers&gt;
+        ///  &lt;name&gt;Cannith&lt;/name&gt;
+        ///  &lt;queuenames&gt;B2BC2C51-E34A-44B6-B440-7B3B8708BE02;2E9F9260-623A-4B45-90CC-B503B871B2DF;&lt;/queuenames&gt;
+        ///  &lt;allow_billing_role&gt;TurbineEmployee,TurbineVIP,StormreachLimited,StormreachStandard,StormreachGuest,StormreachEUPre&lt;/allow_billing_role&gt;
+        ///  &lt;lastassignedqueuenumber&gt;0x00011D22&lt;/lastassignedqueuenumber&gt;
+        ///  &lt;logintierlastnumbers&gt;72992;72994;72991;&lt;/logintierlastnumbers&gt;
+        ///  &lt;farmid&gt;2 [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        internal static string StatusServer {
+            get {
+                return ResourceManager.GetString("StatusServer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        public static System.Drawing.Bitmap X {
+        internal static System.Drawing.Bitmap X {
             get {
                 object obj = ResourceManager.GetObject("X", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
