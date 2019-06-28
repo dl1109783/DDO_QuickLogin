@@ -1,23 +1,24 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Windows.Forms;
-using QuickLogin.AuthServer;
+using QuickLogin.Connect;
 
 namespace QuickLogin
 {
     public partial class CheckUser : Form
     {
-        public GameSubscription checkGsb;
+        public SubscriptionUser SelectUser;
 
-        public CheckUser(ArrayList p_alList)
+        public CheckUser(List<SubscriptionUser> p_alList)
         {
             InitializeComponent();
-            checkGsb = null;
+            SelectUser = null;
             if (p_alList != null && p_alList.Count > 0)
             {
-                lbCheckList.DisplayMember = "Name";
+                lbCheckList.DisplayMember = "Description";
                 lbCheckList.Items.Clear();
-                foreach (GameSubscription gsb in p_alList)
+                foreach (SubscriptionUser gsb in p_alList)
                 {
                     lbCheckList.Items.Add(gsb);
                 }
@@ -26,7 +27,7 @@ namespace QuickLogin
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
-            checkGsb = (GameSubscription)lbCheckList.SelectedItem;
+            SelectUser = (SubscriptionUser)lbCheckList.SelectedItem;
             this.Hide();
         }
     }

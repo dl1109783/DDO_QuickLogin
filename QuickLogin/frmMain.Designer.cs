@@ -1,4 +1,7 @@
-﻿namespace QuickLogin
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace QuickLogin
 {
     partial class frmMain
     {
@@ -38,6 +41,7 @@
             this.tpConn = new System.Windows.Forms.TabPage();
             this.rtxtInfo = new System.Windows.Forms.RichTextBox();
             this.tpLogin = new System.Windows.Forms.TabPage();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.cbxShowPassWord = new System.Windows.Forms.CheckBox();
             this.cbxRemember = new System.Windows.Forms.CheckBox();
             this.lbSev = new System.Windows.Forms.Label();
@@ -51,7 +55,8 @@
             this.lbUrl3 = new System.Windows.Forms.Label();
             this.lbUrl4 = new System.Windows.Forms.Label();
             this.lbUrl5 = new System.Windows.Forms.Label();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.txtInfo = new QuickLogin.RichTextBoxEx();
+            this.txtServerInfo = new QuickLogin.RichTextBoxEx();
             this.pnlLogin.SuspendLayout();
             this.tcServicePanel.SuspendLayout();
             this.tpConn.SuspendLayout();
@@ -68,7 +73,7 @@
             this.lbVersion.Name = "lbVersion";
             this.lbVersion.Size = new System.Drawing.Size(31, 19);
             this.lbVersion.TabIndex = 1;
-            this.lbVersion.Text = "2.3";
+            this.lbVersion.Text = "2.5";
             // 
             // lbUrl1
             // 
@@ -174,6 +179,17 @@
             this.tpLogin.Size = new System.Drawing.Size(340, 210);
             this.tpLogin.TabIndex = 2;
             this.tpLogin.Text = "登录";
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.btnUpdate.Location = new System.Drawing.Point(31, 142);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(64, 37);
+            this.btnUpdate.TabIndex = 16;
+            this.btnUpdate.Text = "更新";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // cbxShowPassWord
             // 
@@ -348,16 +364,39 @@
             this.lbUrl5.Text = "地址";
             this.lbUrl5.Click += new System.EventHandler(this.lbUrl_Click);
             // 
-            // btnUpdate
+            // txtInfo
             // 
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.btnUpdate.Location = new System.Drawing.Point(31, 142);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(64, 37);
-            this.btnUpdate.TabIndex = 16;
-            this.btnUpdate.Text = "更新";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
+            this.txtInfo.BackColor = System.Drawing.Color.Black;
+            this.txtInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtInfo.Font = new System.Drawing.Font("Verdana", 8F);
+            this.txtInfo.ForeColor = System.Drawing.Color.Lime;
+            this.txtInfo.Location = new System.Drawing.Point(284, 311);
+            this.txtInfo.Margin = new System.Windows.Forms.Padding(0);
+            this.txtInfo.Name = "txtInfo";
+            this.txtInfo.ReadOnly = true;
+            this.txtInfo.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.txtInfo.Size = new System.Drawing.Size(433, 215);
+            this.txtInfo.TabIndex = 11;
+            this.txtInfo.TabStop = false;
+            this.txtInfo.Text = "";
+            this.txtInfo.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.txtInfo_LinkClicked);
+            // 
+            // txtServerInfo
+            // 
+            this.txtServerInfo.BackColor = System.Drawing.Color.Black;
+            this.txtServerInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtServerInfo.Font = new System.Drawing.Font("宋体", 12F);
+            this.txtServerInfo.ForeColor = System.Drawing.Color.Lime;
+            this.txtServerInfo.Location = new System.Drawing.Point(45, 96);
+            this.txtServerInfo.Margin = new System.Windows.Forms.Padding(0);
+            this.txtServerInfo.Name = "txtServerInfo";
+            this.txtServerInfo.ReadOnly = true;
+            this.txtServerInfo.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.txtServerInfo.Size = new System.Drawing.Size(235, 360);
+            this.txtServerInfo.TabIndex = 12;
+            this.txtServerInfo.TabStop = false;
+            this.txtServerInfo.Text = "";
+            this.txtServerInfo.Visible = false;
             // 
             // frmMain
             // 
@@ -368,6 +407,8 @@
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(756, 542);
             this.ControlBox = false;
+            this.Controls.Add(this.txtServerInfo);
+            this.Controls.Add(this.txtInfo);
             this.Controls.Add(this.lbUrl5);
             this.Controls.Add(this.lbUrl4);
             this.Controls.Add(this.lbUrl3);

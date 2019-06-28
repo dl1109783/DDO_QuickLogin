@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Status>
+  <logintiers>0;1;2;</logintiers>
+  <name>Cannith</name>
+  <queuenames>B2BC2C51-E34A-44B6-B440-7B3B8708BE02;2E9F9260-623A-4B45-90CC-B503B871B2DF;</queuenames>
+  <allow_billing_role>TurbineEmployee,TurbineVIP,StormreachLimited,StormreachStandard,StormreachGuest,StormreachEUPre</allow_billing_role>
+  <lastassignedqueuenumber>0x00011D22</lastassignedqueuenumber>
+  <logintierlastnumbers>72992;72994;72991;</logintierlastnumbers>
+  <farmid>25</farmid>
+  <deny_admin_role/>
+  <world_full>false</world_full>
+  <wait_hint>34.030</wait_hint>
+  <queueurls>http://10.192.145.17:7082/LoginQueue;http://10.192.145.17:7081/LoginQueue;</queueurls>
+  <allow_admin_role>Server,CustomerService,Observer,SeniorCustomerService,LeadCustomerService,Test</allow_admin_role>
+  <nowservingqueuenumber>0x00011D22</nowservingqueuenumber>
+  <deny_billing_role/>
+  <logintiermultipliers>1;2;3;</logintiermultipliers>
+  <loginservers>198.252.160.41:9004;198.252.160.41:9003;</loginservers>
+  <world_pvppermission>0</world_pvppermission>
+</Status>

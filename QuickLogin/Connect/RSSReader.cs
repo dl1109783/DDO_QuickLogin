@@ -1,137 +1,109 @@
+using System;
 using System.Collections.Generic;
-using System.Xml;
+using System.Diagnostics;
+using System.Drawing;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Xml.Linq;
 
 namespace QuickLogin.Connect
 {
     public sealed class RSSReader
     {
-        public string Title = "";//channel的标题
-        public string Description = "";//channel的描述
-        public string Link = "";//channel的连接
-        public Images Image;//channel的图像
-
-        public List<Items> itemList = new List<Items>();//每个Item项目的集合
-        XmlReader reader;
-        XmlDocument xmlDoc;
-
+        /// <summary>
+        /// 新闻数组
+        /// </summary>
+        public List<News> NewsList;
+        /// <summary>
+        /// 标题关键字，打折，维护等显示红色
+        /// </summary>
+        List<string> WarningText;
+        /// <summary>
+        /// 去除Html标签
+        /// </summary>
+        Regex rgExHtml;
         public RSSReader()
         {
+            WarningText = new List<string> { "%", "Bonus", "Down", "Restart" };
+            rgExHtml = new Regex("<[^>]*>", RegexOptions.IgnoreCase);
             //新闻链接地址
             string RSSURL = "http://www.ddo.com/en/launcher-feed.xml";
-            reader = XmlReader.Create(RSSURL);
-            xmlDoc = new XmlDocument();
-            xmlDoc.Load(reader);
-
-            XmlNode node = FoundChildNode(xmlDoc, "rss");
-            XmlNode channelNode = FoundChildNode(node, "channel");
-
-            for (int i = 0; i < channelNode.ChildNodes.Count; i++)
-            {
-                switch (channelNode.ChildNodes[i].Name)
+            XDocument xml = XDocument.Load(RSSURL);
+            NewsList = (
+                from item in xml.Descendants("item")
+                select new News()
                 {
-                    case "title":
-                        this.Title = channelNode.ChildNodes[i].InnerText;
-                        break;
-                    case "image":
-                        this.Image = GetImageDetial(channelNode.ChildNodes[i]);
-                        break;
-                    case "description":
-                        this.Description = channelNode.ChildNodes[i].InnerText;
-                        break;
-                    case "item":
-                        itemList.Add(GetItemsDetail(channelNode.ChildNodes[i]));
-                        break;
-                    default:
-                        break;
+                    Title = GetVal(item.Element("title")),
+                    Description = GetVal(item.Element("description")),
+                    Link = GetVal(item.Element("link")),
+                    Color = GetColor(item.Element("title")),
+                    Pubdate = GetVal(item.Element("pubDate"))
                 }
-            }
+                     ).ToList();
         }
-
-        private XmlNode FoundChildNode(XmlNode node, string name)
+        /// <summary>
+        /// 从XElement中获取值
+        /// 删除Html标签，换行符，制表符
+        /// </summary>
+        /// <param name="element"></param>
+        /// <returns></returns>
+        string GetVal(XElement element)
         {
-            XmlNode childNode = null;
-            for (int i = 0; i < node.ChildNodes.Count; i++)
+            string val = string.Empty;
+            try
             {
-                if (node.ChildNodes[i].Name == name &&
-                    node.ChildNodes[i].ChildNodes.Count > 0)
+                if (element != null && !string.IsNullOrEmpty(element.Value))
                 {
-                    childNode = node.ChildNodes[i];
-                    return childNode;
+                    return rgExHtml.Replace(element.Value, "").Replace("\n", " ").Replace("\t", " ").Replace("\r", " ").Replace("&amp; ", "&").Replace("+0000", "").Trim();
                 }
             }
-            return childNode;
+            catch (Exception e) { Trace.WriteLine(e.ToString()); }
+            return val;
         }
-
-        private Images GetImageDetial(XmlNode node)
+        /// <summary>
+        /// 根据WarningText判断标题该显示什么颜色
+        /// </summary>
+        /// <param name="element"></param>
+        /// <returns></returns>
+        Color GetColor(XElement element)
         {
-            Images image = new Images();
-            foreach (XmlNode n in node.ChildNodes)
+            Color val = Color.Yellow;
+            try
             {
-                switch (n.Name)
+                if (element != null && !string.IsNullOrEmpty(element.Value))
                 {
-                    case "title":
-                        image.Title = n.InnerText;
-                        break;
-                    case "link":
-                        image.Link = n.InnerText;
-                        break;
-                    case "url":
-                        image.URL = n.InnerText;
-                        break;
-                    default:
-                        break;
+                    val = WarningText.Any(txt => element.Value.Contains(txt)) ? Color.Red : Color.Yellow;
                 }
             }
-            return image;
-        }
-
-        private Items GetItemsDetail(XmlNode node)
-        {
-            Items item = new Items();
-            foreach (XmlNode n in node.ChildNodes)
-            {
-                switch (n.Name)
-                {
-                    case "title":
-                        item.Title = n.InnerText;
-                        break;
-                    case "link":
-                        item.Link = n.InnerText;
-                        break;
-                    case "description":
-                        item.Description = n.InnerText;
-                        break;
-                    case "image":
-                        item.Image = n.InnerText;
-                        break;
-                    case "dc:creator":
-                        item.Creator = n.InnerText;
-                        break;
-                    case "pubDate":
-                        item.PubDate = n.InnerText;
-                        break;
-                    default:
-                        break;
-                }
-            }
-            return item;
+            catch (Exception e) { Trace.WriteLine(e.ToString()); }
+            return val;
         }
     }
 
-    public struct Items
+    /// <summary>
+    /// 新闻
+    /// </summary>
+    public struct News
     {
+        /// <summary>
+        /// 标题
+        /// </summary>
         public string Title;
+        /// <summary>
+        /// 详细消息
+        /// </summary>
         public string Description;
+        /// <summary>
+        /// 链接
+        /// </summary>
         public string Link;
-        public string Image;
-        public string PubDate;
-        public string Creator;
-    }
-
-    public struct Images
-    {
-        public string URL;
-        public string Title;
-        public string Link;
+        /// <summary>
+        /// 标题颜色
+        /// </summary>
+        public Color Color;
+        /// <summary>
+        /// 发布时间
+        /// </summary>
+        public string Pubdate;
     }
 }

@@ -1,0 +1,39 @@
+﻿<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <LoginAccountResponse xmlns="http://www.turbine.com/SE/GLS">
+      <LoginAccountResult>
+        <Subscriptions>
+          <GameSubscription>
+            <Game>DDO</Game>
+            <Name>CZ3D2JE9RWXZLFPWWXJJQNPAY</Name>
+            <Description>admin</Description>
+            <ProductTokens>
+              <string>eStore_Content_Shantokor</string>
+              <string>FULL</string>
+              <string>StormreachGuest</string>
+              <string>PaidPoints</string>
+              <string>StormreachStandard</string>
+            </ProductTokens>
+            <CustomerServiceTokens />
+            <Status>Expired</Status>
+            <BillingSystemTime>6/28/2019 6:15:46 AM</BillingSystemTime>
+            <AdditionalInfo />
+          </GameSubscription>
+          <GameSubscription>
+            <Game>Web_DDO</Game>
+            <Name>4666646a-a6a5-df11-b46f-a4badb16cbf952454643020cd6</Name>
+            <Description>My Web_DDO Subscription</Description>
+            <ProductTokens>
+              <string>BASE</string>
+            </ProductTokens>
+            <CustomerServiceTokens />
+            <Status>Expired</Status>
+            <BillingSystemTime>6/28/2019 6:15:46 AM</BillingSystemTime>
+            <AdditionalInfo />
+          </GameSubscription>
+        </Subscriptions>
+        <Ticket>tpc10ZC3I96R/+0mANcFB6fpHLQsnJve44jgczJRt71Ex8l2LjoyIThNhvYFWXhYWEfvaO+7TB17ssGo3KEL1E3HHXGhn4ia9mGQtRJU7ggjrPc+TOYKmK25ktoNaScap3UrgOW582+oQ1oGFAnxXokzB7ya3PvDTAv3VVFgjc3qamVHE1BvJhSbzDzAcCfc8YXC8anYOsEOSHD1RG3nHZ0UOc6MlrSwLCMagbGlEzuGZ3b1zBfWRlc4/Y4p2agE</Ticket>
+      </LoginAccountResult>
+    </LoginAccountResponse>
+  </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,80 @@
+﻿<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GetDatacentersResponse xmlns="http://www.turbine.com/SE/GLS">
+      <GetDatacentersResult>
+        <Datacenter>
+          <Name>DDO</Name>
+          <Worlds>
+            <World>
+              <Name>Cannith</Name>
+              <LoginServerUrl>(invalid service specified)</LoginServerUrl>
+              <ChatServerUrl>198.252.160.41:2900</ChatServerUrl>
+              <StatusServerUrl>http://gls.ddo.com/GLS.DataCenterServer/StatusServer.aspx?s=10.192.145.17</StatusServerUrl>
+              <Order>0</Order>
+              <Language>EN</Language>
+            </World>
+            <World>
+              <Name>Argonnessen</Name>
+              <LoginServerUrl>(invalid service specified)</LoginServerUrl>
+              <ChatServerUrl>198.252.160.40:2900</ChatServerUrl>
+              <StatusServerUrl>http://gls.ddo.com/GLS.DataCenterServer/StatusServer.aspx?s=10.192.145.11</StatusServerUrl>
+              <Order>1</Order>
+              <Language>EN</Language>
+            </World>
+            <World>
+              <Name>Wayfinder</Name>
+              <LoginServerUrl>(invalid service specified)</LoginServerUrl>
+              <ChatServerUrl>198.252.160.47:2900</ChatServerUrl>
+              <StatusServerUrl>http://gls.ddo.com/GLS.DataCenterServer/StatusServer.aspx?s=10.192.145.53</StatusServerUrl>
+              <Order>2</Order>
+              <Language>DE</Language>
+            </World>
+            <World>
+              <Name>Thelanis</Name>
+              <LoginServerUrl>(invalid service specified)</LoginServerUrl>
+              <ChatServerUrl>198.252.160.46:2900</ChatServerUrl>
+              <StatusServerUrl>http://gls.ddo.com/GLS.DataCenterServer/StatusServer.aspx?s=10.192.145.47</StatusServerUrl>
+              <Order>3</Order>
+              <Language>EN</Language>
+            </World>
+            <World>
+              <Name>Sarlona</Name>
+              <LoginServerUrl>(invalid service specified)</LoginServerUrl>
+              <ChatServerUrl>198.252.160.45:2900</ChatServerUrl>
+              <StatusServerUrl>http://gls.ddo.com/GLS.DataCenterServer/StatusServer.aspx?s=10.192.145.41</StatusServerUrl>
+              <Order>4</Order>
+              <Language>EN</Language>
+            </World>
+            <World>
+              <Name>Khyber</Name>
+              <LoginServerUrl>(invalid service specified)</LoginServerUrl>
+              <ChatServerUrl>198.252.160.43:2900</ChatServerUrl>
+              <StatusServerUrl>http://gls.ddo.com/GLS.DataCenterServer/StatusServer.aspx?s=10.192.145.29</StatusServerUrl>
+              <Order>5</Order>
+              <Language>EN</Language>
+            </World>
+            <World>
+              <Name>Ghallanda</Name>
+              <LoginServerUrl>(invalid service specified)</LoginServerUrl>
+              <ChatServerUrl>198.252.160.42:2900</ChatServerUrl>
+              <StatusServerUrl>http://gls.ddo.com/GLS.DataCenterServer/StatusServer.aspx?s=10.192.145.23</StatusServerUrl>
+              <Order>6</Order>
+              <Language>EN</Language>
+            </World>
+            <World>
+              <Name>Orien</Name>
+              <LoginServerUrl>(invalid service specified)</LoginServerUrl>
+              <ChatServerUrl>198.252.160.44:2900</ChatServerUrl>
+              <StatusServerUrl>http://gls.ddo.com/GLS.DataCenterServer/StatusServer.aspx?s=10.192.145.35</StatusServerUrl>
+              <Order>7</Order>
+              <Language>EN</Language>
+            </World>
+          </Worlds>
+          <AuthServer>https://gls-auth.ddo.com/GLS.AuthServer/Service.asmx</AuthServer>
+          <PatchServer>patch.ddo.com:5015</PatchServer>
+          <LauncherConfigurationServer>http://gls.ddo.com/launcher/ddo/dndlauncher.server.config.xml</LauncherConfigurationServer>
+        </Datacenter>
+      </GetDatacentersResult>
+    </GetDatacentersResponse>
+  </soap:Body>
+</soap:Envelope>
