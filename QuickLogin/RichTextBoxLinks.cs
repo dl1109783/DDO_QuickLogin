@@ -1,4 +1,4 @@
-using System;
+锘縰sing System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -175,7 +175,7 @@ namespace QuickLogin
                 throw new ArgumentOutOfRangeException("position");
 
             this.SelectionStart = position;
-            this.SelectedRtf = @"{\rtf1\ansicpg936 " + text + @"\v #" + hyperlink + @"\v0}";//返回"文本#链接"
+            this.SelectedRtf = @"{\rtf1\ansicpg936 " + text + @"\v #" + hyperlink + @"\v0}";
             this.Select(position, text.Length + hyperlink.Length + 1);
             this.SetSelectionLink(true);
             this.Select(position + text.Length + hyperlink.Length + 1, 0);

@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -14,7 +14,7 @@ namespace QuickLogin
     {
 
         /// <summary>
-        /// µÇÂ¼ĞÅÏ¢
+        /// ç™»å½•ä¿¡æ¯
         /// </summary>
         /// <param name="p_Type"></param>
         /// <param name="p_Value"></param>
@@ -24,7 +24,7 @@ namespace QuickLogin
             {
                 switch (p_Type)
                 {
-                    //ĞÂÎÅ
+                    //æ–°é—»
                     case ConnectType.GetNewsSuccess:
                         #region
                         Font fTitle = new Font("Verdana", 9, FontStyle.Bold);
@@ -36,7 +36,7 @@ namespace QuickLogin
                             txtInfo.SelectionFont = fTitle;
                             txtInfo.AppendText(news.Title + "\n");
                             #endregion 
-                            //ÃèÊö
+                            //æè¿°
                             txtInfo.AppendText("  " + news.Description + "\n");
                             #region Link
                             txtInfo.AppendText("  ");
@@ -47,7 +47,7 @@ namespace QuickLogin
                         }
                         #endregion
                         break;
-                    //»ñµÃÊı¾İÖĞĞÄ
+                    //è·å¾—æ•°æ®ä¸­å¿ƒ
                     case ConnectType.GetDataCenterSuccess:
                         #region
                         var _worlds = (List<World>)p_Value;
@@ -78,7 +78,7 @@ namespace QuickLogin
                         rtxtInfo.Text = p_Value.ToString() + "\n" + rtxtInfo.Text;
                         #endregion
                         break;
-                    //µÇÂ½ÓÃ»§
+                    //ç™»é™†ç”¨æˆ·
                     case ConnectType.LoginSuccess:
                         #region
                         txtServerInfo.Visible = true;
@@ -92,18 +92,18 @@ namespace QuickLogin
                         btnLogin.Enabled = true;
                         #endregion
                         break;
-                    //±¨´í
+                    //æŠ¥é”™
                     case ConnectType.Error:
                         #region
                         Exception ex = (Exception)p_Value;
                         if (ex.Message == "No Subscriber Formal Entity was found.")
                         {
                             //
-                            MessageBox.Show("ÓÃ»§Ãû»òÃÜÂë´íÎó!");
+                            MessageBox.Show("ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯!");
                         }
                         //else if (ex.Message.IndexOf("content.turbine.com") > 0)
                         //{
-                        //    //Á¬½ÓÊı¾İÖĞĞÄÊ±±¨´í.
+                        //    //è¿æ¥æ•°æ®ä¸­å¿ƒæ—¶æŠ¥é”™.
                         //}
                         else
                         {
@@ -127,7 +127,7 @@ namespace QuickLogin
             }
         }
         /// <summary>
-        /// µÇÂ¼°´Å¥
+        /// ç™»å½•æŒ‰é’®
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -137,7 +137,7 @@ namespace QuickLogin
             {
                 if (!File.Exists("dndclient.exe"))
                 {
-                    MessageBox.Show("Çë½«±¾³ÌĞò·ÅÔÚDDOÓÎÏ·Ä¿Â¼!");
+                    MessageBox.Show("è¯·å°†æœ¬ç¨‹åºæ”¾åœ¨DDOæ¸¸æˆç›®å½•!");
                     return;
                 }
                 connThread._strUserName = cblUsername.Text.Trim();
@@ -148,7 +148,7 @@ namespace QuickLogin
                     btnLogin.Enabled = false;
                     new Thread(new ThreadStart(this.connThread.LoginUser)) { IsBackground = true }.Start();
                 }
-                else { MessageBox.Show("Çë¼ì²éÓÃ»§Ãû,ÃÜÂë,ÒÔ¼°·şÎñÆ÷ÊÇ·ñÑ¡ÔñÕıÈ·!"); }
+                else { MessageBox.Show("è¯·æ£€æŸ¥ç”¨æˆ·å,å¯†ç ,ä»¥åŠæœåŠ¡å™¨æ˜¯å¦é€‰æ‹©æ­£ç¡®!"); }
             }
             catch (Exception ex)
             {
@@ -164,6 +164,7 @@ namespace QuickLogin
             tcServicePanel.Location = new Point(-6, -25);
             tcServicePanel.Appearance = TabAppearance.FlatButtons;
             connThread = new ConnectThread(new CallBackHandler(ConnectThread_OnCallBack));
+            lbVersion.Text = Application.ProductVersion;
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -178,13 +179,13 @@ namespace QuickLogin
                     BindLableText(lbUrl4, Program.Url4);
                     BindLableText(lbUrl5, Program.Url5);
 
-                    //»ñµÃ·şÎñÆ÷×´Ì¬
+                    //è·å¾—æœåŠ¡å™¨çŠ¶æ€
                     Thread td = new Thread(connThread.GetDataCenter);
-                    td.IsBackground = true;//ºóÌ¨Ïß³Ì,³ÌĞò¹Ø±Õ×Ô¶¯ÍË³ö
+                    td.IsBackground = true;//åå°çº¿ç¨‹,ç¨‹åºå…³é—­è‡ªåŠ¨é€€å‡º
                     td.Start();
-                    //»ñµÃĞÂÎÅ
+                    //è·å¾—æ–°é—»
                     Thread td2 = new Thread(connThread.GetNews);
-                    td2.IsBackground = true;//ºóÌ¨Ïß³Ì,³ÌĞò¹Ø±Õ×Ô¶¯ÍË³ö
+                    td2.IsBackground = true;//åå°çº¿ç¨‹,ç¨‹åºå…³é—­è‡ªåŠ¨é€€å‡º
                     td2.Start();
                     userLists = new UserList();
                     if (userLists.AllUser != null && userLists.AllUser.Count > 0)
@@ -208,7 +209,7 @@ namespace QuickLogin
             }
         }
         /// <summary>
-        /// ÏÂÀ­¿òÑ¡Ïî¸Ä±ä
+        /// ä¸‹æ‹‰æ¡†é€‰é¡¹æ”¹å˜
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -238,9 +239,9 @@ namespace QuickLogin
             }
         }
 
-        #region »ù±¾·½·¨
+        #region åŸºæœ¬æ–¹æ³•
         /// <summary>
-        /// µ÷ÓÃ¹Ù·½¿Í»§¶Ë¸üĞÂÓÎÏ·
+        /// è°ƒç”¨å®˜æ–¹å®¢æˆ·ç«¯æ›´æ–°æ¸¸æˆ
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -252,7 +253,7 @@ namespace QuickLogin
                 {
                     Process.Start(new ProcessStartInfo("DNDLauncher.exe", " -invoker -nosplash -skiprawdownload "));
                 }
-                else MessageBox.Show("ÕÒ²»µ½DNDLauncher.exeÎÄ¼ş!");
+                else MessageBox.Show("æ‰¾ä¸åˆ°DNDLauncher.exeæ–‡ä»¶!");
             }
             catch (Exception ex)
             {
@@ -260,7 +261,7 @@ namespace QuickLogin
             }
         }
         /// <summary>
-        /// ÏÔÊ¾ÃÜÂë
+        /// æ˜¾ç¤ºå¯†ç 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -298,7 +299,7 @@ namespace QuickLogin
         {
             this.WindowState = FormWindowState.Minimized;
         }
-        //½çÃæÍÏ¶¯
+        //ç•Œé¢æ‹–åŠ¨
         private Point mousePoint;
         private Point formPoint;
         public void MouseDownEvent(object sender, MouseEventArgs e)
@@ -315,7 +316,7 @@ namespace QuickLogin
             }
         }
         /// <summary>
-        /// ĞÂÎÅÖĞµÄÁ´½Óµã»÷
+        /// æ–°é—»ä¸­çš„é“¾æ¥ç‚¹å‡»
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -327,7 +328,7 @@ namespace QuickLogin
             }
         }
         /// <summary>
-        /// µ÷ÓÃÄ¬ÈÏä¯ÀÀÆ÷´ò¿ªÁ´½Ó
+        /// è°ƒç”¨é»˜è®¤æµè§ˆå™¨æ‰“å¼€é“¾æ¥
         /// </summary>
         /// <param name="p_strUrl"></param>
         private void OpenUrl(string p_strUrl)
@@ -343,7 +344,7 @@ namespace QuickLogin
             }
         }
         /// <summary>
-        /// °ó¶¨±êÇ©Á´½ÓºÍÃû×Ö
+        /// ç»‘å®šæ ‡ç­¾é“¾æ¥å’Œåå­—
         /// </summary>
         /// <param name="label"></param>
         /// <param name="str"></param>
@@ -381,7 +382,7 @@ namespace QuickLogin
                     try
                     {
                         MessageBoxButtons messButton = MessageBoxButtons.OKCancel;
-                        DialogResult dr = MessageBox.Show("´ò¿ªÅäÖÃÎÄ¼ş³ö´í£¬ÎŞ·¨µ¼Èë±£´æµÄÕË»§Êı¾İ£¬ÊÇ·ñÖØ½¨ÅäÖÃÎÄ¼ş¡£", "³ö´íÁË£¡", messButton);
+                        DialogResult dr = MessageBox.Show("æ‰“å¼€é…ç½®æ–‡ä»¶å‡ºé”™ï¼Œæ— æ³•å¯¼å…¥ä¿å­˜çš„è´¦æˆ·æ•°æ®ï¼Œæ˜¯å¦é‡å»ºé…ç½®æ–‡ä»¶ã€‚", "å‡ºé”™äº†ï¼", messButton);
                         if (dr == DialogResult.Cancel)
                         {
                             this.Close();

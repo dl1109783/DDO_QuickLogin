@@ -71,9 +71,8 @@ namespace QuickLogin
             this.lbVersion.ForeColor = System.Drawing.Color.White;
             this.lbVersion.Location = new System.Drawing.Point(74, 456);
             this.lbVersion.Name = "lbVersion";
-            this.lbVersion.Size = new System.Drawing.Size(31, 19);
+            this.lbVersion.Size = new System.Drawing.Size(0, 19);
             this.lbVersion.TabIndex = 1;
-            this.lbVersion.Text = "2.5";
             // 
             // lbUrl1
             // 

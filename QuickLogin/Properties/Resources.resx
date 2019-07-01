@@ -121,23 +121,14 @@
   <data name="GetDatacenters" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GetDatacenters.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="GetDatacenters_feedback" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GetDatacenters_feedback.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="LoginAccount" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoginAccount.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="LoginAccount_feedback" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LoginAccount_feedback.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="M" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\m.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MainBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\mainbackground.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="StatusServer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\StatusServer.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>..\Resources\MainBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="X" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\x.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -289,51 +289,51 @@ namespace QuickLogin.Connect
             userLists.Save();
             OnCallBack(ConnectType.LoginSuccess, GetProductTokens(_loginUser.SelectUser.ProductTokens));
 
-            Dictionary<string, string> dicArg = new Dictionary<string, string>();
-
+            List<string> arg = new List<string>();
             //加密后的用户名
-            dicArg.Add("-a", _loginUser.SelectUser.SubscriptionName);
-
+            arg.Add("-a");
+            arg.Add(_loginUser.SelectUser.SubscriptionName);
             //服务器地址
-            dicArg.Add("-h", serverStatus.LoginServers.GetRandom());
+            arg.Add("-h");
+            arg.Add(serverStatus.LoginServers.GetRandom());
             //猜测是加密后的角色信息
-            dicArg.Add("--glsticketdirect", _loginUser.Ticket);
+            arg.Add("--glsticketdirect");
+            arg.Add(_loginUser.Ticket);
             //聊天服务器 198.252.160.45:2900 
-            dicArg.Add("--chatserver", _worldSelect.ChatServerUrl);
+            arg.Add("--chatserver");
+            arg.Add(_worldSelect.ChatServerUrl);
             //未知
-            dicArg.Add("--rodat", "on");
+            arg.Add("--rodat");
+            arg.Add("on");
 
             //语言
-            dicArg.Add("--language", "English");
+            arg.Add("--language");
+            arg.Add("English");
             //dicArg.Add(" --language ZH_CN ");
 
             //游戏类型--或许和指环王用的一样的引擎
-            dicArg.Add("--gametype", "DDO");
-
+            arg.Add("--gametype");
+            arg.Add("DDO");
             //角色登录验证服务器
-            dicArg.Add("--authserverurl", "https://gls.ddo.com/GLS.AuthServer/Service.asmx");
+            arg.Add("--authserverurl");
+            arg.Add("https://gls.ddo.com/GLS.AuthServer/Service.asmx");
             //验证存活时间?
-            dicArg.Add("--glsticketlifetime", "21600");
-
+            arg.Add("--glsticketlifetime");
+            arg.Add("21600");
             //貌似是客服地址
-            dicArg.Add("--supporturl", "https://tss.turbine.com/TSSTrowser/trowser.aspx");
-
+            arg.Add("--supporturl");
+            arg.Add("https://tss.turbine.com/TSSTrowser/trowser.aspx");
             //BUG提交地址2018-11-29新加
-            dicArg.Add("--bugurl", "http://ddobugs.turbine.com?task=ticket");
-
+            arg.Add("--bugurl");
+            arg.Add("http://ddobugs.turbine.com?task=ticket");
             //未知
-            dicArg.Add("--supportserviceurl", "https://tss.turbine.com/TSSTrowser/SubmitTicket.asmx");
-
+            arg.Add("--supportserviceurl");
+            arg.Add("https://tss.turbine.com/TSSTrowser/SubmitTicket.asmx");
             try
             {
-                string arguments = "";
-                foreach (var item in dicArg)
-                {
-                    arguments += item.Key.Trim() + " " + item.Value.Trim() + " ";
-                }
                 //登录太快服务器来不及响应，休眠1秒再登录
                 Thread.Sleep(1000);
-                Process.Start("dndclient.exe", arguments.Trim());
+                Process.Start("dndclient.exe", string.Join(" ", arg.ToArray()));
             }
             catch (Exception ex)
             {

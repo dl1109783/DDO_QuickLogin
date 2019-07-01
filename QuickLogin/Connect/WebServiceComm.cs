@@ -78,8 +78,8 @@ namespace QuickLogin.Connect
         public static UserProfile LoginAccount(string AuthServer, string UserName, string Password)
         {
             string xml = Resources.LoginAccount;
-            //var xDoc = CallUrlBySoap(AuthServer, string.Format(xml, UserName, Password));
-            var xDoc = XDocument.Parse(Resources.LoginAccount_feedback); //测试 
+            var xDoc = CallUrlBySoap(AuthServer, string.Format(xml, UserName, Password));
+            //var xDoc = XDocument.Parse(Resources.LoginAccount_feedback); //测试 
             UserProfile userProfile = new UserProfile();
             var xSubscription = xDoc.Descendants(xNamespace + "GameSubscription");
             userProfile.SubscriptionUser = (from item in xSubscription

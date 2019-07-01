@@ -32,3 +32,4 @@ packages/
 *.pdb
 *.db
 
+/dist/UserSettings.xml

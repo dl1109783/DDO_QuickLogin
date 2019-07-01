@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // 有关程序集的常规信息通过下列属性集
@@ -29,5 +28,5 @@ using System.Runtime.InteropServices;
 //      内部版本号
 //      修订号
 //
-[assembly: AssemblyVersion("2.5")]
-[assembly: AssemblyFileVersion("2.5")]
+[assembly: AssemblyVersion("2.5.1")]
+[assembly: AssemblyFileVersion("2.5.1")]
