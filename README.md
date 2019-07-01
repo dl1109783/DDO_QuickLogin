@@ -26,5 +26,5 @@
 + ~~旧版本更新的请自行输入账户信息~~
 
 ### 使用说明
-+ 将QuickLogin.exe文件复制到游戏根目录,如图:![img](https://images.gitee.com/uploads/images/2019/0628/181152_778ba0a1_1366903.png)
++ 将QuickLogin.exe文件复制到游戏根目录,如图:![img](https://gitee.com/dlanny/DDO_QuickLogin/raw/master/DOC/1.png)
 + 运行![img](https://images.gitee.com/uploads/images/2019/0628/181152_2385d8a8_1366903.png) 即可
