@@ -1,7 +1,7 @@
 ﻿# DDO_QuickLogin
 + Dungeons and Dragons Online Quick Login Client
 + 龙与地下城OL 快速登陆客户端
-+ [打包下载(QuickLogin.exe)](raw/master/dist/QuickLogin.exe)
++ [打包下载(QuickLogin.exe)](../../raw/master/dist/QuickLogin.exe)
 
 ### 功能
 + 跳过下载壁纸及检查更新,快速进入游戏
