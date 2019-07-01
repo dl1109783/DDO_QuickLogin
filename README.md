@@ -16,7 +16,9 @@
 + 压缩程序，减少体积，修复BUG
 
 ### V2.5 更新
-+ 支持Win7. 重构代码，优化效率，减少Bug
++ 支持Win7. 支持.net framework 3.5 。
++ 重构代码，移除WebService引用，使用HttpWebRequest直接调用，优化效率。
++ 修复Bug。
 
 ### ~~V2.3 -V2.4  废弃 过于臃肿，需要 .net framework 4.6支持~~
 + ~~源码存于GitHub~~
