@@ -2,6 +2,7 @@
 + Dungeons and Dragons Online Quick Login Client
 + 龙与地下城OL 快速登陆客户端
 + [下载(QuickLogin.exe)](../../raw/master/dist/QuickLogin.exe)
++ 支持Windows XP ，Windows Server 2003 ，Windows Vista，Windows 7，8，10。
 
 ### 功能
 + 跳过下载壁纸及检查更新,快速进入游戏
