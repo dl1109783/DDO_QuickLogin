@@ -7,8 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickLogin", "QuickLogin\Qu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DOC", "DOC", "{06A66857-D125-4CAE-8B26-FBD86A34DFAA}"
 	ProjectSection(SolutionItems) = preProject
+		DOC\GetDatacenters_feedback.xml = DOC\GetDatacenters_feedback.xml
 		LICENSE = LICENSE
+		DOC\LoginAccount_feedback.xml = DOC\LoginAccount_feedback.xml
 		README.md = README.md
+		DOC\StatusServer.xml = DOC\StatusServer.xml
 	EndProjectSection
 EndProject
 Global

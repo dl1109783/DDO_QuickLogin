@@ -60,12 +60,7 @@ namespace QuickLogin.Connect
         public static ServerStatus GetServerStatus(string StatusServerUrl)
         {
             var xDoc = CallUrlByGet(StatusServerUrl);
-            var xDatacenter = xDoc.Root;
-            ServerStatus serverStatus = new ServerStatus();
-            serverStatus.LoginServers = xDatacenter.GetVal("loginservers").TrimEnd(';').Split(';');
-            serverStatus.QueueURLs = xDatacenter.GetVal("queueurls").TrimEnd(';').Split(';');
-            serverStatus.IsFull = xDatacenter.GetVal("world_full") == "true";
-            return serverStatus;
+            return new ServerStatus(xDoc);
         }
 
         /// <summary>
@@ -120,7 +115,7 @@ namespace QuickLogin.Connect
             return null;
         }
 
-        public static void TakeANumber(string SubscriptionName, string Ticket, string QueueURL)
+        public static TakeNumber TakeANumber(string SubscriptionName, string Ticket, string QueueURL)
         {
             string takeANumberParameters = "command=TakeANumber&subscription={0}&ticket={1}&ticket_type=GLS&queue_url={2}";
             string postData = string.Format(
@@ -139,23 +134,14 @@ namespace QuickLogin.Connect
             request.WriteRequestData(postData);
             //返回信息
             var xDoc = request.GetResponseData();
-            /*
-<Result>
-  <Command>TakeANumber</Command>
-  <HResult>0x00000000</HResult>
-  <QueueName>7EC32C5C-894A-40C6-B7E2-C0402DD8B695</QueueName>
-  <QueueNumber>0x000018c7</QueueNumber>
-  <NowServingNumber>0x000018cd</NowServingNumber>
-  <LoginTier>1</LoginTier>
-  <ContextNumber>0x000007b0</ContextNumber>
-</Result>
-             */
+            //登录队列， 人多时有排队现象， 不做控制会登录不了，2019-07-08
+            return new TakeNumber(xDoc);
         }
 
 
 
 
-        static string GetVal(this XElement element, string Name)
+        public static string GetVal(this XElement element, string Name)
         {
             string val = string.Empty;
             try
@@ -307,12 +293,7 @@ namespace QuickLogin.Connect
             return Name;
         }
     }
-    public class ServerStatus
-    {
-        public string[] QueueURLs;
-        public bool IsFull;
-        public string[] LoginServers;
-    }
+
 
     public class UserProfile
     {
@@ -326,6 +307,86 @@ namespace QuickLogin.Connect
         public string Status;
         public string Description;
         public List<string> ProductTokens;
+    }
+
+    public class ServerStatus
+    {
+        /*
+         <Status>
+  <logintiers>0;1;2;</logintiers>
+  <name>Cannith</name>
+  <queuenames>B2BC2C51-E34A-44B6-B440-7B3B8708BE02;2E9F9260-623A-4B45-90CC-B503B871B2DF;</queuenames>
+  <allow_billing_role>TurbineEmployee,TurbineVIP,StormreachLimited,StormreachStandard,StormreachGuest,StormreachEUPre</allow_billing_role>
+  <lastassignedqueuenumber>0x00011D22</lastassignedqueuenumber>
+  <logintierlastnumbers>72992;72994;72991;</logintierlastnumbers>
+  <farmid>25</farmid>
+  <deny_admin_role/>
+  <world_full>false</world_full>
+  <wait_hint>34.030</wait_hint>
+  <queueurls>http://10.192.145.17:7082/LoginQueue;http://10.192.145.17:7081/LoginQueue;</queueurls>
+  <allow_admin_role>Server,CustomerService,Observer,SeniorCustomerService,LeadCustomerService,Test</allow_admin_role>
+  <nowservingqueuenumber>0x00011D22</nowservingqueuenumber>
+  <deny_billing_role/>
+  <logintiermultipliers>1;2;3;</logintiermultipliers>
+  <loginservers>198.252.160.41:9004;198.252.160.41:9003;</loginservers>
+  <world_pvppermission>0</world_pvppermission>
+</Status>
+             
+             */
+        public ServerStatus(XDocument xml)
+        {
+            XElement xDocument = xml.Root;
+            LoginServers = xDocument.GetVal("loginservers").TrimEnd(';').Split(';');
+            QueueURLs = xDocument.GetVal("queueurls").TrimEnd(';').Split(';');
+            IsFull = xDocument.GetVal("world_full") == "true";
+        }
+        public string[] QueueURLs;
+        public bool IsFull;
+        public string[] LoginServers;
+    }
+    public class TakeNumber
+    {
+        /*
+<Result>
+<Command>TakeANumber</Command>
+<HResult>0x00000000</HResult>
+<QueueName>7EC32C5C-894A-40C6-B7E2-C0402DD8B695</QueueName>
+<QueueNumber>0x000018c7</QueueNumber>
+<NowServingNumber>0x000018cd</NowServingNumber>
+<LoginTier>1</LoginTier>
+<ContextNumber>0x000007b0</ContextNumber>
+</Result>
+ */
+        public TakeNumber(XDocument xml)
+        {
+            XElement xDocument = xml.Root;
+            QueueName = xDocument.GetVal("QueueName");
+            string qNum = xDocument.GetVal("QueueNumber").ToUpper().TrimStart('0', 'X');
+            string nowNun = xDocument.GetVal("NowServingNumber").ToUpper().TrimStart('0', 'X');
+            string cNum = xDocument.GetVal("ContextNumber").ToUpper().TrimStart('0', 'X');
+            string tier = xDocument.GetVal("LoginTier");
+            if (!string.IsNullOrEmpty(qNum.Trim()))
+            {
+                QueueNumber = Convert.ToInt32(qNum, 16);
+            }
+            if (!string.IsNullOrEmpty(nowNun.Trim()))
+            {
+                NowServingNumber = Convert.ToInt32(nowNun, 16);
+            }
+            if (!string.IsNullOrEmpty(cNum.Trim()))
+            {
+                ContextNumber = Convert.ToInt32(cNum, 16);
+            }
+            if (!string.IsNullOrEmpty(tier.Trim()))
+            {
+                LoginTier = Convert.ToInt32(tier, 10);
+            }
+        }
+        public string QueueName;
+        public int QueueNumber;
+        public int NowServingNumber;
+        public int ContextNumber;
+        public int LoginTier;
     }
 
 }

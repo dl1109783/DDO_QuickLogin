@@ -263,7 +263,6 @@ namespace QuickLogin.Connect
                     cu.ShowDialog();
                     _loginUser.SelectUser = cu.SelectUser;
                     cu.Dispose();
-
                 }
                 if (_loginUser.SelectUser == null) _loginUser.SelectUser = _loginUser.SubscriptionUser[0];
 
@@ -273,7 +272,19 @@ namespace QuickLogin.Connect
                     OnCallBack(ConnectType.LoginFaild, "用户已被停用 !");
                     return;
                 }
-                WebServiceComm.TakeANumber(_loginUser.SelectUser.SubscriptionName, _loginUser.Ticket, serverStatus.QueueURLs.GetRandom());
+
+                int i = 0;
+                while (true)
+                {
+                    i++;
+                    //登陆排队 
+                    var takeNumber = WebServiceComm.TakeANumber(_loginUser.SelectUser.SubscriptionName, _loginUser.Ticket, serverStatus.QueueURLs.GetRandom());
+                    Thread.Sleep(1000);
+                    if (takeNumber.NowServingNumber >= takeNumber.QueueNumber || i > 10)
+                    {
+                        break;
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -331,8 +342,6 @@ namespace QuickLogin.Connect
             arg.Add("https://tss.turbine.com/TSSTrowser/SubmitTicket.asmx");
             try
             {
-                //登录太快服务器来不及响应，休眠1秒再登录
-                Thread.Sleep(1000);
                 Process.Start("dndclient.exe", string.Join(" ", arg.ToArray()));
             }
             catch (Exception ex)
