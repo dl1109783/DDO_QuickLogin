@@ -170,7 +170,7 @@ namespace QuickLogin
         private void Main_Load(object sender, EventArgs e)
         {
             try
-            {
+            { 
                 if (CheckXmlFile())
                 {
                     BindLableText(lbUrl1, Program.Url1);
