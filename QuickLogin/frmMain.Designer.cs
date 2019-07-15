@@ -57,6 +57,8 @@ namespace QuickLogin
             this.lbUrl5 = new System.Windows.Forms.Label();
             this.txtInfo = new QuickLogin.RichTextBoxEx();
             this.txtServerInfo = new QuickLogin.RichTextBoxEx();
+            this.lbUrl6 = new System.Windows.Forms.Label();
+            this.lbUrl7 = new System.Windows.Forms.Label();
             this.pnlLogin.SuspendLayout();
             this.tcServicePanel.SuspendLayout();
             this.tpConn.SuspendLayout();
@@ -397,6 +399,34 @@ namespace QuickLogin
             this.txtServerInfo.Text = "";
             this.txtServerInfo.Visible = false;
             // 
+            // lbUrl6
+            // 
+            this.lbUrl6.AutoSize = true;
+            this.lbUrl6.BackColor = System.Drawing.Color.Transparent;
+            this.lbUrl6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbUrl6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbUrl6.ForeColor = System.Drawing.Color.White;
+            this.lbUrl6.Location = new System.Drawing.Point(237, 60);
+            this.lbUrl6.Name = "lbUrl6";
+            this.lbUrl6.Size = new System.Drawing.Size(43, 20);
+            this.lbUrl6.TabIndex = 15;
+            this.lbUrl6.Text = "地址";
+            this.lbUrl6.Click += new System.EventHandler(this.lbUrl_Click);
+            // 
+            // lbUrl7
+            // 
+            this.lbUrl7.AutoSize = true;
+            this.lbUrl7.BackColor = System.Drawing.Color.Transparent;
+            this.lbUrl7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbUrl7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbUrl7.ForeColor = System.Drawing.Color.White;
+            this.lbUrl7.Location = new System.Drawing.Point(327, 60);
+            this.lbUrl7.Name = "lbUrl7";
+            this.lbUrl7.Size = new System.Drawing.Size(43, 20);
+            this.lbUrl7.TabIndex = 16;
+            this.lbUrl7.Text = "地址";
+            this.lbUrl7.Click += new System.EventHandler(this.lbUrl_Click);
+            // 
             // frmMain
             // 
             this.AcceptButton = this.btnLogin;
@@ -406,6 +436,8 @@ namespace QuickLogin
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(756, 542);
             this.ControlBox = false;
+            this.Controls.Add(this.lbUrl7);
+            this.Controls.Add(this.lbUrl6);
             this.Controls.Add(this.txtServerInfo);
             this.Controls.Add(this.txtInfo);
             this.Controls.Add(this.lbUrl5);
@@ -465,5 +497,7 @@ namespace QuickLogin
         private System.Windows.Forms.Label lbUrl5;
         private System.Windows.Forms.CheckBox cbxShowPassWord;
         private System.Windows.Forms.Button btnUpdate;
+        private Label lbUrl6;
+        private Label lbUrl7;
     }
 }

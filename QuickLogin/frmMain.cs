@@ -178,7 +178,8 @@ namespace QuickLogin
                     BindLableText(lbUrl3, Program.Url3);
                     BindLableText(lbUrl4, Program.Url4);
                     BindLableText(lbUrl5, Program.Url5);
-
+                    BindLableText(lbUrl6, Program.Url6);
+                    BindLableText(lbUrl7, Program.Url7);
                     //获得服务器状态
                     Thread td = new Thread(connThread.GetDataCenter);
                     td.IsBackground = true;//后台线程,程序关闭自动退出
