@@ -277,8 +277,9 @@ namespace QuickLogin.Connect
                 while (true)
                 {
                     i++;
+                    serverStatus.GetRandomUrl();
                     //登陆排队 
-                    var takeNumber = WebServiceComm.TakeANumber(_loginUser.SelectUser.SubscriptionName, _loginUser.Ticket, serverStatus.QueueURLs.GetRandom());
+                    var takeNumber = WebServiceComm.TakeANumber(_loginUser.SelectUser.SubscriptionName, _loginUser.Ticket, serverStatus.QueueURL);
                     Thread.Sleep(1000);
                     if (takeNumber.NowServingNumber >= takeNumber.QueueNumber || i > 10)
                     {
@@ -306,7 +307,7 @@ namespace QuickLogin.Connect
             arg.Add(_loginUser.SelectUser.SubscriptionName);
             //服务器地址
             arg.Add("-h");
-            arg.Add(serverStatus.LoginServers.GetRandom());
+            arg.Add(serverStatus.LoginServer);
             //猜测是加密后的角色信息
             arg.Add("--glsticketdirect");
             arg.Add(_loginUser.Ticket);

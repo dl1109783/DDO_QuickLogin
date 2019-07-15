@@ -340,9 +340,23 @@ namespace QuickLogin.Connect
             QueueURLs = xDocument.GetVal("queueurls").TrimEnd(';').Split(';');
             IsFull = xDocument.GetVal("world_full") == "true";
         }
-        public string[] QueueURLs;
+        string[] QueueURLs;
         public bool IsFull;
-        public string[] LoginServers;
+        string[] LoginServers;
+
+        public string QueueURL;
+        public string LoginServer;
+        /// <summary>
+        /// 获得随机登录地址
+        /// </summary>
+        public void GetRandomUrl()
+        {
+            var index = new Random().Next(QueueURLs.Length);
+            QueueURL = QueueURLs[index];
+            if (QueueURLs.Length == LoginServers.Length) LoginServer = LoginServers[index];
+            else LoginServer = LoginServers.GetRandom();
+        }
+
     }
     public class TakeNumber
     {
