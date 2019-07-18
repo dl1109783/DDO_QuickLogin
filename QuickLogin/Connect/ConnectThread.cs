@@ -274,17 +274,20 @@ namespace QuickLogin.Connect
                 }
 
                 int i = 0;
+                serverStatus.GetRandomUrl();
                 while (true)
                 {
                     i++;
-                    serverStatus.GetRandomUrl();
+                    //serverStatus.GetRandomUrl();
+                    //serverStatus.GetFirstUrl();
                     //µÇÂ½ÅÅ¶Ó 
                     var takeNumber = WebServiceComm.TakeANumber(_loginUser.SelectUser.SubscriptionName, _loginUser.Ticket, serverStatus.QueueURL);
-                    Thread.Sleep(1000);
                     if (takeNumber.NowServingNumber >= takeNumber.QueueNumber || i > 10)
                     {
+                        Thread.Sleep(takeNumber.LoginTier * 1000);
                         break;
                     }
+                    Thread.Sleep(1000);
                 }
             }
             catch (Exception ex)

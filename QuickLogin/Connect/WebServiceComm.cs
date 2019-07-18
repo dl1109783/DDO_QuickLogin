@@ -356,21 +356,30 @@ namespace QuickLogin.Connect
             if (QueueURLs.Length == LoginServers.Length) LoginServer = LoginServers[index];
             else LoginServer = LoginServers.GetRandom();
         }
-
+        public void GetFirstUrl()
+        {
+            if (QueueURLs.Length > 0) QueueURL = QueueURLs[0];
+            if (LoginServers.Length > 0) LoginServer = LoginServers[0];
+        }
+        public void GetLastUrl()
+        {
+            if (QueueURLs.Length > 0) QueueURL = QueueURLs[QueueURLs.Length - 1];
+            if (LoginServers.Length > 0) LoginServer = LoginServers[LoginServers.Length - 1];
+        }
     }
     public class TakeNumber
     {
         /*
-<Result>
-<Command>TakeANumber</Command>
-<HResult>0x00000000</HResult>
-<QueueName>7EC32C5C-894A-40C6-B7E2-C0402DD8B695</QueueName>
-<QueueNumber>0x000018c7</QueueNumber>
-<NowServingNumber>0x000018cd</NowServingNumber>
-<LoginTier>1</LoginTier>
-<ContextNumber>0x000007b0</ContextNumber>
-</Result>
- */
+    <Result>
+    <Command>TakeANumber</Command>
+    <HResult>0x00000000</HResult>
+    <QueueName>7EC32C5C-894A-40C6-B7E2-C0402DD8B695</QueueName>
+    <QueueNumber>0x000018c7</QueueNumber>
+    <NowServingNumber>0x000018cd</NowServingNumber>
+    <LoginTier>1</LoginTier>
+    <ContextNumber>0x000007b0</ContextNumber>
+    </Result>
+    */
         public TakeNumber(XDocument xml)
         {
             XElement xDocument = xml.Root;
