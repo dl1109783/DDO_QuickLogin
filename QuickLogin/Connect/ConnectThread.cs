@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Text;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace QuickLogin.Connect
 {
@@ -28,6 +30,7 @@ namespace QuickLogin.Connect
         public bool isGetNews;
         public string _strUserName;
         public string _strPassWord;
+        public ClientType clientType;
         public ConnectThread(CallBackHandler CallBak)
         {
             isClosed = false;
@@ -318,41 +321,48 @@ namespace QuickLogin.Connect
             arg.Add("--chatserver");
             arg.Add(_worldSelect.ChatServerUrl);
             //未知
-            arg.Add("--rodat");
-            arg.Add("on");
+            arg.Add("--rodat on");
 
             //语言
-            arg.Add("--language");
-            arg.Add("English");
+            arg.Add("--language English");
             //dicArg.Add(" --language ZH_CN ");
 
             //游戏类型--或许和指环王用的一样的引擎
-            arg.Add("--gametype");
-            arg.Add("DDO");
+            arg.Add("--gametype DDO");
             //角色登录验证服务器
             arg.Add("--authserverurl");
             arg.Add("https://gls.ddo.com/GLS.AuthServer/Service.asmx");
             //验证存活时间?
-            arg.Add("--glsticketlifetime");
-            arg.Add("21600");
+            arg.Add("--glsticketlifetime 21600");
             //貌似是客服地址
             arg.Add("--supporturl");
-            arg.Add("https://tss.turbine.com/TSSTrowser/trowser.aspx");
+            arg.Add("https://tss.ddo.com/TSSTrowser/trowser.aspx");
             //BUG提交地址2018-11-29新加
             arg.Add("--bugurl");
             arg.Add("http://ddobugs.turbine.com?task=ticket");
             //未知
             arg.Add("--supportserviceurl");
-            arg.Add("https://tss.turbine.com/TSSTrowser/SubmitTicket.asmx");
+            arg.Add("https://tss.ddo.com/TSSTrowser/SubmitTicket.asmx");
             try
             {
-                Process.Start("dndclient.exe", string.Join(" ", arg.ToArray()));
+                string filePath = "";
+                if (clientType == default(ClientType) || clientType != ClientType.X64)
+                {
+                    filePath = Path.Combine(Application.StartupPath, "dndclient.exe");
+                }
+                else filePath = Path.Combine(Application.StartupPath, "x64\\dndclient64.exe");
+                Process.Start(filePath, string.Join(" ", arg.ToArray()));
             }
             catch (Exception ex)
             {
                 OnCallBack(ConnectType.Error, ex);
             }
         }
+    }
+    public enum ClientType
+    {
+        X86,
+        X64,
     }
 
 }

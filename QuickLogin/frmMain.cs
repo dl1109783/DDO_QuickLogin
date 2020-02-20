@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuickLogin.Connect;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -6,7 +7,6 @@ using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using QuickLogin.Connect;
 
 namespace QuickLogin
 {
@@ -84,12 +84,14 @@ namespace QuickLogin
                         txtServerInfo.Visible = true;
                         txtServerInfo.Text = p_Value.ToString();
                         btnLogin.Enabled = true;
+                        btnLoginX64.Enabled = true;
                         #endregion
                         break;
                     case ConnectType.LoginFaild:
                         #region
                         MessageBox.Show(p_Value.ToString());
                         btnLogin.Enabled = true;
+                        btnLoginX64.Enabled = true;
                         #endregion
                         break;
                     //报错
@@ -110,6 +112,7 @@ namespace QuickLogin
                             MessageBox.Show(ex.Message);
                         }
                         btnLogin.Enabled = true;
+                        btnLoginX64.Enabled = true;
                         #endregion
                         break;
                     //case ConnectType.GetNewsFaild:
@@ -126,35 +129,7 @@ namespace QuickLogin
                 MessageBox.Show(exx.Message);
             }
         }
-        /// <summary>
-        /// 登录按钮
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!File.Exists("dndclient.exe"))
-                {
-                    MessageBox.Show("请将本程序放在DDO游戏目录!");
-                    return;
-                }
-                connThread._strUserName = cblUsername.Text.Trim();
-                connThread._strPassWord = txtPassword.Text.Trim();
-                connThread._worldSelect = (World)cblServerList.SelectedItem;
-                if (connThread._strPassWord.Trim() != string.Empty && connThread._strUserName.Trim() != string.Empty && connThread._worldSelect != null)
-                {
-                    btnLogin.Enabled = false;
-                    new Thread(new ThreadStart(this.connThread.LoginUser)) { IsBackground = true }.Start();
-                }
-                else { MessageBox.Show("请检查用户名,密码,以及服务器是否选择正确!"); }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
+
 
         ConnectThread connThread;
         UserList userLists;
@@ -170,7 +145,7 @@ namespace QuickLogin
         private void Main_Load(object sender, EventArgs e)
         {
             try
-            { 
+            {
                 if (CheckXmlFile())
                 {
                     BindLableText(lbUrl1, Program.Url1);
@@ -412,8 +387,48 @@ namespace QuickLogin
                   new XElement("User", new XAttribute("Username", "Administrator"), new XAttribute("World", "Sarlona"), new XAttribute("Password", ""))));
             xd.Save(Program.XML_FILE_PATH);
         }
+
         #endregion
 
-
+        private void btnLoginX64_Click(object sender, EventArgs e)
+        {
+            connThread.clientType = ClientType.X64;
+            Login();
+        }
+        /// <summary>
+        /// 登录按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            connThread.clientType = ClientType.X86;
+            Login();
+        }
+        private void Login()
+        {
+            try
+            {
+                if (!File.Exists("dndclient.exe"))
+                {
+                    MessageBox.Show("请将本程序放在DDO游戏目录!");
+                    return;
+                }
+                connThread._strUserName = cblUsername.Text.Trim();
+                connThread._strPassWord = txtPassword.Text.Trim();
+                connThread._worldSelect = (World)cblServerList.SelectedItem;
+                if (connThread._strPassWord.Trim() != string.Empty && connThread._strUserName.Trim() != string.Empty && connThread._worldSelect != null)
+                {
+                    btnLogin.Enabled = false;
+                    btnLoginX64.Enabled = false;
+                    new Thread(new ThreadStart(this.connThread.LoginUser)) { IsBackground = true }.Start();
+                }
+                else { MessageBox.Show("请检查用户名,密码,以及服务器是否选择正确!"); }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }
