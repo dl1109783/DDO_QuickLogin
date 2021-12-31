@@ -9,9 +9,9 @@ namespace QuickLogin
         public static readonly string LoginQueueUrl = "http://gls.DDO.com/GLS.AuthServer/LoginQueue.aspx";
 
         public static readonly string Url1 = "源码|https://gitee.com/dlanny/DDO_QuickLogin";
-        public static readonly string Url2 = "游戏主页|http://www.ddo.com/";
-        public static readonly string Url3 = "账户管理|http://myaccount.turbine.com/";
-        public static readonly string Url4 = "DDO WiKi|http://ddowiki.com/";
+        public static readonly string Url2 = "官网|http://www.ddo.com/";
+        public static readonly string Url3 = "账号|http://myaccount.turbine.com/";
+        public static readonly string Url4 = "WiKi|http://ddowiki.com/";
         //public static readonly string Url5 = "天命模拟|http://dlanny.gitee.io/ddo_quicklogin/";
         public static readonly string Url5 = "解谜|http://solver.cubicleninja.com/";
         public static readonly string Url6 = "贴吧|https://tieba.baidu.com/f?kw=%E9%BE%99%E4%B8%8E%E5%9C%B0%E4%B8%8B%E5%9F%8E&ie=utf-8";
