@@ -430,5 +430,15 @@ namespace QuickLogin
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void cblServerList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            userLists.DefaultUser.WorldName = ((World)cblServerList.SelectedItem).Name;
+        }
+
+        private void btnViewGroup_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://www.playeraudit.com/grouping?s=" + ((World)cblServerList.SelectedItem).Name.ToLower());
+        }
     }
 }
