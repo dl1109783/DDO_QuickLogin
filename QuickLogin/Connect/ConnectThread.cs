@@ -42,145 +42,161 @@ namespace QuickLogin.Connect
 
         private void InitPurchaseItems()
         {
+            if (hs != null)
+            {
+                return;
+            }
             hs = new Hashtable();
-            hs.Add("DDO_MOTU_Bundle", "DLC-黑暗地域(MotU)");
-            hs.Add("DDO_MOTU_PreOrder_Bundle", "DLC-黑暗地域预购(MotU)");
-            hs.Add("DDODruidPack", "德鲁伊包");
-            hs.Add("eStore_Feywild_Ultimate", "DLC-精灵荒野(豪华)");
-            hs.Add("eStore_Saltmarsh_Standard", "DLC-盐沼(标准)");
-            hs.Add("Estore_Ravenloft_Discount", "DLC-鸦阁(折扣)");
-            hs.Add("Estore_Shadowfell_Discount", "DLC-暗影降临(折扣)");
-            hs.Add("Estore_Motu_Discount", "DLC-Motu(折扣)");
-            hs.Add("FULL", "全部");
-            hs.Add("PaidPoints", "付费用户");
-            hs.Add("StormreachGuest", "权限-试用");
-            hs.Add("StormreachStandard", "权限-标准");
-            hs.Add("TREATED_AS_SUBSCRIBER", "订阅用户");
-            hs.Add("XP2_CharacterSlot_Premium", "角色槽赠送");
-            hs.Add("XP2_Premium", "U20赠品");
-            hs.Add("15AnniversaryCloak", "时装-15周年斗篷");
-            hs.Add("EDRevampCloak", "时装-天命圈斗篷");
-            hs.Add("EDTomeBase", "新天命书-基础");
-            hs.Add("EDTomeFeywild", "新天命书-妖精荒野");
-            hs.Add("EDTomeMotU", "新天命书-黑暗地域");
-            hs.Add("EDTomeSaltmarsh", "新天命书-盐沼");
-            hs.Add("eStore_f2p_anniversary10_bundle", "10周年礼包1");
-            hs.Add("eStore_f2p_anniversary10_bundle_claimed", "10周年礼包2");
-            hs.Add("eStore_f2p_anniversary10_bundle_claimed2", "10周年礼包3");
+            hs.Add("DDO_MOTU_Bundle", "DLC|黑暗地域(MotU)");
+            hs.Add("DDO_MOTU_PreOrder_Bundle", "DLC|黑暗地域预购(MotU)");
+            hs.Add("DDODruidPack", "未分类|德鲁伊包");
+            hs.Add("eStore_Feywild_Ultimate", "DLC|妖精荒野(U48)豪华包");
+            hs.Add("eStore_Feywild_Collectors", "DLC|妖精荒野(U48)进阶包");
+            hs.Add("eStore_Saltmarsh_Standard", "DLC|盐沼(U50)标准包");
+            hs.Add("Estore_Ravenloft_Discount", "DLC|鸦阁(U37)折扣包");
+            hs.Add("Estore_Shadowfell_Discount", "DLC|暗影降临折扣包");
+            hs.Add("eStore_Shadowfell_Standard", "DLC|暗影降临标准包");
+            hs.Add("Estore_Motu_Discount", "DLC|黑暗地域折扣包)");
+            hs.Add("eStore_Sharn_Standard_DM", "DLC|沙恩(U42)标准包-副本");
+            hs.Add("DDOSharnSupplies_Claimed", "DLC|沙恩(U42)标准包-星钻等");
 
-            hs.Add("eStore_Content_Catacombs", "陵墓");
-            hs.Add("eStore_Content_Shantokor", "衫托克大厅(STK)");
-            hs.Add("eStore_Content_TanglerootGorge", "缠根");
-            hs.Add("eStore_Content_Deleras", "德墓");
-            hs.Add("eStore_Content_ThreeBarrelCove", "三桶湾");
-            hs.Add("eStore_Content_RuinsOfThrenal", "司莱诺废墟");
-            hs.Add("eStore_Content_SorrowduskIsles", "哀暮岛");
-            hs.Add("eStore_Content_VaultOfNight", "红龙维拉(VON红龙Raid)");
-            hs.Add("eStore_Content_RestlessIsle", "殒梦岛(泰坦Raid)");
-            hs.Add("eStore_Content_SandsOfMenechtarun", "沙漠(女王Raid)");
-            hs.Add("eStore_Content_GiantholdRuins", "巨人领地(U17幽灵龙Raid)");
-            hs.Add("eStore_Content_Necropolis", "不死城1");
-            hs.Add("eStore_Content_Necropolis2", "不死城2");
-            hs.Add("eStore_Content_Necropolis3", "不死城3");
-            hs.Add("eStore_Content_Necropolis4", "不死城4(升天Raid)");
-            hs.Add("eStore_Content_ValeOfTwilight", "十二魔法(裹尸布Raid)");
-            hs.Add("eStore_Content_ReaversReach", "水下(SOS)");
-            hs.Add("eStore_Content_Shavarath", "沙瓦雷斯(战场)");
-            hs.Add("eStore_Content_CrimeWave", "莎伦辛迪加(市场小本)");
-            hs.Add("eStore_Content_Halls", "暮星镇的闹鬼大厅");
+            hs.Add("FULL", "权限|全部");
+            hs.Add("F2PDDOUp", "权限|F2PDDOUp");//？？
 
-            hs.Add("eStore_Content_Inspired", "U 1:灵感之路(新海港)");
-            hs.Add("eStore_Content_Dreaming", "U 2:梦中的黑暗(新海港)");
-            hs.Add("eStore_Content_Sentinels", "U 4:风暴湾的哨兵");
-            hs.Add("eStore_Content_Carnival", "U 5:菲奥兰狂欢节");
-            hs.Add("eStore_Content_Swamp", "U 6:红色沼泽");//Swamp沼泽
-            hs.Add("eStore_Content_DevilAssault", "U 7:恶魔突袭(市场Raid)");
-            hs.Add("eStore_Content_Droaam2", "U 8:风暴湾的战斗(炸船)");  //Droaam炸船里的疯子狗头人
-            hs.Add("eStore_Content_Taken", "U 9:疯狂的预兆");//Taken瘸腿畸形怪
-            hs.Add("eStore_Content_Xoriat", "U10:疯狂的统治");
-            hs.Add("eStore_Content_Blades1", "U11:刀锋领主挑战");
-            hs.Add("eStore_Content_Blades2", "U12:刀锋领主(刀锋Raid)");
-            hs.Add("estore_Content_EveningstarAdventures", "U14(C1):伊尔明斯特");
-            hs.Add("estore_Content_EveningstarChallenges", "U14(C1):伊尔明斯特挑战");
-            hs.Add("estore_Content_EveningstarLandscape", "U14(C1):伊尔明斯特野外");
-            hs.Add("estore_Content_UnderdarkAdventures", "U14(C2):黑暗地域");
-            hs.Add("estore_Content_UnderdarkLandscape", "U14(C2):黑暗地域野外");
-            hs.Add("estore_Content_DemonwebAdventures", "U14(C3):恶魔蛛网");
-            hs.Add("estore_Content_DemonwebLandscape", "U14(C3):恶魔蛛网野外");
-            hs.Add("eStore_Content_Plant", "U15:德鲁伊的内部(活木晶核)");//植物
-            hs.Add("eStore_Content_Castles", "U16:阴影之路");//Castles城堡
-            hs.Add("eStore_Content_Wheloon", "U19:阴影笼罩中的维伦");//Wheloon沃伦   
-            hs.Add("eStore_Content_Stormhorns", "U20:黑暗中的阴谋(雪山)");//Stormhorns风暴角
-            hs.Add("eStore_Content_Thunderholme", "U21:雷电中的阴影(影龙)");
-            hs.Add("eStore_Content_Xoriat2", "U24:疯狂的心(新新眼魔酒馆)");
-            hs.Add("eStore_Content_Classic_TOEE", "U25:元素神殿(ToEE)");
-            hs.Add("eStore_Content_Shav_Archon", "U27:执政官的试炼(DoJ)");
-            hs.Add("eStore_Content_Plague", "U28:恶魔的赌注");
-            hs.Add("eStore_Content_Codex", "U29:无限位面的法典(传奇尸布)");
-            hs.Add("eStore_Content_Classic_Slave", "U32:奴隶主");
-            hs.Add("eStore_Content_Dragonborn_1", "U35:龙裔的黎明(市场双龙+Raid)");
-            hs.Add("eStore_Content_Desire", "U36:泰斯雅玛矿洞");
-            hs.Add("eStore_Content_Ravenloft", "U37:鸦阁迷雾");
-            hs.Add("eStore_Content_Plume", "U39:白羽山及其它传说");
-            hs.Add("eStore_Content_Sharn1", "U42:沙恩的主谋");
-            hs.Add("eStore_Content_Soul", "U43:灵魂分裂者(Sharn码头)");
-            hs.Add("eStore_Content_Classic_Keep", "U44:边疆的守望者(刷马)");
-            hs.Add("eStore_Content_Classic_Hag", "U46:失踪的守门人");
-            hs.Add("eStore_Content_Fey", "U48:妖精荒野");
-            hs.Add("eStore_Content_Relic", "U49:位面之眼的危机");
+            hs.Add("StormreachLimited", "礼包|DDO限定版（旧版）");
 
-            hs.Add("eStore_Feature_32PtBuild", "32点开卡");
-            hs.Add("eStore_Feature_AccountBank", "共享银行");
-            hs.Add("eStore_Feature_EpicDestinies", "传奇天命");
-            hs.Add("eStore_Feature_HeadStart", "副本困难难度开启");
+            
 
-            hs.Add("eStore_Feature_AasimarScourge", "IC种族-阿斯莫");
-            hs.Add("eStore_Feature_Bladeforged", "IC种族-刀锋机关人");
-            hs.Add("eStore_Feature_DeepGnome", "IC种族-深渊侏儒");
-            hs.Add("eStore_Feature_PurpleDragonKnight", "IC种族-紫龙骑士");
-            hs.Add("eStore_Feature_RazorShifter", "IC种族-利爪兽形者");//待确认key
-            hs.Add("eStore_Feature_Shadarkai", "IC种族-影灵");
-            hs.Add("eStore_Feature_Morninglord", "IC种族-日精灵");
-            hs.Add("eStore_Feature_TieflingScoundrel", "IC种族-提夫林");
+            hs.Add("PaidPoints", "权限|付费用户");
+            hs.Add("StormreachGuest", "权限|试用");
+            hs.Add("StormreachStandard", "权限|标准");
+            hs.Add("TREATED_AS_SUBSCRIBER", "权限|订阅用户");
+            hs.Add("XP2_CharacterSlot_Premium", "礼包|角色槽赠送");
+            hs.Add("XP2_Premium", "礼包|U20赠品");
+            hs.Add("15AnniversaryCloak", "礼包|15周年斗篷");
+            hs.Add("EDRevampCloak", "礼包|天命圈斗篷");
+            hs.Add("EDTomeBase", "新天命书|基础");
+            hs.Add("EDTomeFeywild", "新天命书|妖精荒野");
+            hs.Add("EDTomeMotU", "新天命书|黑暗地域");
+            hs.Add("EDTomeSaltmarsh", "新天命书|盐沼");
+            hs.Add("eStore_f2p_anniversary10_bundle", "礼包|10周年1");
+            hs.Add("eStore_f2p_anniversary10_bundle_claimed", "礼包|10周年2");
+            hs.Add("eStore_f2p_anniversary10_bundle_claimed2", "礼包|10周年3");
 
-            hs.Add("eStore_Feature_Alchemist", "职业-炼金术士");
-            hs.Add("eStore_Feature_Artificer", "职业-技师");
-            hs.Add("eStore_Feature_Druid", "职业-德鲁伊");
-            hs.Add("eStore_Feature_FavoredSoul", "职业-天佑");
-            hs.Add("eStore_Feature_Monk", "职业-武僧");
-            hs.Add("eStore_Feature_Warlock", "职业-邪术师");
+            hs.Add("eStore_Content_Catacombs", "副本包|陵墓");
+            hs.Add("eStore_Content_Shantokor", "副本包|衫托克大厅(STK)");
+            hs.Add("eStore_Content_TanglerootGorge", "副本包|缠根");
+            hs.Add("eStore_Content_Deleras", "副本包|德墓");
+            hs.Add("eStore_Content_ThreeBarrelCove", "副本包|三桶湾");
+            hs.Add("eStore_Content_RuinsOfThrenal", "副本包|司莱诺废墟");
+            hs.Add("eStore_Content_SorrowduskIsles", "副本包|哀暮岛");
+            hs.Add("eStore_Content_VaultOfNight", "副本包|红龙维拉(VON红龙Raid)");
+            hs.Add("eStore_Content_RestlessIsle", "副本包|殒梦岛(泰坦Raid)");
+            hs.Add("eStore_Content_SandsOfMenechtarun", "副本包|沙漠(女王Raid)");
+            hs.Add("eStore_Content_GiantholdRuins", "副本包|巨人领地(U17幽灵龙Raid)");
+            hs.Add("eStore_Content_Necropolis", "副本包|不死城1");
+            hs.Add("eStore_Content_Necropolis2", "副本包|不死城2");
+            hs.Add("eStore_Content_Necropolis3", "副本包|不死城3");
+            hs.Add("eStore_Content_Necropolis4", "副本包|不死城4(升天Raid)");
+            hs.Add("eStore_Content_ValeOfTwilight", "副本包|十二魔法(裹尸布Raid)");
+            hs.Add("eStore_Content_ReaversReach", "副本包|水下(SOS)");
+            hs.Add("eStore_Content_Shavarath", "副本包|沙瓦雷斯(战场)");
+            hs.Add("eStore_Content_CrimeWave", "副本包|莎伦辛迪加(市场小本)");
+            hs.Add("eStore_Content_Halls", "副本包|暮星镇的闹鬼大厅");
 
-            hs.Add("eStore_Feature_Aasimar", "种族-阿斯莫");
-            hs.Add("eStore_Feature_Dragonborn", "种族-龙裔");
-            hs.Add("eStore_Feature_Drow", "种族-卓尔精灵");//待确认key-卓尔
-            hs.Add("eStore_Feature_Gnome", "种族-侏儒");
-            hs.Add("eStore_Feature_HalfElf", "种族-半精灵");
-            hs.Add("eStore_Feature_HalfOrc", "种族-半兽人");
-            hs.Add("eStore_Feature_Shifter", "种族-兽形者");//待确认key-shifter
-            hs.Add("eStore_Feature_Tiefling", "种族-提夫林");
-            hs.Add("eStore_Feature_Warforged", "种族-机关人");
+            hs.Add("eStore_Content_Inspired", "副本包|U 1:灵感之路(新海港)");
+            hs.Add("eStore_Content_Dreaming", "副本包|U 2:梦中的黑暗(新海港)");
+            hs.Add("eStore_Content_Sentinels", "副本包|U 4:风暴湾的哨兵");
+            hs.Add("eStore_Content_Carnival", "副本包|U 5:菲奥兰狂欢节");
+            hs.Add("eStore_Content_Swamp", "副本包|U 6:红色沼泽");//Swamp沼泽
+            hs.Add("eStore_Content_DevilAssault", "副本包|U 7:恶魔突袭(市场Raid)");
+            hs.Add("eStore_Content_Droaam2", "副本包|U 8:风暴湾的战斗(炸船)");  //Droaam炸船里的疯子狗头人
+            hs.Add("eStore_Content_Taken", "副本包|U 9:疯狂的预兆");//Taken瘸腿畸形怪
+            hs.Add("eStore_Content_Xoriat", "副本包|U10:疯狂的统治");
+            hs.Add("eStore_Content_Blades1", "副本包|U11:刀锋领主挑战");
+            hs.Add("eStore_Content_Blades2", "副本包|U12:刀锋领主(刀锋Raid)");
+            hs.Add("estore_Content_EveningstarAdventures", "副本包|U14(C1):伊尔明斯特");
+            hs.Add("estore_Content_EveningstarChallenges", "副本包|U14(C1):伊尔明斯特挑战");
+            hs.Add("estore_Content_EveningstarLandscape", "副本包|U14(C1):伊尔明斯特野外");
+            hs.Add("estore_Content_UnderdarkAdventures", "副本包|U14(C2):黑暗地域");
+            hs.Add("estore_Content_UnderdarkLandscape", "副本包|U14(C2):黑暗地域野外");
+            hs.Add("estore_Content_DemonwebAdventures", "副本包|U14(C3):恶魔蛛网");
+            hs.Add("estore_Content_DemonwebLandscape", "副本包|U14(C3):恶魔蛛网野外");
+            hs.Add("eStore_Content_Plant", "副本包|U15:德鲁伊的内部(活木晶核)");//植物
+            hs.Add("eStore_Content_Castles", "副本包|U16:阴影之路");//Castles城堡
+            hs.Add("eStore_Content_Wheloon", "副本包|U19:阴影笼罩中的维伦");//Wheloon沃伦   
+            hs.Add("eStore_Content_Stormhorns", "副本包|U20:黑暗中的阴谋(雪山)");//Stormhorns风暴角
+            hs.Add("eStore_Content_Thunderholme", "副本包|U21:雷电中的阴影(影龙)");
+            hs.Add("eStore_Content_Xoriat2", "副本包|U24:疯狂的心(新新眼魔酒馆)");
+            hs.Add("eStore_Content_Classic_TOEE", "副本包|U25:元素神殿(ToEE)");
+            hs.Add("eStore_Content_Shav_Archon", "副本包|U27:执政官的试炼(DoJ)");
+            hs.Add("eStore_Content_Plague", "副本包|U28:恶魔的赌注");
+            hs.Add("eStore_Content_Codex", "副本包|U29:无限位面的法典(传奇尸布)");
+            hs.Add("eStore_Content_Classic_Slave", "副本包|U32:奴隶主");
+            hs.Add("eStore_Content_Dragonborn_1", "副本包|U35:龙裔的黎明(市场双龙+Raid)");
+            hs.Add("eStore_Content_Desire", "副本包|U36:泰斯雅玛矿洞");
+            hs.Add("eStore_Content_Ravenloft", "副本包|U37:鸦阁迷雾");
+            hs.Add("eStore_Content_Plume", "副本包|U39:白羽山及其它传说");
+            hs.Add("eStore_Content_Sharn1", "副本包|U42:沙恩的主谋");
+            hs.Add("eStore_Content_Soul", "副本包|U43:灵魂分裂者(Sharn码头)");
+            hs.Add("eStore_Content_Classic_Keep", "副本包|U44:边疆的守望者(刷马)");
+            hs.Add("eStore_Content_Classic_Hag", "副本包|U46:失踪的守门人");
+            hs.Add("eStore_Content_Fey", "副本包|U48:妖精荒野");
+            hs.Add("eStore_Content_Relic", "副本包|U49:位面之眼的危机");
+
+            hs.Add("eStore_Feature_32PtBuild", "辅助功能|32点开卡");
+            hs.Add("eStore_Feature_EpicDestinies", "辅助功能|传奇天命");
+            hs.Add("eStore_Feature_HeadStart", "辅助功能|副本困难难度开启");
+            hs.Add("eStore_Feature_HOH_Passport", "辅助功能|位面传送");
+
+            hs.Add("eStore_Feature_AasimarScourge", "种族职业|IC种族-阿斯莫");
+            hs.Add("eStore_Feature_Bladeforged", "种族职业|IC种族-刀锋机关人");
+            hs.Add("eStore_Feature_DeepGnome", "种族职业|IC种族-深渊侏儒");
+            hs.Add("eStore_Feature_PurpleDragonKnight", "种族职业|IC种族-紫龙骑士");
+            hs.Add("eStore_Feature_ShifterIconic", "种族职业|IC种族-利爪兽形者");//待确认key
+            hs.Add("eStore_Feature_Shadarkai", "种族职业|IC种族-影灵");
+            hs.Add("eStore_Feature_Morninglord", "种族职业|IC种族-日精灵");
+            hs.Add("eStore_Feature_TieflingScoundrel", "种族职业|IC种族-提夫林");
+
+            hs.Add("eStore_Feature_Alchemist", "种族职业|职业-炼金术士");
+            hs.Add("eStore_Feature_Artificer", "种族职业|职业-技师");
+            hs.Add("eStore_Feature_Druid", "种族职业|职业-德鲁伊");
+            hs.Add("eStore_Feature_FavoredSoul", "种族职业|职业-天佑");
+            hs.Add("eStore_Feature_Monk", "种族职业|职业-武僧");
+            hs.Add("eStore_Feature_Warlock", "种族职业|职业-邪术师");
+
+            hs.Add("eStore_Feature_Aasimar", "种族职业|种族-阿斯莫");
+            hs.Add("eStore_Feature_Dragonborn", "种族职业|种族-龙裔");
+            hs.Add("eStore_Feature_Drow", "种族职业|种族-卓尔精灵");//待确认key-卓尔
+            hs.Add("eStore_Feature_Gnome", "种族职业|种族-侏儒");
+            hs.Add("eStore_Feature_HalfElf", "种族职业|种族-半精灵");
+            hs.Add("eStore_Feature_HalfOrc", "种族职业|种族-半兽人");
+            hs.Add("eStore_Feature_Shifter", "种族职业|种族-兽形者");//待确认key-shifter
+            hs.Add("eStore_Feature_Tiefling", "种族职业|种族-提夫林");
+            hs.Add("eStore_Feature_Warforged", "种族职业|种族-机关人");
             //待补充-木精灵
 
-            hs.Add("Community_Offer_YellowCube", "黄果冻");
+            hs.Add("Community_Offer_YellowCube", "礼包|黄果冻");
 
-            hs.Add("eStore_Feature_CharSlot", "角色位1");
-            hs.Add("eStore_Feature_MonsterManualVol02", "怪物手册：卷2");
-            hs.Add("eStore_Feature_SharedPlat", "共享银行铂币");
-            hs.Add("eStore_Feature_HOH_Passport", "位面传送");
+            hs.Add("eStore_Feature_CharSlot", "角色位|1");
+            hs.Add("eStore_Feature_MonsterManualVol02", "怪物手册|卷2");
+            hs.Add("eStore_Feature_SharedPlat", "仓库|共享银行铂币");
+            hs.Add("eStore_Feature_AccountBank", "仓库|共享银行");
 
-            hs.Add("eStore_PremEnhancementFalconry", "通用天赋：猎鹰");
-            hs.Add("eStore_PremEnhancementHarperAgent", "通用天赋：竖琴手");
-            hs.Add("eStore_PremEnhancementInquisitive", "通用天赋：双弩");
-            hs.Add("eStore_PremEnhancementVistaniKnifeFighter", "通用天赋：维斯塔尼刀客");//待确认key
-            hs.Add("eStore_PremEnhancementHorizonWalker", "通用天赋：地平线行者");//待确认ke
-            hs.Add("eStore_PremEnhancementFeydarkIllusionist", "通用天赋：妖精洞穴幻术师");//待确认key
 
-            hs.Add("Permadeath_Season_1_Reward_Favor", "S1/S5:死亡凝视(1750声望)");
-            hs.Add("Permadeath_Season_1_Reward_Remnants", "S1/S5:血脚印(5000声望)");
-            hs.Add("Permadeath_Season_4_Reward_Favor1", "S4:克苏鲁头饰(1750声望)");
-            hs.Add("Permadeath_Season_4_Reward_Favor2", "S4:克苏鲁马(5000声望)");
-            hs.Add("Permadeath_Season_4_Reward_Level", "S4:克苏鲁斗篷(20级)");
-            hs.Add("Permadeath_Season_5_Reward_Level", "S5:红色飘带(20级)");
+            hs.Add("eStore_PremEnhancementFalconry", "通用天赋|猎鹰");
+            hs.Add("eStore_PremEnhancementHarperAgent", "通用天赋|竖琴手");
+            hs.Add("eStore_PremEnhancementInquisitive", "通用天赋|双弩");
+            hs.Add("eStore_PremEnhancementVistaniKnife", "通用天赋|维斯塔尼刀客");//待确认key
+            hs.Add("eStore_PremEnhancementHorizonWalker", "通用天赋|地平线行者");//待确认ke
+            hs.Add("eStore_PremEnhancementFeydark", "通用天赋|妖精洞穴幻术师");
+
+            hs.Add("Permadeath_Season_1_Reward_Favor", "赛季服|S1/S5:死亡凝视(1750声望)");
+            hs.Add("Permadeath_Season_1_Reward_Remnants", "赛季服|S1/S5:血脚印(5000声望)");
+            hs.Add("Permadeath_Season_4_Reward_Favor1", "赛季服|S4:克苏鲁头饰(1750声望)");
+            hs.Add("Permadeath_Season_4_Reward_Favor2", "赛季服|S4:克苏鲁马(5000声望)");
+            hs.Add("Permadeath_Season_4_Reward_Level", "赛季服|S4:克苏鲁斗篷(20级)");
+            hs.Add("Permadeath_Season_5_Reward_Level", "赛季服|S5:红色飘带(20级)");
         }
 
         public event CallBackHandler OnCallBack;
@@ -231,14 +247,14 @@ namespace QuickLogin.Connect
             {
                 return hs[sKey].ToString() + "\n";
             }
-            NoMatch.Add(strKey);
+            //NoMatch.Add(strKey);
 
-            if (sKey.Contains("eStore_Feature_AccountBank_SharedPlatUpgrade_")) return sKey.Replace("eStore_Feature_AccountBank_SharedPlatUpgrade_", "共享银行铂币") + "\n";
-            if (sKey.Contains("eStore_Feature_CharSlot_")) return sKey.Replace("eStore_Feature_CharSlot_", "角色位") + "\n";
-            if (sKey.Contains("eStore_Feature_AccountBank_SlotsUpgrade_")) return sKey.Replace("eStore_Feature_AccountBank_SlotsUpgrade_", "共享银行栏") + "\n";
-            if (sKey.Contains("eS_AcctBank")) return sKey.Replace("eS_AcctBank", "共享银行栏") + "\n";
-            if (sKey.Contains("eStore_Feature_MonsterManualVol000")) return sKey.Replace("eStore_Feature_MonsterManualVol000", "怪物手册：卷") + "\n";
-            if (sKey.Contains("eStore_Feature_SingletonBank_SlotsUp_")) return sKey.Replace("eStore_Feature_SingletonBank_SlotsUp_", "人物背包栏") + "\n";
+            if (sKey.Contains("eStore_Feature_AccountBank_SharedPlatUpgrade_")) return sKey.Replace("eStore_Feature_AccountBank_SharedPlatUpgrade_", "仓库|共享银行铂币") + "\n";
+            if (sKey.Contains("eStore_Feature_CharSlot_")) return sKey.Replace("eStore_Feature_CharSlot_", "角色位|") + "\n";
+            if (sKey.Contains("eStore_Feature_AccountBank_SlotsUpgrade_")) return sKey.Replace("eStore_Feature_AccountBank_SlotsUpgrade_", "仓库|共享银行栏") + "\n";
+            if (sKey.Contains("eS_AcctBank")) return sKey.Replace("eS_AcctBank", "仓库|共享银行栏") + "\n";
+            if (sKey.Contains("eStore_Feature_MonsterManualVol000")) return sKey.Replace("eStore_Feature_MonsterManualVol000", "怪物手册|卷") + "\n";
+            if (sKey.Contains("eStore_Feature_SingletonBank_SlotsUp_")) return sKey.Replace("eStore_Feature_SingletonBank_SlotsUp_", "仓库|人物背包栏") + "\n";
             
             return strKey;
         }
@@ -251,58 +267,36 @@ namespace QuickLogin.Connect
         {
             if (p_strProductTokens == null) return "";
             StringBuilder sbShow = new StringBuilder();
-            List<string> listContent = new List<string>();
-            List<string> listFeature = new List<string>();
-            List<string> listBase = new List<string>();
-            List<string> listHC = new List<string>();
+            Dictionary<string, List<string>> dicPurchasedItems = new Dictionary<string, List<string>>();
 
             InitPurchaseItems();
+
             foreach (string _strProduct in p_strProductTokens)
             {
-                string _strTemp = _strProduct + "\n";
-                if (_strTemp.ToUpper().IndexOf("PERMADEATH_") >= 0)
+                string _retVal = GetDes(_strProduct + "\n");
+                string _key = "未分类";
+                if (_retVal.IndexOf("|") >= 0)
                 {
-                    listHC.Add(GetDes(_strTemp));
-                } 
-                else if (_strTemp.ToUpper().IndexOf("CONTENT") >= 0)
-                {
-                    listContent.Add(GetDes(_strTemp));
+                    string[] _arr = _retVal.Split('|');
+                    _key = _arr[0];
+                    _retVal = _arr[1];
                 }
-                else if (_strTemp.ToUpper().IndexOf("FEATURE") >= 0 || _strTemp.ToUpper().IndexOf("ES_ACCTBANK") >= 0 || _strTemp.ToUpper().IndexOf("_PREMENHANCEMENT") >= 0)
+                if (!dicPurchasedItems.ContainsKey(_key))
                 {
-                    listFeature.Add(GetDes(_strTemp));
+                    dicPurchasedItems.Add(_key, new List<string>());
                 }
-                else
-                {
-                    listBase.Add(GetDes(_strTemp));
-                }
-            }
-            listBase.Sort();
-            sbShow.Append("[账户权限]\n");
-            foreach (string _info in listBase)
-            {
-                sbShow.Append(" - ").Append(_info);
+                dicPurchasedItems[_key].Add(_retVal);
             }
 
-            listHC.Sort();
-            sbShow.Append("\n[赛季服]\n");
-            foreach (string _info in listHC)
+            foreach (string key in dicPurchasedItems.Keys)
             {
-                sbShow.Append(" - ").Append(_info);
-            }
-
-            listContent.Sort();
-            sbShow.Append("\n[副 本]\n");
-            foreach (string _info in listContent)
-            {
-                sbShow.Append(" - ").Append(_info);
-            }
-
-            listFeature.Sort();
-            sbShow.Append("\n[功能特性]\n");
-            foreach (string _info in listFeature)
-            {
-                sbShow.Append(" - ").Append(_info);
+                dicPurchasedItems[key].Sort();
+                sbShow.Append("[").Append(key).Append("]\n");
+                foreach (string _info in dicPurchasedItems[key])
+                {
+                    sbShow.Append(" - ").Append(_info);
+                }
+                sbShow.Append("\n");
             }
             return sbShow.ToString();
         }
