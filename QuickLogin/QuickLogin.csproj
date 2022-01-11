@@ -107,6 +107,7 @@
     <None Include="Resources\LoginAccount.xml" />
     <Content Include="Resources\M.bmp" />
     <None Include="Resources\MainBackground.jpg" />
+    <None Include="Resources\Mainform_background.png" />
     <Content Include="Resources\X.bmp" />
   </ItemGroup>
   <ItemGroup>

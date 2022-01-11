@@ -84,14 +84,12 @@ namespace QuickLogin
                         txtServerInfo.Visible = true;
                         txtServerInfo.Text = p_Value.ToString();
                         btnLogin.Enabled = true;
-                        btnLoginX64.Enabled = true;
                         #endregion
                         break;
                     case ConnectType.LoginFaild:
                         #region
                         MessageBox.Show(p_Value.ToString());
                         btnLogin.Enabled = true;
-                        btnLoginX64.Enabled = true;
                         #endregion
                         break;
                     //报错
@@ -112,7 +110,6 @@ namespace QuickLogin
                             MessageBox.Show(ex.Message);
                         }
                         btnLogin.Enabled = true;
-                        btnLoginX64.Enabled = true;
                         #endregion
                         break;
                     //case ConnectType.GetNewsFaild:
@@ -402,7 +399,14 @@ namespace QuickLogin
         /// <param name="e"></param>
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            connThread.clientType = ClientType.X86;
+            if (cb64Bit.Checked)
+            {
+                connThread.clientType = ClientType.X64;
+            }
+            else
+            {
+                connThread.clientType = ClientType.X86;
+            }
             Login();
         }
         private void Login()
@@ -420,7 +424,6 @@ namespace QuickLogin
                 if (connThread._strPassWord.Trim() != string.Empty && connThread._strUserName.Trim() != string.Empty && connThread._worldSelect != null)
                 {
                     btnLogin.Enabled = false;
-                    btnLoginX64.Enabled = false;
                     new Thread(new ThreadStart(this.connThread.LoginUser)) { IsBackground = true }.Start();
                 }
                 else { MessageBox.Show("请检查用户名,密码,以及服务器是否选择正确!"); }
@@ -436,9 +439,17 @@ namespace QuickLogin
             userLists.DefaultUser.WorldName = ((World)cblServerList.SelectedItem).Name;
         }
 
-        private void btnViewGroup_Click(object sender, EventArgs e)
+
+        private void lbPublicGroup_Click(object sender, EventArgs e)
         {
-            OpenUrl("https://www.playeraudit.com/grouping?s=" + ((World)cblServerList.SelectedItem).Name.ToLower());
+            if (cblServerList.SelectedItem != null)
+            {
+                OpenUrl("https://www.playeraudit.com/grouping?s=" + ((World)cblServerList.SelectedItem).Name.ToLower());
+            }
+            else
+            {
+                OpenUrl("https://www.playeraudit.com/");
+            }
         }
     }
 }

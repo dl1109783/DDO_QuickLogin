@@ -52,11 +52,15 @@ namespace QuickLogin.Connect
             hs.Add("DDODruidPack", "未分类|德鲁伊包");
             hs.Add("eStore_Feywild_Ultimate", "DLC|妖精荒野(U48)豪华包");
             hs.Add("eStore_Feywild_Collectors", "DLC|妖精荒野(U48)进阶包");
+            hs.Add("eStore_Feywild_Standard", "DLC|妖精荒野(U48)标准包");
             hs.Add("eStore_Saltmarsh_Standard", "DLC|盐沼(U50)标准包");
             hs.Add("Estore_Ravenloft_Discount", "DLC|鸦阁(U37)折扣包");
             hs.Add("Estore_Shadowfell_Discount", "DLC|暗影降临折扣包");
             hs.Add("eStore_Shadowfell_Standard", "DLC|暗影降临标准包");
             hs.Add("Estore_Motu_Discount", "DLC|黑暗地域折扣包)");
+            hs.Add("eStore_Sharn_Ultimate", "DLC|沙恩(U42)豪华包");
+            hs.Add("eStore_Sharn_Collectors", "DLC|沙恩(U42)进阶包");
+            hs.Add("eStore_Sharn_Standard", "DLC|沙恩(U42)标准包");
             hs.Add("eStore_Sharn_Standard_DM", "DLC|沙恩(U42)标准包-副本");
             hs.Add("DDOSharnSupplies_Claimed", "DLC|沙恩(U42)标准包-星钻等");
 
@@ -64,8 +68,7 @@ namespace QuickLogin.Connect
             hs.Add("F2PDDOUp", "权限|F2PDDOUp");//？？
 
             hs.Add("StormreachLimited", "礼包|DDO限定版（旧版）");
-
-            
+            hs.Add("PaidPoints", "礼包|购买点数（旧版）");
 
             hs.Add("PaidPoints", "权限|付费用户");
             hs.Add("StormreachGuest", "权限|试用");
