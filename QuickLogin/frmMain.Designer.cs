@@ -33,7 +33,6 @@ namespace QuickLogin
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.lbVersion = new System.Windows.Forms.Label();
-            this.lbUrl1 = new System.Windows.Forms.Label();
             this.btnMin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.pnlLogin = new System.Windows.Forms.Panel();
@@ -53,19 +52,34 @@ namespace QuickLogin
             this.cblUsername = new System.Windows.Forms.ComboBox();
             this.cblServerList = new System.Windows.Forms.ComboBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.lbUrl2 = new System.Windows.Forms.Label();
-            this.lbUrl3 = new System.Windows.Forms.Label();
-            this.lbUrl4 = new System.Windows.Forms.Label();
-            this.lbUrl5 = new System.Windows.Forms.Label();
-            this.lbUrl6 = new System.Windows.Forms.Label();
-            this.lbUrl7 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.官网ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.首页ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.账号ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wikiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.首页ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.职业介绍ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.种族ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.天赋ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.专长ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.法术ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.天命ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.声望ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.任务ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.转生ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.其它ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.快登源码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtServerInfo = new QuickLogin.RichTextBoxEx();
             this.txtInfo = new QuickLogin.RichTextBoxEx();
-            this.label1 = new System.Windows.Forms.Label();
+            this.贴吧ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.qQ群ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.解谜工具ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlLogin.SuspendLayout();
             this.tcServicePanel.SuspendLayout();
             this.tpConn.SuspendLayout();
             this.tpLogin.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbVersion
@@ -79,25 +93,11 @@ namespace QuickLogin
             this.lbVersion.Size = new System.Drawing.Size(0, 19);
             this.lbVersion.TabIndex = 1;
             // 
-            // lbUrl1
-            // 
-            this.lbUrl1.AutoSize = true;
-            this.lbUrl1.BackColor = System.Drawing.Color.Transparent;
-            this.lbUrl1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbUrl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbUrl1.ForeColor = System.Drawing.Color.White;
-            this.lbUrl1.Location = new System.Drawing.Point(238, 22);
-            this.lbUrl1.Name = "lbUrl1";
-            this.lbUrl1.Size = new System.Drawing.Size(43, 20);
-            this.lbUrl1.TabIndex = 2;
-            this.lbUrl1.Text = "地址";
-            this.lbUrl1.Click += new System.EventHandler(this.lbUrl_Click);
-            // 
             // btnMin
             // 
             this.btnMin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMin.Image = global::QuickLogin.Properties.Resources.M;
-            this.btnMin.Location = new System.Drawing.Point(584, 18);
+            this.btnMin.Location = new System.Drawing.Point(601, 1);
             this.btnMin.Name = "btnMin";
             this.btnMin.Size = new System.Drawing.Size(24, 24);
             this.btnMin.TabIndex = 7;
@@ -109,7 +109,7 @@ namespace QuickLogin
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Image = global::QuickLogin.Properties.Resources.X;
-            this.btnClose.Location = new System.Drawing.Point(614, 18);
+            this.btnClose.Location = new System.Drawing.Point(629, 1);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(24, 24);
             this.btnClose.TabIndex = 8;
@@ -208,11 +208,11 @@ namespace QuickLogin
             this.lbPublicGroup.AutoSize = true;
             this.lbPublicGroup.BackColor = System.Drawing.Color.Transparent;
             this.lbPublicGroup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbPublicGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPublicGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPublicGroup.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lbPublicGroup.Location = new System.Drawing.Point(271, 16);
+            this.lbPublicGroup.Location = new System.Drawing.Point(265, 18);
             this.lbPublicGroup.Name = "lbPublicGroup";
-            this.lbPublicGroup.Size = new System.Drawing.Size(41, 20);
+            this.lbPublicGroup.Size = new System.Drawing.Size(36, 17);
             this.lbPublicGroup.TabIndex = 19;
             this.lbPublicGroup.Text = "招募";
             this.lbPublicGroup.Click += new System.EventHandler(this.lbPublicGroup_Click);
@@ -340,90 +340,159 @@ namespace QuickLogin
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.WordWrap = false;
             // 
-            // lbUrl2
+            // label1
             // 
-            this.lbUrl2.AutoSize = true;
-            this.lbUrl2.BackColor = System.Drawing.Color.Transparent;
-            this.lbUrl2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbUrl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbUrl2.ForeColor = System.Drawing.Color.White;
-            this.lbUrl2.Location = new System.Drawing.Point(302, 22);
-            this.lbUrl2.Name = "lbUrl2";
-            this.lbUrl2.Size = new System.Drawing.Size(43, 20);
-            this.lbUrl2.TabIndex = 11;
-            this.lbUrl2.Tag = "";
-            this.lbUrl2.Text = "地址";
-            this.lbUrl2.Click += new System.EventHandler(this.lbUrl_Click);
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(7, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(341, 12);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "DDO快速登录器 Copyright 2011 Design by 夜风 QQ: 35792181";
             // 
-            // lbUrl3
+            // menuStrip1
             // 
-            this.lbUrl3.AutoSize = true;
-            this.lbUrl3.BackColor = System.Drawing.Color.Transparent;
-            this.lbUrl3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbUrl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbUrl3.ForeColor = System.Drawing.Color.White;
-            this.lbUrl3.Location = new System.Drawing.Point(371, 22);
-            this.lbUrl3.Name = "lbUrl3";
-            this.lbUrl3.Size = new System.Drawing.Size(43, 20);
-            this.lbUrl3.TabIndex = 12;
-            this.lbUrl3.Text = "地址";
-            this.lbUrl3.Click += new System.EventHandler(this.lbUrl_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.其它ToolStripMenuItem,
+            this.wikiToolStripMenuItem,
+            this.官网ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 50, 2);
+            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.menuStrip1.Size = new System.Drawing.Size(653, 25);
+            this.menuStrip1.Stretch = false;
+            this.menuStrip1.TabIndex = 18;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // lbUrl4
+            // 官网ToolStripMenuItem
             // 
-            this.lbUrl4.AutoSize = true;
-            this.lbUrl4.BackColor = System.Drawing.Color.Transparent;
-            this.lbUrl4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbUrl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbUrl4.ForeColor = System.Drawing.Color.White;
-            this.lbUrl4.Location = new System.Drawing.Point(445, 22);
-            this.lbUrl4.Name = "lbUrl4";
-            this.lbUrl4.Size = new System.Drawing.Size(43, 20);
-            this.lbUrl4.TabIndex = 13;
-            this.lbUrl4.Text = "地址";
-            this.lbUrl4.Click += new System.EventHandler(this.lbUrl_Click);
+            this.官网ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.首页ToolStripMenuItem,
+            this.账号ToolStripMenuItem});
+            this.官网ToolStripMenuItem.Name = "官网ToolStripMenuItem";
+            this.官网ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.官网ToolStripMenuItem.Text = "官网";
             // 
-            // lbUrl5
+            // 首页ToolStripMenuItem
             // 
-            this.lbUrl5.AutoSize = true;
-            this.lbUrl5.BackColor = System.Drawing.Color.Transparent;
-            this.lbUrl5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbUrl5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbUrl5.ForeColor = System.Drawing.Color.White;
-            this.lbUrl5.Location = new System.Drawing.Point(522, 22);
-            this.lbUrl5.Name = "lbUrl5";
-            this.lbUrl5.Size = new System.Drawing.Size(43, 20);
-            this.lbUrl5.TabIndex = 14;
-            this.lbUrl5.Text = "地址";
-            this.lbUrl5.Click += new System.EventHandler(this.lbUrl_Click);
+            this.首页ToolStripMenuItem.Name = "首页ToolStripMenuItem";
+            this.首页ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.首页ToolStripMenuItem.Text = "首页";
+            this.首页ToolStripMenuItem.Click += new System.EventHandler(this.首页ToolStripMenuItem_Click);
             // 
-            // lbUrl6
+            // 账号ToolStripMenuItem
             // 
-            this.lbUrl6.AutoSize = true;
-            this.lbUrl6.BackColor = System.Drawing.Color.Transparent;
-            this.lbUrl6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbUrl6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbUrl6.ForeColor = System.Drawing.Color.White;
-            this.lbUrl6.Location = new System.Drawing.Point(237, 60);
-            this.lbUrl6.Name = "lbUrl6";
-            this.lbUrl6.Size = new System.Drawing.Size(43, 20);
-            this.lbUrl6.TabIndex = 15;
-            this.lbUrl6.Text = "地址";
-            this.lbUrl6.Click += new System.EventHandler(this.lbUrl_Click);
+            this.账号ToolStripMenuItem.Name = "账号ToolStripMenuItem";
+            this.账号ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.账号ToolStripMenuItem.Text = "账号";
+            this.账号ToolStripMenuItem.Click += new System.EventHandler(this.账号ToolStripMenuItem_Click);
             // 
-            // lbUrl7
+            // wikiToolStripMenuItem
             // 
-            this.lbUrl7.AutoSize = true;
-            this.lbUrl7.BackColor = System.Drawing.Color.Transparent;
-            this.lbUrl7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbUrl7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbUrl7.ForeColor = System.Drawing.Color.White;
-            this.lbUrl7.Location = new System.Drawing.Point(302, 60);
-            this.lbUrl7.Name = "lbUrl7";
-            this.lbUrl7.Size = new System.Drawing.Size(43, 20);
-            this.lbUrl7.TabIndex = 16;
-            this.lbUrl7.Text = "地址";
-            this.lbUrl7.Click += new System.EventHandler(this.lbUrl_Click);
+            this.wikiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.首页ToolStripMenuItem1,
+            this.职业介绍ToolStripMenuItem,
+            this.种族ToolStripMenuItem,
+            this.天赋ToolStripMenuItem,
+            this.专长ToolStripMenuItem,
+            this.法术ToolStripMenuItem,
+            this.天命ToolStripMenuItem,
+            this.声望ToolStripMenuItem,
+            this.任务ToolStripMenuItem,
+            this.转生ToolStripMenuItem});
+            this.wikiToolStripMenuItem.Name = "wikiToolStripMenuItem";
+            this.wikiToolStripMenuItem.Size = new System.Drawing.Size(45, 21);
+            this.wikiToolStripMenuItem.Text = "Wiki";
+            // 
+            // 首页ToolStripMenuItem1
+            // 
+            this.首页ToolStripMenuItem1.Name = "首页ToolStripMenuItem1";
+            this.首页ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.首页ToolStripMenuItem1.Text = "首页";
+            this.首页ToolStripMenuItem1.Click += new System.EventHandler(this.首页ToolStripMenuItem1_Click);
+            // 
+            // 职业介绍ToolStripMenuItem
+            // 
+            this.职业介绍ToolStripMenuItem.Name = "职业介绍ToolStripMenuItem";
+            this.职业介绍ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.职业介绍ToolStripMenuItem.Text = "职业";
+            this.职业介绍ToolStripMenuItem.Click += new System.EventHandler(this.职业介绍ToolStripMenuItem_Click);
+            // 
+            // 种族ToolStripMenuItem
+            // 
+            this.种族ToolStripMenuItem.Name = "种族ToolStripMenuItem";
+            this.种族ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.种族ToolStripMenuItem.Text = "种族";
+            this.种族ToolStripMenuItem.Click += new System.EventHandler(this.种族ToolStripMenuItem_Click);
+            // 
+            // 天赋ToolStripMenuItem
+            // 
+            this.天赋ToolStripMenuItem.Name = "天赋ToolStripMenuItem";
+            this.天赋ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.天赋ToolStripMenuItem.Text = "天赋";
+            this.天赋ToolStripMenuItem.Click += new System.EventHandler(this.天赋ToolStripMenuItem_Click);
+            // 
+            // 专长ToolStripMenuItem
+            // 
+            this.专长ToolStripMenuItem.Name = "专长ToolStripMenuItem";
+            this.专长ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.专长ToolStripMenuItem.Text = "专长";
+            this.专长ToolStripMenuItem.Click += new System.EventHandler(this.专长ToolStripMenuItem_Click);
+            // 
+            // 法术ToolStripMenuItem
+            // 
+            this.法术ToolStripMenuItem.Name = "法术ToolStripMenuItem";
+            this.法术ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.法术ToolStripMenuItem.Text = "法术";
+            this.法术ToolStripMenuItem.Click += new System.EventHandler(this.法术ToolStripMenuItem_Click);
+            // 
+            // 天命ToolStripMenuItem
+            // 
+            this.天命ToolStripMenuItem.Name = "天命ToolStripMenuItem";
+            this.天命ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.天命ToolStripMenuItem.Text = "天命";
+            this.天命ToolStripMenuItem.Click += new System.EventHandler(this.天命ToolStripMenuItem_Click);
+            // 
+            // 声望ToolStripMenuItem
+            // 
+            this.声望ToolStripMenuItem.Name = "声望ToolStripMenuItem";
+            this.声望ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.声望ToolStripMenuItem.Text = "声望";
+            this.声望ToolStripMenuItem.Click += new System.EventHandler(this.声望ToolStripMenuItem_Click);
+            // 
+            // 任务ToolStripMenuItem
+            // 
+            this.任务ToolStripMenuItem.Name = "任务ToolStripMenuItem";
+            this.任务ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.任务ToolStripMenuItem.Text = "任务";
+            this.任务ToolStripMenuItem.Click += new System.EventHandler(this.任务ToolStripMenuItem_Click);
+            // 
+            // 转生ToolStripMenuItem
+            // 
+            this.转生ToolStripMenuItem.Name = "转生ToolStripMenuItem";
+            this.转生ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.转生ToolStripMenuItem.Text = "转生";
+            this.转生ToolStripMenuItem.Click += new System.EventHandler(this.转生ToolStripMenuItem_Click);
+            // 
+            // 其它ToolStripMenuItem
+            // 
+            this.其它ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.快登源码ToolStripMenuItem,
+            this.贴吧ToolStripMenuItem,
+            this.qQ群ToolStripMenuItem,
+            this.解谜工具ToolStripMenuItem});
+            this.其它ToolStripMenuItem.Name = "其它ToolStripMenuItem";
+            this.其它ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.其它ToolStripMenuItem.Text = "其它";
+            // 
+            // 快登源码ToolStripMenuItem
+            // 
+            this.快登源码ToolStripMenuItem.Name = "快登源码ToolStripMenuItem";
+            this.快登源码ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.快登源码ToolStripMenuItem.Text = "快登源码";
+            this.快登源码ToolStripMenuItem.Click += new System.EventHandler(this.快登源码ToolStripMenuItem_Click);
             // 
             // txtServerInfo
             // 
@@ -459,16 +528,26 @@ namespace QuickLogin
             this.txtInfo.Text = "";
             this.txtInfo.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.txtInfo_LinkClicked);
             // 
-            // label1
+            // 贴吧ToolStripMenuItem
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(386, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(257, 12);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Copyright 2011 Design by 夜风 QQ: 35792181";
+            this.贴吧ToolStripMenuItem.Name = "贴吧ToolStripMenuItem";
+            this.贴吧ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.贴吧ToolStripMenuItem.Text = "百度贴吧";
+            this.贴吧ToolStripMenuItem.Click += new System.EventHandler(this.贴吧ToolStripMenuItem_Click);
+            // 
+            // qQ群ToolStripMenuItem
+            // 
+            this.qQ群ToolStripMenuItem.Name = "qQ群ToolStripMenuItem";
+            this.qQ群ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.qQ群ToolStripMenuItem.Text = "QQ群";
+            this.qQ群ToolStripMenuItem.Click += new System.EventHandler(this.qQ群ToolStripMenuItem_Click);
+            // 
+            // 解谜工具ToolStripMenuItem
+            // 
+            this.解谜工具ToolStripMenuItem.Name = "解谜工具ToolStripMenuItem";
+            this.解谜工具ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.解谜工具ToolStripMenuItem.Text = "解谜工具";
+            this.解谜工具ToolStripMenuItem.Click += new System.EventHandler(this.解谜工具ToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -479,23 +558,18 @@ namespace QuickLogin
             this.ClientSize = new System.Drawing.Size(653, 542);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbUrl7);
-            this.Controls.Add(this.lbUrl6);
             this.Controls.Add(this.txtServerInfo);
             this.Controls.Add(this.txtInfo);
-            this.Controls.Add(this.lbUrl5);
-            this.Controls.Add(this.lbUrl4);
-            this.Controls.Add(this.lbUrl3);
-            this.Controls.Add(this.lbUrl2);
             this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnMin);
-            this.Controls.Add(this.lbUrl1);
             this.Controls.Add(this.lbVersion);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "快速登陆器";
@@ -508,6 +582,8 @@ namespace QuickLogin
             this.tpConn.ResumeLayout(false);
             this.tpLogin.ResumeLayout(false);
             this.tpLogin.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -516,18 +592,11 @@ namespace QuickLogin
         #endregion
 
         private System.Windows.Forms.Label lbVersion;
-        private System.Windows.Forms.Label lbUrl1;
         private System.Windows.Forms.Button btnMin;
         private System.Windows.Forms.Button btnClose;
         private RichTextBoxEx txtInfo;
         private System.Windows.Forms.Panel pnlLogin;
         private RichTextBoxEx txtServerInfo;
-        private System.Windows.Forms.Label lbUrl2;
-        private System.Windows.Forms.Label lbUrl3;
-        private System.Windows.Forms.Label lbUrl4;
-        private System.Windows.Forms.Label lbUrl5;
-        private Label lbUrl6;
-        private Label lbUrl7;
         private TabControl tcServicePanel;
         private TabPage tpConn;
         private RichTextBox rtxtInfo;
@@ -545,5 +614,25 @@ namespace QuickLogin
         private TextBox txtPassword;
         private CheckBox cb64Bit;
         private Label label1;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem 官网ToolStripMenuItem;
+        private ToolStripMenuItem 首页ToolStripMenuItem;
+        private ToolStripMenuItem 账号ToolStripMenuItem;
+        private ToolStripMenuItem wikiToolStripMenuItem;
+        private ToolStripMenuItem 首页ToolStripMenuItem1;
+        private ToolStripMenuItem 职业介绍ToolStripMenuItem;
+        private ToolStripMenuItem 种族ToolStripMenuItem;
+        private ToolStripMenuItem 天赋ToolStripMenuItem;
+        private ToolStripMenuItem 专长ToolStripMenuItem;
+        private ToolStripMenuItem 法术ToolStripMenuItem;
+        private ToolStripMenuItem 天命ToolStripMenuItem;
+        private ToolStripMenuItem 声望ToolStripMenuItem;
+        private ToolStripMenuItem 任务ToolStripMenuItem;
+        private ToolStripMenuItem 转生ToolStripMenuItem;
+        private ToolStripMenuItem 其它ToolStripMenuItem;
+        private ToolStripMenuItem 快登源码ToolStripMenuItem;
+        private ToolStripMenuItem 贴吧ToolStripMenuItem;
+        private ToolStripMenuItem qQ群ToolStripMenuItem;
+        private ToolStripMenuItem 解谜工具ToolStripMenuItem;
     }
 }

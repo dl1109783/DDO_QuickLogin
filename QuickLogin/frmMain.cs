@@ -145,13 +145,13 @@ namespace QuickLogin
             {
                 if (CheckXmlFile())
                 {
-                    BindLableText(lbUrl1, Program.Url1);
-                    BindLableText(lbUrl2, Program.Url2);
-                    BindLableText(lbUrl3, Program.Url3);
-                    BindLableText(lbUrl4, Program.Url4);
-                    BindLableText(lbUrl5, Program.Url5);
-                    BindLableText(lbUrl6, Program.Url6);
-                    BindLableText(lbUrl7, Program.Url7);
+                    //BindLableText(lbUrl1, Program.Url1);
+                    //BindLableText(lbUrl2, Program.Url2);
+                    //BindLableText(lbUrl3, Program.Url3);
+                    //BindLableText(lbUrl4, Program.Url4);
+                    //BindLableText(lbUrl5, Program.Url5);
+                    //BindLableText(lbUrl6, Program.Url6);
+                    //BindLableText(lbUrl7, Program.Url7);
                     //获得服务器状态
                     Thread td = new Thread(connThread.GetDataCenter);
                     td.IsBackground = true;//后台线程,程序关闭自动退出
@@ -450,6 +450,86 @@ namespace QuickLogin
             {
                 OpenUrl("https://www.playeraudit.com/");
             }
+        }
+
+        private void 首页ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("http://www.ddo.com/");
+        }
+
+        private void 账号ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("http://myaccount.turbine.com/");
+        }
+
+        private void 首页ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            OpenUrl("http://ddowiki.com/");
+        }
+
+        private void 职业介绍ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://ddowiki.com/page/Classes");
+        }
+
+        private void 种族ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://ddowiki.com/page/Races");
+        }
+
+        private void 天赋ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://ddowiki.com/page/Enhancements");
+        }
+
+        private void 专长ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://ddowiki.com/page/Feats");
+        }
+
+        private void 法术ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://ddowiki.com/page/Spells");
+        }
+
+        private void 天命ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://ddowiki.com/page/Epic_Destinies");
+        }
+
+        private void 声望ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://ddowiki.com/page/Favor");
+        }
+
+        private void 任务ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://ddowiki.com/page/Quests");
+        }
+
+        private void 转生ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://ddowiki.com/page/Reincarnation");
+        }
+
+        private void 快登源码ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://gitee.com/dlanny/DDO_QuickLogin");
+        }
+
+        private void 贴吧ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://tieba.baidu.com/f?kw=%E9%BE%99%E4%B8%8E%E5%9C%B0%E4%B8%8B%E5%9F%8E&ie=utf-8");
+        }
+
+        private void qQ群ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://shang.qq.com/wpa/qunwpa?idkey=1ac28296d2b07056b37b6ccea5b567e5f3ab64a5efd5b842d0df5e718a7e4590");
+        }
+
+        private void 解谜工具ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("http://solver.cubicleninja.com/");
         }
     }
 }
