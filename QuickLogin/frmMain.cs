@@ -525,5 +525,6 @@ namespace QuickLogin
         {
             OpenUrl("http://solver.cubicleninja.com/");
         }
+
     }
 }
