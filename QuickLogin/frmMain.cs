@@ -136,7 +136,6 @@ namespace QuickLogin
             tcServicePanel.Location = new Point(-6, -25);
             tcServicePanel.Appearance = TabAppearance.FlatButtons;
             connThread = new ConnectThread(new CallBackHandler(ConnectThread_OnCallBack));
-            lbVersion.Text = Application.ProductVersion;
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -387,11 +386,6 @@ namespace QuickLogin
 
         #endregion
 
-        private void btnLoginX64_Click(object sender, EventArgs e)
-        {
-            connThread.clientType = ClientType.X64;
-            Login();
-        }
         /// <summary>
         /// 登录按钮
         /// </summary>
@@ -512,11 +506,6 @@ namespace QuickLogin
             OpenUrl("https://ddowiki.com/page/Reincarnation");
         }
 
-        private void 快登源码ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenUrl("https://gitee.com/dlanny/DDO_QuickLogin");
-        }
-
         private void 贴吧ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenUrl("https://tieba.baidu.com/f?kw=%E9%BE%99%E4%B8%8E%E5%9C%B0%E4%B8%8B%E5%9F%8E&ie=utf-8");
@@ -527,7 +516,12 @@ namespace QuickLogin
             OpenUrl("https://shang.qq.com/wpa/qunwpa?idkey=1ac28296d2b07056b37b6ccea5b567e5f3ab64a5efd5b842d0df5e718a7e4590");
         }
 
-        private void 解谜工具ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 源码下载ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://gitee.com/dlanny/DDO_QuickLogin");
+        }
+
+        private void 在线解谜ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenUrl("http://solver.cubicleninja.com/");
         }

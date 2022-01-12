@@ -68,8 +68,6 @@ namespace QuickLogin.Connect
             hs.Add("F2PDDOUp", "权限|F2PDDOUp");//？？
 
             hs.Add("StormreachLimited", "礼包|DDO限定版（旧版）");
-            hs.Add("PaidPoints", "礼包|购买点数（旧版）");
-
             hs.Add("PaidPoints", "权限|付费用户");
             hs.Add("StormreachGuest", "权限|试用");
             hs.Add("StormreachStandard", "权限|标准");
