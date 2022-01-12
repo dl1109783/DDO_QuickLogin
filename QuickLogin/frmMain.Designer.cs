@@ -85,7 +85,7 @@ namespace QuickLogin
             this.pnlLogin.Controls.Add(this.tcServicePanel);
             this.pnlLogin.Location = new System.Drawing.Point(407, 84);
             this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(328, 216);
+            this.pnlLogin.Size = new System.Drawing.Size(328, 190);
             this.pnlLogin.TabIndex = 10;
             // 
             // tcServicePanel
@@ -203,7 +203,7 @@ namespace QuickLogin
             this.cbxShowPassWord.TabStop = false;
             this.cbxShowPassWord.Text = "显示密码?";
             this.cbxShowPassWord.UseVisualStyleBackColor = false;
-            this.cbxShowPassWord.CheckedChanged += new System.EventHandler(CbxShowPassWord_CheckedChanged);
+            this.cbxShowPassWord.CheckedChanged += new System.EventHandler(this.CbxShowPassWord_CheckedChanged);
             // 
             // cbxRemember
             // 
@@ -492,12 +492,12 @@ namespace QuickLogin
             this.txtInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtInfo.Font = new System.Drawing.Font("Verdana", 8F);
             this.txtInfo.ForeColor = System.Drawing.Color.Lime;
-            this.txtInfo.Location = new System.Drawing.Point(407, 318);
+            this.txtInfo.Location = new System.Drawing.Point(407, 283);
             this.txtInfo.Margin = new System.Windows.Forms.Padding(0);
             this.txtInfo.Name = "txtInfo";
             this.txtInfo.ReadOnly = true;
             this.txtInfo.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.txtInfo.Size = new System.Drawing.Size(328, 215);
+            this.txtInfo.Size = new System.Drawing.Size(328, 250);
             this.txtInfo.TabIndex = 11;
             this.txtInfo.TabStop = false;
             this.txtInfo.Text = "";
