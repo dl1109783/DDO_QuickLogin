@@ -525,5 +525,14 @@ namespace QuickLogin
             OpenUrl("http://solver.cubicleninja.com/");
         }
 
+        private void dLCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://store-new.standingstonegames.com/ddo/expansions");
+        }
+
+        private void 注册账号ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://signup.ddo.com/ddo.php");
+        }
     }
 }

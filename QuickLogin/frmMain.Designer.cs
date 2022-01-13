@@ -71,6 +71,8 @@ namespace QuickLogin
             this.在线解谜ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtServerInfo = new QuickLogin.RichTextBoxEx();
             this.txtInfo = new QuickLogin.RichTextBoxEx();
+            this.dLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.注册账号ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlLogin.SuspendLayout();
             this.tcServicePanel.SuspendLayout();
             this.tpConn.SuspendLayout();
@@ -318,14 +320,14 @@ namespace QuickLogin
             // 贴吧ToolStripMenuItem
             // 
             this.贴吧ToolStripMenuItem.Name = "贴吧ToolStripMenuItem";
-            this.贴吧ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.贴吧ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.贴吧ToolStripMenuItem.Text = "百度贴吧";
             this.贴吧ToolStripMenuItem.Click += new System.EventHandler(this.贴吧ToolStripMenuItem_Click);
             // 
             // qQ群ToolStripMenuItem
             // 
             this.qQ群ToolStripMenuItem.Name = "qQ群ToolStripMenuItem";
-            this.qQ群ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.qQ群ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.qQ群ToolStripMenuItem.Text = "QQ群";
             this.qQ群ToolStripMenuItem.Click += new System.EventHandler(this.qQ群ToolStripMenuItem_Click);
             // 
@@ -349,70 +351,70 @@ namespace QuickLogin
             // 首页ToolStripMenuItem1
             // 
             this.首页ToolStripMenuItem1.Name = "首页ToolStripMenuItem1";
-            this.首页ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.首页ToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
             this.首页ToolStripMenuItem1.Text = "首页";
             this.首页ToolStripMenuItem1.Click += new System.EventHandler(this.首页ToolStripMenuItem1_Click);
             // 
             // 职业介绍ToolStripMenuItem
             // 
             this.职业介绍ToolStripMenuItem.Name = "职业介绍ToolStripMenuItem";
-            this.职业介绍ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.职业介绍ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.职业介绍ToolStripMenuItem.Text = "职业";
             this.职业介绍ToolStripMenuItem.Click += new System.EventHandler(this.职业介绍ToolStripMenuItem_Click);
             // 
             // 种族ToolStripMenuItem
             // 
             this.种族ToolStripMenuItem.Name = "种族ToolStripMenuItem";
-            this.种族ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.种族ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.种族ToolStripMenuItem.Text = "种族";
             this.种族ToolStripMenuItem.Click += new System.EventHandler(this.种族ToolStripMenuItem_Click);
             // 
             // 天赋ToolStripMenuItem
             // 
             this.天赋ToolStripMenuItem.Name = "天赋ToolStripMenuItem";
-            this.天赋ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.天赋ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.天赋ToolStripMenuItem.Text = "天赋";
             this.天赋ToolStripMenuItem.Click += new System.EventHandler(this.天赋ToolStripMenuItem_Click);
             // 
             // 专长ToolStripMenuItem
             // 
             this.专长ToolStripMenuItem.Name = "专长ToolStripMenuItem";
-            this.专长ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.专长ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.专长ToolStripMenuItem.Text = "专长";
             this.专长ToolStripMenuItem.Click += new System.EventHandler(this.专长ToolStripMenuItem_Click);
             // 
             // 法术ToolStripMenuItem
             // 
             this.法术ToolStripMenuItem.Name = "法术ToolStripMenuItem";
-            this.法术ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.法术ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.法术ToolStripMenuItem.Text = "法术";
             this.法术ToolStripMenuItem.Click += new System.EventHandler(this.法术ToolStripMenuItem_Click);
             // 
             // 天命ToolStripMenuItem
             // 
             this.天命ToolStripMenuItem.Name = "天命ToolStripMenuItem";
-            this.天命ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.天命ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.天命ToolStripMenuItem.Text = "天命";
             this.天命ToolStripMenuItem.Click += new System.EventHandler(this.天命ToolStripMenuItem_Click);
             // 
             // 声望ToolStripMenuItem
             // 
             this.声望ToolStripMenuItem.Name = "声望ToolStripMenuItem";
-            this.声望ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.声望ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.声望ToolStripMenuItem.Text = "声望";
             this.声望ToolStripMenuItem.Click += new System.EventHandler(this.声望ToolStripMenuItem_Click);
             // 
             // 任务ToolStripMenuItem
             // 
             this.任务ToolStripMenuItem.Name = "任务ToolStripMenuItem";
-            this.任务ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.任务ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.任务ToolStripMenuItem.Text = "任务";
             this.任务ToolStripMenuItem.Click += new System.EventHandler(this.任务ToolStripMenuItem_Click);
             // 
             // 转生ToolStripMenuItem
             // 
             this.转生ToolStripMenuItem.Name = "转生ToolStripMenuItem";
-            this.转生ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.转生ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.转生ToolStripMenuItem.Text = "转生";
             this.转生ToolStripMenuItem.Click += new System.EventHandler(this.转生ToolStripMenuItem_Click);
             // 
@@ -420,7 +422,9 @@ namespace QuickLogin
             // 
             this.官网ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.首页ToolStripMenuItem,
-            this.账号ToolStripMenuItem});
+            this.注册账号ToolStripMenuItem,
+            this.账号ToolStripMenuItem,
+            this.dLCToolStripMenuItem});
             this.官网ToolStripMenuItem.Name = "官网ToolStripMenuItem";
             this.官网ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.官网ToolStripMenuItem.Text = "官网";
@@ -436,7 +440,7 @@ namespace QuickLogin
             // 
             this.账号ToolStripMenuItem.Name = "账号ToolStripMenuItem";
             this.账号ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.账号ToolStripMenuItem.Text = "账号";
+            this.账号ToolStripMenuItem.Text = "账号管理";
             this.账号ToolStripMenuItem.Click += new System.EventHandler(this.账号ToolStripMenuItem_Click);
             // 
             // menuStrip1
@@ -503,6 +507,20 @@ namespace QuickLogin
             this.txtInfo.TabStop = false;
             this.txtInfo.Text = "";
             this.txtInfo.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.txtInfo_LinkClicked);
+            // 
+            // dLCToolStripMenuItem
+            // 
+            this.dLCToolStripMenuItem.Name = "dLCToolStripMenuItem";
+            this.dLCToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dLCToolStripMenuItem.Text = "DLC";
+            this.dLCToolStripMenuItem.Click += new System.EventHandler(this.dLCToolStripMenuItem_Click);
+            // 
+            // 注册账号ToolStripMenuItem
+            // 
+            this.注册账号ToolStripMenuItem.Name = "注册账号ToolStripMenuItem";
+            this.注册账号ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.注册账号ToolStripMenuItem.Text = "注册账号";
+            this.注册账号ToolStripMenuItem.Click += new System.EventHandler(this.注册账号ToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -578,5 +596,7 @@ namespace QuickLogin
         private MenuStrip menuStrip1;
         private ToolStripMenuItem 源码下载ToolStripMenuItem;
         private ToolStripMenuItem 在线解谜ToolStripMenuItem;
+        private ToolStripMenuItem dLCToolStripMenuItem;
+        private ToolStripMenuItem 注册账号ToolStripMenuItem;
     }
 }
