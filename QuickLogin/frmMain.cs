@@ -259,18 +259,18 @@ namespace QuickLogin
         {
             connThread.isClosed = true;
         }
-        private void lbUrl_Click(object sender, EventArgs e)
-        {
-            OpenUrl(((Label)sender).Tag.ToString());
-        }
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-        private void btnMin_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
+        //private void lbUrl_Click(object sender, EventArgs e)
+        //{
+        //    OpenUrl(((Label)sender).Tag.ToString());
+        //}
+        //private void btnClose_Click(object sender, EventArgs e)
+        //{
+        //    Application.Exit();
+        //}
+        //private void btnMin_Click(object sender, EventArgs e)
+        //{
+        //    this.WindowState = FormWindowState.Minimized;
+        //}
         //界面拖动
         private Point mousePoint;
         private Point formPoint;
@@ -315,32 +315,32 @@ namespace QuickLogin
                 MessageBox.Show(ex.ToString());
             }
         }
-        /// <summary>
-        /// 绑定标签链接和名字
-        /// </summary>
-        /// <param name="label"></param>
-        /// <param name="str"></param>
-        private void BindLableText(Label label, string str)
-        {
-            if (!string.IsNullOrEmpty(str) && str.Contains("|"))
-            {
-                var aryInfo = str.Split('|');
-                if (aryInfo.Length > 1)
-                {
-                    label.Text = aryInfo[0];
-                    label.Tag = aryInfo[1];
-                    return;
-                }
-            }
-            label.Text = string.Empty;
-            label.Tag = string.Empty;
-        }
+        ///// <summary>
+        ///// 绑定标签链接和名字
+        ///// </summary>
+        ///// <param name="label"></param>
+        ///// <param name="str"></param>
+        //private void BindLableText(Label label, string str)
+        //{
+        //    if (!string.IsNullOrEmpty(str) && str.Contains("|"))
+        //    {
+        //        var aryInfo = str.Split('|');
+        //        if (aryInfo.Length > 1)
+        //        {
+        //            label.Text = aryInfo[0];
+        //            label.Tag = aryInfo[1];
+        //            return;
+        //        }
+        //    }
+        //    label.Text = string.Empty;
+        //    label.Tag = string.Empty;
+        //}
 
         bool CheckXmlFile()
         {
             if (!File.Exists(Program.XML_FILE_PATH))
             {
-                CreadNewXml();
+                CreateNewXml();
                 return true;
             }
             else
@@ -363,7 +363,7 @@ namespace QuickLogin
                         else
                         {
                             File.Delete(Program.XML_FILE_PATH);
-                            CreadNewXml();
+                            CreateNewXml();
                             return true;
                         }
                     }
@@ -376,7 +376,7 @@ namespace QuickLogin
             }
 
         }
-        void CreadNewXml()
+        void CreateNewXml()
         {
             XDocument xd = new XDocument(
                   new XElement("Users", new XAttribute("DefaultUser", "Default"),
@@ -432,7 +432,6 @@ namespace QuickLogin
         {
             userLists.DefaultUser.WorldName = ((World)cblServerList.SelectedItem).Name;
         }
-
 
         private void lbPublicGroup_Click(object sender, EventArgs e)
         {
