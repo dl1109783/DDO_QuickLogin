@@ -65,14 +65,15 @@ namespace QuickLogin
             this.转生ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.官网ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.首页ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.注册账号ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.账号ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.源码下载ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.在线解谜ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtServerInfo = new QuickLogin.RichTextBoxEx();
             this.txtInfo = new QuickLogin.RichTextBoxEx();
-            this.dLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.注册账号ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.副本图片攻略ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlLogin.SuspendLayout();
             this.tcServicePanel.SuspendLayout();
             this.tpConn.SuspendLayout();
@@ -432,22 +433,37 @@ namespace QuickLogin
             // 首页ToolStripMenuItem
             // 
             this.首页ToolStripMenuItem.Name = "首页ToolStripMenuItem";
-            this.首页ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.首页ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.首页ToolStripMenuItem.Text = "首页";
             this.首页ToolStripMenuItem.Click += new System.EventHandler(this.首页ToolStripMenuItem_Click);
+            // 
+            // 注册账号ToolStripMenuItem
+            // 
+            this.注册账号ToolStripMenuItem.Name = "注册账号ToolStripMenuItem";
+            this.注册账号ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.注册账号ToolStripMenuItem.Text = "注册账号";
+            this.注册账号ToolStripMenuItem.Click += new System.EventHandler(this.注册账号ToolStripMenuItem_Click);
             // 
             // 账号ToolStripMenuItem
             // 
             this.账号ToolStripMenuItem.Name = "账号ToolStripMenuItem";
-            this.账号ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.账号ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.账号ToolStripMenuItem.Text = "账号管理";
             this.账号ToolStripMenuItem.Click += new System.EventHandler(this.账号ToolStripMenuItem_Click);
+            // 
+            // dLCToolStripMenuItem
+            // 
+            this.dLCToolStripMenuItem.Name = "dLCToolStripMenuItem";
+            this.dLCToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.dLCToolStripMenuItem.Text = "DLC";
+            this.dLCToolStripMenuItem.Click += new System.EventHandler(this.dLCToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.其它ToolStripMenuItem,
             this.源码下载ToolStripMenuItem,
+            this.副本图片攻略ToolStripMenuItem,
             this.在线解谜ToolStripMenuItem,
             this.wikiToolStripMenuItem,
             this.官网ToolStripMenuItem});
@@ -508,19 +524,12 @@ namespace QuickLogin
             this.txtInfo.Text = "";
             this.txtInfo.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.txtInfo_LinkClicked);
             // 
-            // dLCToolStripMenuItem
+            // 副本图片攻略ToolStripMenuItem
             // 
-            this.dLCToolStripMenuItem.Name = "dLCToolStripMenuItem";
-            this.dLCToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.dLCToolStripMenuItem.Text = "DLC";
-            this.dLCToolStripMenuItem.Click += new System.EventHandler(this.dLCToolStripMenuItem_Click);
-            // 
-            // 注册账号ToolStripMenuItem
-            // 
-            this.注册账号ToolStripMenuItem.Name = "注册账号ToolStripMenuItem";
-            this.注册账号ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.注册账号ToolStripMenuItem.Text = "注册账号";
-            this.注册账号ToolStripMenuItem.Click += new System.EventHandler(this.注册账号ToolStripMenuItem_Click);
+            this.副本图片攻略ToolStripMenuItem.Name = "副本图片攻略ToolStripMenuItem";
+            this.副本图片攻略ToolStripMenuItem.Size = new System.Drawing.Size(92, 21);
+            this.副本图片攻略ToolStripMenuItem.Text = "副本图片攻略";
+            this.副本图片攻略ToolStripMenuItem.Click += new System.EventHandler(this.副本图片攻略ToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -598,5 +607,6 @@ namespace QuickLogin
         private ToolStripMenuItem 在线解谜ToolStripMenuItem;
         private ToolStripMenuItem dLCToolStripMenuItem;
         private ToolStripMenuItem 注册账号ToolStripMenuItem;
+        private ToolStripMenuItem 副本图片攻略ToolStripMenuItem;
     }
 }

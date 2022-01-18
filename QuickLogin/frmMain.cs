@@ -534,5 +534,11 @@ namespace QuickLogin
         {
             OpenUrl("https://signup.ddo.com/ddo.php");
         }
+
+        private void 副本图片攻略ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmStrategy fs = new frmStrategy();
+            fs.ShowDialog(this);
+        }
     }
 }
