@@ -29,6 +29,7 @@ namespace QuickLogin
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStrategy));
             this.pbImage = new System.Windows.Forms.PictureBox();
             this.lbQuest = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
@@ -69,7 +70,9 @@ namespace QuickLogin
             this.Controls.Add(this.lbQuest);
             this.Controls.Add(this.pbImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmStrategy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "副本图片攻略";
