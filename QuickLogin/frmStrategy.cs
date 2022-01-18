@@ -39,6 +39,8 @@ namespace QuickLogin
                 return;
             }
             pbImage.Image = (Image)_dicPics[lbQuest.SelectedIndex];
+            this.pbImage.Location = new System.Drawing.Point(269, 12);
+            this.pbImage.Size = new System.Drawing.Size(690, 541);
         }
 
         private void pbImage_MouseDown(object sender, MouseEventArgs e)
