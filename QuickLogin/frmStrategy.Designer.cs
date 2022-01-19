@@ -41,8 +41,7 @@ namespace QuickLogin
             // 
             this.lbQuest.FormattingEnabled = true;
             this.lbQuest.ItemHeight = 12;
-            
-            this.lbQuest.Location = new System.Drawing.Point(12, 9);
+            this.lbQuest.Location = new System.Drawing.Point(9, 9);
             this.lbQuest.Name = "lbQuest";
             this.lbQuest.Size = new System.Drawing.Size(250, 544);
             this.lbQuest.TabIndex = 1;
@@ -80,7 +79,7 @@ namespace QuickLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(963, 565);
+            this.ClientSize = new System.Drawing.Size(968, 561);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbQuest);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

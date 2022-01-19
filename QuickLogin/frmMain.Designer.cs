@@ -70,10 +70,12 @@ namespace QuickLogin
             this.dLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.源码下载ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.原版ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.修改版ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.副本图片攻略ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.在线解谜ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtServerInfo = new QuickLogin.RichTextBoxEx();
             this.txtInfo = new QuickLogin.RichTextBoxEx();
-            this.副本图片攻略ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlLogin.SuspendLayout();
             this.tcServicePanel.SuspendLayout();
             this.tpConn.SuspendLayout();
@@ -478,10 +480,33 @@ namespace QuickLogin
             // 
             // 源码下载ToolStripMenuItem
             // 
+            this.源码下载ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.原版ToolStripMenuItem,
+            this.修改版ToolStripMenuItem});
             this.源码下载ToolStripMenuItem.Name = "源码下载ToolStripMenuItem";
             this.源码下载ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.源码下载ToolStripMenuItem.Text = "源码下载";
-            this.源码下载ToolStripMenuItem.Click += new System.EventHandler(this.源码下载ToolStripMenuItem_Click);
+            // 
+            // 原版ToolStripMenuItem
+            // 
+            this.原版ToolStripMenuItem.Name = "原版ToolStripMenuItem";
+            this.原版ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.原版ToolStripMenuItem.Text = "原版";
+            this.原版ToolStripMenuItem.Click += new System.EventHandler(this.原版ToolStripMenuItem_Click);
+            // 
+            // 修改版ToolStripMenuItem
+            // 
+            this.修改版ToolStripMenuItem.Name = "修改版ToolStripMenuItem";
+            this.修改版ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.修改版ToolStripMenuItem.Text = "修改版";
+            this.修改版ToolStripMenuItem.Click += new System.EventHandler(this.修改版ToolStripMenuItem_Click);
+            // 
+            // 副本图片攻略ToolStripMenuItem
+            // 
+            this.副本图片攻略ToolStripMenuItem.Name = "副本图片攻略ToolStripMenuItem";
+            this.副本图片攻略ToolStripMenuItem.Size = new System.Drawing.Size(92, 21);
+            this.副本图片攻略ToolStripMenuItem.Text = "副本图片攻略";
+            this.副本图片攻略ToolStripMenuItem.Click += new System.EventHandler(this.副本图片攻略ToolStripMenuItem_Click);
             // 
             // 在线解谜ToolStripMenuItem
             // 
@@ -524,20 +549,13 @@ namespace QuickLogin
             this.txtInfo.Text = "";
             this.txtInfo.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.txtInfo_LinkClicked);
             // 
-            // 副本图片攻略ToolStripMenuItem
-            // 
-            this.副本图片攻略ToolStripMenuItem.Name = "副本图片攻略ToolStripMenuItem";
-            this.副本图片攻略ToolStripMenuItem.Size = new System.Drawing.Size(92, 21);
-            this.副本图片攻略ToolStripMenuItem.Text = "副本图片攻略";
-            this.副本图片攻略ToolStripMenuItem.Click += new System.EventHandler(this.副本图片攻略ToolStripMenuItem_Click);
-            // 
             // frmMain
             // 
             this.AcceptButton = this.btnLogin;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::QuickLogin.Properties.Resources.Mainform_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(780, 542);
+            this.ClientSize = new System.Drawing.Size(780, 564);
             this.Controls.Add(this.txtServerInfo);
             this.Controls.Add(this.txtInfo);
             this.Controls.Add(this.pnlLogin);
@@ -548,7 +566,7 @@ namespace QuickLogin
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DDO快速登陆器 v2.5.6 Copyright 2011 Design by 夜风 QQ: 35792181";
+            this.Text = "DDO快速登陆器修改版 v1.0.0 Copyright 2021 by Ancentril QQ: 627471604";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownEvent);
@@ -608,5 +626,7 @@ namespace QuickLogin
         private ToolStripMenuItem dLCToolStripMenuItem;
         private ToolStripMenuItem 注册账号ToolStripMenuItem;
         private ToolStripMenuItem 副本图片攻略ToolStripMenuItem;
+        private ToolStripMenuItem 原版ToolStripMenuItem;
+        private ToolStripMenuItem 修改版ToolStripMenuItem;
     }
 }

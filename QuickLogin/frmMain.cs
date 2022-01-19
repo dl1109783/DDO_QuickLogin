@@ -517,7 +517,7 @@ namespace QuickLogin
 
         private void 源码下载ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenUrl("https://gitee.com/dlanny/DDO_QuickLogin");
+            
         }
 
         private void 在线解谜ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -539,6 +539,16 @@ namespace QuickLogin
         {
             frmStrategy fs = new frmStrategy();
             fs.ShowDialog(this);
+        }
+
+        private void 原版ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://gitee.com/dlanny/DDO_QuickLogin");
+        }
+
+        private void 修改版ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://gitee.com/vivx97/DDO_QuickLogin");
         }
     }
 }

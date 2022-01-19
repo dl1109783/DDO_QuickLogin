@@ -157,6 +157,16 @@ namespace QuickLogin.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap Map_TombOfTheTormented_RatPaths {
+            get {
+                object obj = ResourceManager.GetObject("Map_TombOfTheTormented_RatPaths", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap pit_1 {
             get {
                 object obj = ResourceManager.GetObject("pit_1", resourceCulture);

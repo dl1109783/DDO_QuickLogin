@@ -30,6 +30,7 @@ namespace QuickLogin
             _dicPics.Add(Resources.prove_your_worth);
             _dicPics.Add(Resources.pit_1);
             _dicPics.Add(Resources.shadow_crypt_8_gears_fix);
+            _dicPics.Add(Resources.Map_TombOfTheTormented_RatPaths);
             _dicPics.Add(Resources.sand);
             _dicPics.Add(Resources.von5);
             _dicPics.Add(Resources.An_invitation_to_dinner_map);
@@ -41,6 +42,7 @@ namespace QuickLogin
                 "Prove Your Worth 三桶湾",
                 "The Pit 矿坑",
                 "The Shadow Crypt 幽影墓穴",
+                "Tomb of the Tormented 不死3老鼠本",
                 "Sand of Menechtarun 沙漠野外",
                 "The Vault of Night 龙5",
                 "An Invitation to Dinner 晚宴(U37C1)",
