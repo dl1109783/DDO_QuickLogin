@@ -515,11 +515,6 @@ namespace QuickLogin
             OpenUrl("https://shang.qq.com/wpa/qunwpa?idkey=1ac28296d2b07056b37b6ccea5b567e5f3ab64a5efd5b842d0df5e718a7e4590");
         }
 
-        private void 源码下载ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void 在线解谜ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenUrl("http://solver.cubicleninja.com/");
