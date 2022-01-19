@@ -61,6 +61,26 @@ namespace QuickLogin.Properties {
         }
         
         /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap amber {
+            get {
+                object obj = ResourceManager.GetObject("amber", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap An_invitation_to_dinner_map {
+            get {
+                object obj = ResourceManager.GetObject("An_invitation_to_dinner_map", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;soap12:Envelope xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:soap12=&quot;http://www.w3.org/2003/05/soap-envelope&quot;&gt;
         ///  &lt;soap12:Body&gt;
@@ -73,6 +93,16 @@ namespace QuickLogin.Properties {
         internal static string GetDatacenters {
             get {
                 return ResourceManager.GetString("GetDatacenters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap inferno {
+            get {
+                object obj = ResourceManager.GetObject("inferno", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -127,9 +157,9 @@ namespace QuickLogin.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap Strategy_1 {
+        internal static System.Drawing.Bitmap pit_1 {
             get {
-                object obj = ResourceManager.GetObject("Strategy_1", resourceCulture);
+                object obj = ResourceManager.GetObject("pit_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -137,9 +167,9 @@ namespace QuickLogin.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap Strategy_2 {
+        internal static System.Drawing.Bitmap prove_your_worth {
             get {
-                object obj = ResourceManager.GetObject("Strategy_2", resourceCulture);
+                object obj = ResourceManager.GetObject("prove_your_worth", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -147,9 +177,29 @@ namespace QuickLogin.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap Strategy_3 {
+        internal static System.Drawing.Bitmap sand {
             get {
-                object obj = ResourceManager.GetObject("Strategy_3", resourceCulture);
+                object obj = ResourceManager.GetObject("sand", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap shadow_crypt_8_gears_fix {
+            get {
+                object obj = ResourceManager.GetObject("shadow_crypt_8_gears_fix", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap von5 {
+            get {
+                object obj = ResourceManager.GetObject("von5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

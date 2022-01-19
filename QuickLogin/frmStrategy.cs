@@ -20,16 +20,33 @@ namespace QuickLogin
         private List<Object> _dicPics;
         public frmStrategy()
         {
-            LoadSettings();
             InitializeComponent();
+            LoadSettings();
         }
 
         private void LoadSettings()
         {
             _dicPics = new List<object>();
-            _dicPics.Add(Resources.Strategy_1);
-            _dicPics.Add(Resources.Strategy_2);
-            _dicPics.Add(Resources.Strategy_3);
+            _dicPics.Add(Resources.prove_your_worth);
+            _dicPics.Add(Resources.pit_1);
+            _dicPics.Add(Resources.shadow_crypt_8_gears_fix);
+            _dicPics.Add(Resources.sand);
+            _dicPics.Add(Resources.von5);
+            _dicPics.Add(Resources.An_invitation_to_dinner_map);
+            _dicPics.Add(Resources.amber);
+            _dicPics.Add(Resources.inferno);
+
+
+            this.lbQuest.Items.AddRange(new object[] {
+                "Prove Your Worth 三桶湾",
+                "The Pit 矿坑",
+                "The Shadow Crypt 幽影墓穴",
+                "Sand of Menechtarun 沙漠野外",
+                "The Vault of Night 龙5",
+                "An Invitation to Dinner 晚宴(U37C1)",
+                "Sealed in Amber 翡翠神殿(U37C2)",
+                "Inferno the Damned 不死4地狱",
+            });
         }
 
         private void lbQuest_SelectedIndexChanged(object sender, EventArgs e)
@@ -39,8 +56,8 @@ namespace QuickLogin
                 return;
             }
             pbImage.Image = (Image)_dicPics[lbQuest.SelectedIndex];
-            this.pbImage.Location = new System.Drawing.Point(269, 12);
-            this.pbImage.Size = new System.Drawing.Size(690, 541);
+            this.pbImage.Location = new System.Drawing.Point(0, 0);
+            this.pbImage.Size = this.panel1.Size;
         }
 
         private void pbImage_MouseDown(object sender, MouseEventArgs e)
@@ -106,7 +123,9 @@ namespace QuickLogin
             if (e.Delta < 0) //缩小
             {
                 //防止一直缩成负值
-                if (pbImage.Width < pbImage.Image.Width / 10)
+                //if (pbImage.Width < pbImage.Image.Width / 10)
+                //    return;
+                if (pbImage.Width < 10)
                     return;
 
                 pbImage.Width -= zoomStep;
@@ -122,40 +141,5 @@ namespace QuickLogin
             VY = (int)((double)y * (oh - pbImage.Height) / oh);
             pbImage.Location = new Point(pbImage.Location.X + VX, pbImage.Location.Y + VY);
         }
-
-        //private void panel2_MouseDown(object sender, MouseEventArgs e)
-        //{
-        //    if (e.Button == MouseButtons.Left)
-        //    {
-        //        mouseDownPoint.X = Cursor.Position.X; //记录鼠标左键按下时位置
-        //        mouseDownPoint.Y = Cursor.Position.Y;
-        //        isMove = true;
-        //    }
-        //}
-
-        //private void panel2_MouseUp(object sender, MouseEventArgs e)
-        //{
-        //    if (e.Button == MouseButtons.Left)
-        //    {
-        //        isMove = false;
-        //    }
-        //}
-
-        //private void panel2_MouseMove(object sender, MouseEventArgs e)
-        //{
-        //    panel2.Focus(); //鼠标不在picturebox上时焦点给别的控件，此时无法缩放   
-        //    if (isMove)
-        //    {
-        //        int x, y;   //新的pbImage.Location(x,y)
-        //        int moveX, moveY; //X方向，Y方向移动大小。
-        //        moveX = Cursor.Position.X - mouseDownPoint.X;
-        //        moveY = Cursor.Position.Y - mouseDownPoint.Y;
-        //        x = pbImage.Location.X + moveX;
-        //        y = pbImage.Location.Y + moveY;
-        //        pbImage.Location = new Point(x, y);
-        //        mouseDownPoint.X = Cursor.Position.X;
-        //        mouseDownPoint.Y = Cursor.Position.Y;
-        //    }
-        //}
     }
 }

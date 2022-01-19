@@ -136,13 +136,28 @@
   <data name="Mainform_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Mainform_background.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Strategy_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="inferno" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\InfernoFULLMAPCaptionedandUpdatedB.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Strategy_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\M_pit.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="amber" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Amber_temple.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Strategy_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Amber_temple.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="An_invitation_to_dinner_map" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\An_invitation_to_dinner_map.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pit_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\M_pit.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="prove_your_worth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rackam_Puzzle.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sand.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shadow_crypt_8_gears_fix" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shadow_crypt_8_gears_fix.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="von5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\250px-M_puzzle_vault_of_night.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
