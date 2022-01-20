@@ -129,6 +129,7 @@
     <None Include="Resources\shadow_crypt_8_gears_fix.jpg" />
     <None Include="Resources\sand.jpg" />
     <None Include="Resources\Map_TombOfTheTormented_RatPaths.jpg" />
+    <None Include="Resources\M_maze_crucible.jpg" />
     <Content Include="Resources\X.bmp" />
   </ItemGroup>
   <ItemGroup>

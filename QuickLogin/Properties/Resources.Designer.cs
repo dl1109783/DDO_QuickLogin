@@ -137,6 +137,16 @@ namespace QuickLogin.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap M_maze_crucible {
+            get {
+                object obj = ResourceManager.GetObject("M_maze_crucible", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap MainBackground {
             get {
                 object obj = ResourceManager.GetObject("MainBackground", resourceCulture);
