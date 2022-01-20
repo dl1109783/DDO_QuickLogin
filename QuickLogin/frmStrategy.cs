@@ -36,6 +36,7 @@ namespace QuickLogin
             _dicPics.Add(Resources.An_invitation_to_dinner_map);
             _dicPics.Add(Resources.amber);
             _dicPics.Add(Resources.inferno);
+            _dicPics.Add(Resources.M_maze_crucible);
 
 
             this.lbQuest.Items.AddRange(new object[] {
@@ -48,6 +49,7 @@ namespace QuickLogin
                 "An Invitation to Dinner 晚宴(U37C1)",
                 "Sealed in Amber 翡翠神殿(U37C2)",
                 "Inferno the Damned 不死4地狱",
+                "The Crucible 巨人炉子",
             });
         }
 
