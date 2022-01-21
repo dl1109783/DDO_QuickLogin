@@ -147,16 +147,6 @@ namespace QuickLogin.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap MainBackground {
-            get {
-                object obj = ResourceManager.GetObject("MainBackground", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap Mainform_background {
             get {
                 object obj = ResourceManager.GetObject("Mainform_background", resourceCulture);
