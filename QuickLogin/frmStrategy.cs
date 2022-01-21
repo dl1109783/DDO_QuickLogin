@@ -18,8 +18,6 @@ namespace QuickLogin
         private bool isMove;
         private int zoomStep = 50;
 
-        private List<Object> _dicPics;
-
         private List<Dictionary<string, string>> _dicContents;
         public frmStrategy()
         {
@@ -48,6 +46,13 @@ namespace QuickLogin
             pbImage.Image = Util.ResourceUtil.GetImage(_dicContents[lbQuest.SelectedIndex]["filename"]);
             this.pbImage.Location = new System.Drawing.Point(0, 0);
             this.pbImage.Size = this.panel1.Size;
+
+            string strategy = _dicContents[lbQuest.SelectedIndex]["info"];
+            if (string.IsNullOrEmpty(strategy))
+            {
+                strategy = "暂无备注";
+            }
+            rtInfo.Text = strategy.Replace('-','\n');
         }
 
         private void pbImage_MouseDown(object sender, MouseEventArgs e)

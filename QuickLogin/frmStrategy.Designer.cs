@@ -33,6 +33,7 @@ namespace QuickLogin
             this.lbQuest = new System.Windows.Forms.ListBox();
             this.pbImage = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.rtInfo = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -43,7 +44,7 @@ namespace QuickLogin
             this.lbQuest.ItemHeight = 12;
             this.lbQuest.Location = new System.Drawing.Point(9, 9);
             this.lbQuest.Name = "lbQuest";
-            this.lbQuest.Size = new System.Drawing.Size(250, 544);
+            this.lbQuest.Size = new System.Drawing.Size(250, 328);
             this.lbQuest.TabIndex = 1;
             this.lbQuest.SelectedIndexChanged += new System.EventHandler(this.lbQuest_SelectedIndexChanged);
             // 
@@ -75,11 +76,20 @@ namespace QuickLogin
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pbImage_MouseUp);
             this.panel1.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.pbImage_MouseWheel);
             // 
+            // rtInfo
+            // 
+            this.rtInfo.Location = new System.Drawing.Point(9, 344);
+            this.rtInfo.Name = "rtInfo";
+            this.rtInfo.Size = new System.Drawing.Size(250, 205);
+            this.rtInfo.TabIndex = 3;
+            this.rtInfo.Text = "";
+            // 
             // frmStrategy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(968, 561);
+            this.Controls.Add(this.rtInfo);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbQuest);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -99,5 +109,6 @@ namespace QuickLogin
         private System.Windows.Forms.ListBox lbQuest;
         private System.Windows.Forms.PictureBox pbImage;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RichTextBox rtInfo;
     }
 }
