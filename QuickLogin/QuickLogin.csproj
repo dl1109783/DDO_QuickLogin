@@ -89,6 +89,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\CsvUtil.cs" />
+    <Compile Include="Util\ResourceUtil.cs" />
     <EmbeddedResource Include="CheckUser.resx">
       <DependentUpon>CheckUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +130,7 @@
     <None Include="Resources\M_maze_crucible.jpg" />
     <None Include="Resources\Mainform_background.jpg" />
     <Content Include="Resources\X.bmp" />
+    <None Include="Resources\strategy.csv" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">

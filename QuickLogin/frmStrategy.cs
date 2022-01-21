@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 using QuickLogin.Properties;
+using QuickLogin.Util;
 
 namespace QuickLogin
 {
@@ -18,6 +19,8 @@ namespace QuickLogin
         private int zoomStep = 50;
 
         private List<Object> _dicPics;
+
+        private List<Dictionary<string, string>> _dicContents;
         public frmStrategy()
         {
             InitializeComponent();
@@ -26,40 +29,23 @@ namespace QuickLogin
 
         private void LoadSettings()
         {
-            _dicPics = new List<object>();
-            _dicPics.Add(Resources.prove_your_worth);
-            _dicPics.Add(Resources.pit_1);
-            _dicPics.Add(Resources.shadow_crypt_8_gears_fix);
-            _dicPics.Add(Resources.Map_TombOfTheTormented_RatPaths);
-            _dicPics.Add(Resources.sand);
-            _dicPics.Add(Resources.von5);
-            _dicPics.Add(Resources.An_invitation_to_dinner_map);
-            _dicPics.Add(Resources.amber);
-            _dicPics.Add(Resources.inferno);
-            _dicPics.Add(Resources.M_maze_crucible);
+            _dicContents = new List<Dictionary<string, string>>();
+            CsvUtil.ReadResourceCSV(_dicContents, Resources.strategy);
 
-
-            this.lbQuest.Items.AddRange(new object[] {
-                "Prove Your Worth 三桶湾",
-                "The Pit 矿坑",
-                "The Shadow Crypt 幽影墓穴",
-                "Tomb of the Tormented 不死3老鼠本",
-                "Sand of Menechtarun 沙漠野外",
-                "The Vault of Night 龙5",
-                "An Invitation to Dinner 晚宴(U37C1)",
-                "Sealed in Amber 翡翠神殿(U37C2)",
-                "Inferno the Damned 不死4地狱",
-                "The Crucible 巨人炉子",
-            });
+            foreach(Dictionary<string,string> _dic in _dicContents)
+            {
+                this.lbQuest.Items.Add(_dic["name"]);
+            }
         }
 
         private void lbQuest_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lbQuest.SelectedIndex < 0 || lbQuest.SelectedIndex > _dicPics.Count - 1)
+            if (lbQuest.SelectedIndex < 0 || lbQuest.SelectedIndex > _dicContents.Count - 1)
             {
                 return;
             }
-            pbImage.Image = (Image)_dicPics[lbQuest.SelectedIndex];
+            //pbImage.Image = (Image)_dicPics[lbQuest.SelectedIndex];
+            pbImage.Image = Util.ResourceUtil.GetImage(_dicContents[lbQuest.SelectedIndex]["filename"]);
             this.pbImage.Location = new System.Drawing.Point(0, 0);
             this.pbImage.Size = this.panel1.Size;
         }

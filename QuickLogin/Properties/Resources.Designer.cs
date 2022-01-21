@@ -205,6 +205,20 @@ namespace QuickLogin.Properties {
         }
         
         /// <summary>
+        ///   查找类似 1,Prove Your Worth,三桶湾,prove_your_worth
+        ///2,The Pit,矿坑,pit_1
+        ///3,The Shadow Crypt,幽影墓穴,shadow_crypt_8_gears_fix
+        ///4,Tomb of the Tormented,不死3老鼠本,Map_TombOfTheTormented_RatPaths
+        ///5,Sand of Menechtarun,沙漠野外,sand
+        /// 的本地化字符串。
+        /// </summary>
+        internal static string strategy {
+            get {
+                return ResourceManager.GetString("strategy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
         internal static System.Drawing.Bitmap von5 {
