@@ -116,20 +116,18 @@
     <None Include="Resources\GetDatacenters.xml" />
     <None Include="Resources\LoginAccount.xml" />
     <None Include="Resources\InfernoFULLMAPCaptionedandUpdatedB.jpg" />
-    <None Include="Resources\Amber_temple.png" />
     <None Include="Resources\Amber_temple.jpg" />
     <None Include="Resources\250px-M_puzzle_vault_of_night.jpg" />
     <None Include="Resources\An_invitation_to_dinner_map.jpg" />
     <Content Include="Resources\M.bmp" />
     <None Include="Resources\MainBackground.jpg" />
-    <None Include="Resources\Mainform_background.png" />
-    <None Include="Resources\M_pit.png" />
     <None Include="Resources\M_pit.jpg" />
     <None Include="Resources\Rackam_Puzzle.jpg" />
     <None Include="Resources\shadow_crypt_8_gears_fix.jpg" />
     <None Include="Resources\sand.jpg" />
     <None Include="Resources\Map_TombOfTheTormented_RatPaths.jpg" />
     <None Include="Resources\M_maze_crucible.jpg" />
+    <None Include="Resources\Mainform_background.jpg" />
     <Content Include="Resources\X.bmp" />
   </ItemGroup>
   <ItemGroup>
