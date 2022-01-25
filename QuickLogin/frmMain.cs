@@ -515,11 +515,6 @@ namespace QuickLogin
             OpenUrl("https://shang.qq.com/wpa/qunwpa?idkey=1ac28296d2b07056b37b6ccea5b567e5f3ab64a5efd5b842d0df5e718a7e4590");
         }
 
-        private void 在线解谜ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenUrl("http://solver.cubicleninja.com/");
-        }
-
         private void dLCToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenUrl("https://store-new.standingstonegames.com/ddo/expansions");
@@ -550,6 +545,16 @@ namespace QuickLogin
         {
             frmEquipQuery fe = new frmEquipQuery();
             fe.ShowDialog(this);
+        }
+
+        private void 解谜ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("http://solver.cubicleninja.com/");
+        }
+
+        private void 天命模拟器ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("http://dlanny.gitee.io/ddoplanner/");
         }
     }
 }

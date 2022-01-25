@@ -78,6 +78,8 @@ namespace QuickLogin
             this.在线解谜ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtServerInfo = new QuickLogin.RichTextBoxEx();
             this.txtInfo = new QuickLogin.RichTextBoxEx();
+            this.解谜ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.天命模拟器ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlLogin.SuspendLayout();
             this.tcServicePanel.SuspendLayout();
             this.tpConn.SuspendLayout();
@@ -491,14 +493,14 @@ namespace QuickLogin
             // 原版ToolStripMenuItem
             // 
             this.原版ToolStripMenuItem.Name = "原版ToolStripMenuItem";
-            this.原版ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.原版ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.原版ToolStripMenuItem.Text = "原版";
             this.原版ToolStripMenuItem.Click += new System.EventHandler(this.原版ToolStripMenuItem_Click);
             // 
             // 修改版ToolStripMenuItem
             // 
             this.修改版ToolStripMenuItem.Name = "修改版ToolStripMenuItem";
-            this.修改版ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.修改版ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.修改版ToolStripMenuItem.Text = "修改版";
             this.修改版ToolStripMenuItem.Click += new System.EventHandler(this.修改版ToolStripMenuItem_Click);
             // 
@@ -527,10 +529,12 @@ namespace QuickLogin
             // 
             // 在线解谜ToolStripMenuItem
             // 
+            this.在线解谜ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.解谜ToolStripMenuItem,
+            this.天命模拟器ToolStripMenuItem});
             this.在线解谜ToolStripMenuItem.Name = "在线解谜ToolStripMenuItem";
-            this.在线解谜ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.在线解谜ToolStripMenuItem.Text = "在线解谜";
-            this.在线解谜ToolStripMenuItem.Click += new System.EventHandler(this.在线解谜ToolStripMenuItem_Click);
+            this.在线解谜ToolStripMenuItem.Size = new System.Drawing.Size(80, 21);
+            this.在线解谜ToolStripMenuItem.Text = "在线模拟器";
             // 
             // txtServerInfo
             // 
@@ -565,6 +569,20 @@ namespace QuickLogin
             this.txtInfo.TabStop = false;
             this.txtInfo.Text = "";
             this.txtInfo.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.txtInfo_LinkClicked);
+            // 
+            // 解谜ToolStripMenuItem
+            // 
+            this.解谜ToolStripMenuItem.Name = "解谜ToolStripMenuItem";
+            this.解谜ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.解谜ToolStripMenuItem.Text = "解谜";
+            this.解谜ToolStripMenuItem.Click += new System.EventHandler(this.解谜ToolStripMenuItem_Click);
+            // 
+            // 天命模拟器ToolStripMenuItem
+            // 
+            this.天命模拟器ToolStripMenuItem.Name = "天命模拟器ToolStripMenuItem";
+            this.天命模拟器ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.天命模拟器ToolStripMenuItem.Text = "天命模拟器";
+            this.天命模拟器ToolStripMenuItem.Click += new System.EventHandler(this.天命模拟器ToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -647,5 +665,7 @@ namespace QuickLogin
         private ToolStripMenuItem 修改版ToolStripMenuItem;
         private ToolStripMenuItem 副本图文攻略ToolStripMenuItem;
         private ToolStripMenuItem 装备数据ToolStripMenuItem;
+        private ToolStripMenuItem 解谜ToolStripMenuItem;
+        private ToolStripMenuItem 天命模拟器ToolStripMenuItem;
     }
 }
