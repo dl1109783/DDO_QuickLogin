@@ -81,6 +81,16 @@ namespace QuickLogin.Properties {
         }
         
         /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap cg {
+            get {
+                object obj = ResourceManager.GetObject("cg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;soap12:Envelope xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:soap12=&quot;http://www.w3.org/2003/05/soap-envelope&quot;&gt;
         ///  &lt;soap12:Body&gt;
@@ -205,12 +215,13 @@ namespace QuickLogin.Properties {
         }
         
         /// <summary>
-        ///   查找类似 1,Prove Your Worth,三桶湾,prove_your_worth
-        ///2,The Pit,矿坑,pit_1
-        ///3,The Shadow Crypt,幽影墓穴,shadow_crypt_8_gears_fix
-        ///4,Tomb of the Tormented,不死3老鼠本,Map_TombOfTheTormented_RatPaths
-        ///5,Sand of Menechtarun,沙漠野外,sand
-        /// 的本地化字符串。
+        ///   查找类似 id,name,desc,filename,info
+        ///1,Prove Your Worth,三桶湾,prove_your_worth,
+        ///2,The Pit,矿坑,pit_1,
+        ///3,The Shadow Crypt,幽影墓穴,shadow_crypt_8_gears_fix,进门打完一波怪，进东边，根据所在房间有3种不同的路线（见参考图）
+        ///4,Tomb of the Tormented,不死3老鼠本,Map_TombOfTheTormented_RatPaths,已知可以打到坏老鼠的法术有Sonic Blast（奥术）及Holy Smite（神术）
+        ///5,Sand of Menechtarun,沙漠野外,sand,
+        ///6,The Vault of Night,龙5,von5,&quot;顺序：-1.同Haywire对话拿到Voice-2.西侧杀矮人boss拿戒指/东侧拼图（见攻略图）-3.北侧分路走（拿voice和戒指的人要走左边）北侧终点的转盘各转4下解锁，拿Voice的上去对话。左右两边都需要str25的拉开关。-4.回西边打完构装拿Coffer,Voice跳下去对话-5.东边拼图房对话，同时放Coffer开 [字符串的其余部分被截断]&quot;; 的本地化字符串。
         /// </summary>
         internal static string strategy {
             get {

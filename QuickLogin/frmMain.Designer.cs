@@ -73,6 +73,8 @@ namespace QuickLogin
             this.原版ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.修改版ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.副本图片攻略ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.副本图文攻略ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.装备数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.在线解谜ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtServerInfo = new QuickLogin.RichTextBoxEx();
             this.txtInfo = new QuickLogin.RichTextBoxEx();
@@ -156,7 +158,6 @@ namespace QuickLogin
             // 
             // cb64Bit
             // 
-            this.cb64Bit.AutoCheck = false;
             this.cb64Bit.AutoSize = true;
             this.cb64Bit.BackColor = System.Drawing.Color.Transparent;
             this.cb64Bit.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -490,23 +491,39 @@ namespace QuickLogin
             // 原版ToolStripMenuItem
             // 
             this.原版ToolStripMenuItem.Name = "原版ToolStripMenuItem";
-            this.原版ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.原版ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.原版ToolStripMenuItem.Text = "原版";
             this.原版ToolStripMenuItem.Click += new System.EventHandler(this.原版ToolStripMenuItem_Click);
             // 
             // 修改版ToolStripMenuItem
             // 
             this.修改版ToolStripMenuItem.Name = "修改版ToolStripMenuItem";
-            this.修改版ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.修改版ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.修改版ToolStripMenuItem.Text = "修改版";
             this.修改版ToolStripMenuItem.Click += new System.EventHandler(this.修改版ToolStripMenuItem_Click);
             // 
             // 副本图片攻略ToolStripMenuItem
             // 
+            this.副本图片攻略ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.副本图文攻略ToolStripMenuItem,
+            this.装备数据ToolStripMenuItem});
             this.副本图片攻略ToolStripMenuItem.Name = "副本图片攻略ToolStripMenuItem";
-            this.副本图片攻略ToolStripMenuItem.Size = new System.Drawing.Size(92, 21);
-            this.副本图片攻略ToolStripMenuItem.Text = "副本图片攻略";
-            this.副本图片攻略ToolStripMenuItem.Click += new System.EventHandler(this.副本图片攻略ToolStripMenuItem_Click);
+            this.副本图片攻略ToolStripMenuItem.Size = new System.Drawing.Size(80, 21);
+            this.副本图片攻略ToolStripMenuItem.Text = "内置攻略库";
+            // 
+            // 副本图文攻略ToolStripMenuItem
+            // 
+            this.副本图文攻略ToolStripMenuItem.Name = "副本图文攻略ToolStripMenuItem";
+            this.副本图文攻略ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.副本图文攻略ToolStripMenuItem.Text = "副本图文攻略";
+            this.副本图文攻略ToolStripMenuItem.Click += new System.EventHandler(this.副本图文攻略ToolStripMenuItem_Click);
+            // 
+            // 装备数据ToolStripMenuItem
+            // 
+            this.装备数据ToolStripMenuItem.Name = "装备数据ToolStripMenuItem";
+            this.装备数据ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.装备数据ToolStripMenuItem.Text = "装备数据";
+            this.装备数据ToolStripMenuItem.Click += new System.EventHandler(this.装备数据ToolStripMenuItem_Click);
             // 
             // 在线解谜ToolStripMenuItem
             // 
@@ -628,5 +645,7 @@ namespace QuickLogin
         private ToolStripMenuItem 副本图片攻略ToolStripMenuItem;
         private ToolStripMenuItem 原版ToolStripMenuItem;
         private ToolStripMenuItem 修改版ToolStripMenuItem;
+        private ToolStripMenuItem 副本图文攻略ToolStripMenuItem;
+        private ToolStripMenuItem 装备数据ToolStripMenuItem;
     }
 }

@@ -75,6 +75,12 @@
     <Compile Include="Connect\RSSReader.cs" />
     <Compile Include="Connect\UserList.cs" />
     <Compile Include="Connect\WebServiceComm.cs" />
+    <Compile Include="frmEquipQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEquipQuery.Designer.cs">
+      <DependentUpon>frmEquipQuery.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     <Compile Include="Util\ResourceUtil.cs" />
     <EmbeddedResource Include="CheckUser.resx">
       <DependentUpon>CheckUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEquipQuery.resx">
+      <DependentUpon>frmEquipQuery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -121,6 +130,7 @@
     <None Include="Resources\Amber_temple.jpg" />
     <None Include="Resources\250px-M_puzzle_vault_of_night.jpg" />
     <None Include="Resources\An_invitation_to_dinner_map.jpg" />
+    <None Include="Resources\cg.jpg" />
     <Content Include="Resources\M.bmp" />
     <None Include="Resources\M_pit.jpg" />
     <None Include="Resources\Rackam_Puzzle.jpg" />

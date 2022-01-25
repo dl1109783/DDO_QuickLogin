@@ -530,12 +530,6 @@ namespace QuickLogin
             OpenUrl("https://signup.ddo.com/ddo.php");
         }
 
-        private void 副本图片攻略ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmStrategy fs = new frmStrategy();
-            fs.ShowDialog(this);
-        }
-
         private void 原版ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenUrl("https://gitee.com/dlanny/DDO_QuickLogin");
@@ -544,6 +538,18 @@ namespace QuickLogin
         private void 修改版ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenUrl("https://gitee.com/vivx97/DDO_QuickLogin");
+        }
+
+        private void 副本图文攻略ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmStrategy fs = new frmStrategy();
+            fs.ShowDialog(this);
+        }
+
+        private void 装备数据ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEquipQuery fe = new frmEquipQuery();
+            fe.ShowDialog(this);
         }
     }
 }

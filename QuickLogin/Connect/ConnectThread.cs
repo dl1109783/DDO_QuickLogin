@@ -48,12 +48,16 @@ namespace QuickLogin.Connect
             }
             hs = new Hashtable();
             hs.Add("DDO_MOTU_Bundle", "DLC|黑暗地域(MotU)");
-            hs.Add("DDO_MOTU_PreOrder_Bundle", "DLC|黑暗地域预购(MotU)");
+            hs.Add("DDO_MOTU_PreOrder_Bundle", "DLC|黑暗地域(MotU)预购");
+            hs.Add("DDO_MOTU_PreOrder_Collectors", "DLC|黑暗地域(MotU)典藏包");
             hs.Add("DDODruidPack", "未分类|德鲁伊包");
             hs.Add("eStore_Feywild_Ultimate", "DLC|妖精荒野(U48)豪华包");
-            hs.Add("eStore_Feywild_Collectors", "DLC|妖精荒野(U48)进阶包");
+            hs.Add("eStore_Feywild_Collectors", "DLC|妖精荒野(U48)典藏包");
             hs.Add("eStore_Feywild_Standard", "DLC|妖精荒野(U48)标准包");
-            hs.Add("eStore_Saltmarsh_Standard", "DLC|盐沼(U50)标准包");
+            hs.Add("eStore_Saltmarsh_Ultimate", "DLC|盐沼(U50)豪华包");
+            hs.Add("eStore_Saltmarsh_Collectors", "DLC|盐沼(U50)典藏包");
+            hs.Add("eStore_Saltmarsh_Standard", "DLC|盐沼(U50)标准包");            
+            
             hs.Add("Estore_Ravenloft_Discount", "DLC|鸦阁(U37)折扣包");
             hs.Add("Estore_Shadowfell_Discount", "DLC|暗影降临折扣包");
             hs.Add("eStore_Shadowfell_Standard", "DLC|暗影降临标准包");
@@ -63,9 +67,23 @@ namespace QuickLogin.Connect
             hs.Add("eStore_Sharn_Standard", "DLC|沙恩(U42)标准包");
             hs.Add("eStore_Sharn_Standard_DM", "DLC|沙恩(U42)标准包-副本");
             hs.Add("DDOSharnSupplies_Claimed", "DLC|沙恩(U42)标准包-星钻等");
+            hs.Add("STEAMPACK01", "礼包|Steam特供礼包1");
+            hs.Add("XP2_Premium_Prepurchase", "礼包|XP2预购");
+            hs.Add("SCBeta", "礼包|SCBeta");
+
+            hs.Add("Saltmarsh_hire_bag_claimed", "礼包|佣兵收藏夹");
+            hs.Add("Saltmarsh_sentient_claimed", "礼包|智能武器10槽");
 
             hs.Add("FULL", "权限|全部");
             hs.Add("F2PDDOUp", "权限|F2PDDOUp");//？？
+            hs.Add("eStore_Feature_HeadStart2", "权限|老兵2");
+
+            hs.Add("DDOTrinketPower", "礼包|Trinket Power");            
+            
+            hs.Add("XP2_Base", "礼包|XP2基础包");
+            hs.Add("XP2_CharacterSlot_Prepurchase_Premium", "礼包|XP2人物栏");
+            hs.Add("XP2_CharacterSlot_Standard", "礼包|XP2标准包");
+            hs.Add("XP2_Legendary_Upgrade", "礼包|XP2传奇升级");            
 
             hs.Add("StormreachLimited", "礼包|DDO限定版（旧版）");
             hs.Add("PaidPoints", "权限|付费用户");

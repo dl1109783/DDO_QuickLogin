@@ -32,7 +32,7 @@ namespace QuickLogin
 
             foreach(Dictionary<string,string> _dic in _dicContents)
             {
-                this.lbQuest.Items.Add(_dic["name"]);
+                this.lbQuest.Items.Add(_dic["name"] + " " + _dic["desc"]);
             }
         }
 
