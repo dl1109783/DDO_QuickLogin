@@ -43,6 +43,24 @@ namespace QuickLogin
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(12, 15);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(53, 12);
+            label1.TabIndex = 5;
+            label1.Text = "装备等级";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(115, 17);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(11, 12);
+            label2.TabIndex = 7;
+            label2.Text = "-";
+            // 
             // txtLevelFrom
             // 
             this.txtLevelFrom.Location = new System.Drawing.Point(71, 12);
@@ -83,15 +101,6 @@ namespace QuickLogin
             this.cbBaseProp.Size = new System.Drawing.Size(121, 20);
             this.cbBaseProp.TabIndex = 4;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(12, 15);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(53, 12);
-            label1.TabIndex = 5;
-            label1.Text = "装备等级";
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -100,15 +109,6 @@ namespace QuickLogin
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(710, 372);
             this.dataGridView1.TabIndex = 6;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(115, 17);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(11, 12);
-            label2.TabIndex = 7;
-            label2.Text = "-";
             // 
             // frmEquipQuery
             // 
@@ -123,6 +123,7 @@ namespace QuickLogin
             this.Controls.Add(this.chkIsMinorArtifact);
             this.Controls.Add(this.txtLevelTo);
             this.Controls.Add(this.txtLevelFrom);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmEquipQuery";
