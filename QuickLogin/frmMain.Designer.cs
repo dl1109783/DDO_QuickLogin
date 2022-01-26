@@ -41,6 +41,7 @@ namespace QuickLogin
             this.tpConn = new System.Windows.Forms.TabPage();
             this.rtxtInfo = new System.Windows.Forms.RichTextBox();
             this.tpLogin = new System.Windows.Forms.TabPage();
+            this.btnLoginX64 = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.cbxShowPassWord = new System.Windows.Forms.CheckBox();
             this.cbxRemember = new System.Windows.Forms.CheckBox();
@@ -59,7 +60,6 @@ namespace QuickLogin
             this.txtServerInfo = new QuickLogin.RichTextBoxEx();
             this.lbUrl6 = new System.Windows.Forms.Label();
             this.lbUrl7 = new System.Windows.Forms.Label();
-            this.btnLoginX64 = new System.Windows.Forms.Button();
             this.pnlLogin.SuspendLayout();
             this.tcServicePanel.SuspendLayout();
             this.tpConn.SuspendLayout();
@@ -74,7 +74,7 @@ namespace QuickLogin
             this.lbVersion.ForeColor = System.Drawing.Color.White;
             this.lbVersion.Location = new System.Drawing.Point(74, 456);
             this.lbVersion.Name = "lbVersion";
-            this.lbVersion.Size = new System.Drawing.Size(0, 25);
+            this.lbVersion.Size = new System.Drawing.Size(0, 19);
             this.lbVersion.TabIndex = 1;
             // 
             // lbUrl1
@@ -86,7 +86,7 @@ namespace QuickLogin
             this.lbUrl1.ForeColor = System.Drawing.Color.White;
             this.lbUrl1.Location = new System.Drawing.Point(238, 22);
             this.lbUrl1.Name = "lbUrl1";
-            this.lbUrl1.Size = new System.Drawing.Size(54, 25);
+            this.lbUrl1.Size = new System.Drawing.Size(43, 20);
             this.lbUrl1.TabIndex = 2;
             this.lbUrl1.Text = "地址";
             this.lbUrl1.Click += new System.EventHandler(this.lbUrl_Click);
@@ -140,10 +140,10 @@ namespace QuickLogin
             // 
             this.tpConn.BackColor = System.Drawing.Color.Black;
             this.tpConn.Controls.Add(this.rtxtInfo);
-            this.tpConn.Location = new System.Drawing.Point(4, 25);
+            this.tpConn.Location = new System.Drawing.Point(4, 22);
             this.tpConn.Margin = new System.Windows.Forms.Padding(0);
             this.tpConn.Name = "tpConn";
-            this.tpConn.Size = new System.Drawing.Size(340, 207);
+            this.tpConn.Size = new System.Drawing.Size(340, 210);
             this.tpConn.TabIndex = 0;
             this.tpConn.Text = "连接";
             // 
@@ -156,7 +156,7 @@ namespace QuickLogin
             this.rtxtInfo.Location = new System.Drawing.Point(0, 0);
             this.rtxtInfo.Name = "rtxtInfo";
             this.rtxtInfo.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtxtInfo.Size = new System.Drawing.Size(340, 207);
+            this.rtxtInfo.Size = new System.Drawing.Size(340, 210);
             this.rtxtInfo.TabIndex = 10;
             this.rtxtInfo.TabStop = false;
             this.rtxtInfo.Text = "";
@@ -176,16 +176,27 @@ namespace QuickLogin
             this.tpLogin.Controls.Add(this.cblUsername);
             this.tpLogin.Controls.Add(this.cblServerList);
             this.tpLogin.Controls.Add(this.txtPassword);
-            this.tpLogin.Location = new System.Drawing.Point(4, 25);
+            this.tpLogin.Location = new System.Drawing.Point(4, 22);
             this.tpLogin.Margin = new System.Windows.Forms.Padding(0);
             this.tpLogin.Name = "tpLogin";
-            this.tpLogin.Size = new System.Drawing.Size(340, 207);
+            this.tpLogin.Size = new System.Drawing.Size(340, 210);
             this.tpLogin.TabIndex = 2;
             this.tpLogin.Text = "登录";
             // 
+            // btnLoginX64
+            // 
+            this.btnLoginX64.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoginX64.Location = new System.Drawing.Point(222, 142);
+            this.btnLoginX64.Name = "btnLoginX64";
+            this.btnLoginX64.Size = new System.Drawing.Size(91, 37);
+            this.btnLoginX64.TabIndex = 17;
+            this.btnLoginX64.Text = "64位登陆";
+            this.btnLoginX64.UseVisualStyleBackColor = true;
+            this.btnLoginX64.Click += new System.EventHandler(this.btnLoginX64_Click);
+            // 
             // btnUpdate
             // 
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.btnUpdate.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Location = new System.Drawing.Point(31, 142);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(64, 37);
@@ -203,7 +214,7 @@ namespace QuickLogin
             this.cbxShowPassWord.ForeColor = System.Drawing.Color.White;
             this.cbxShowPassWord.Location = new System.Drawing.Point(181, 128);
             this.cbxShowPassWord.Name = "cbxShowPassWord";
-            this.cbxShowPassWord.Size = new System.Drawing.Size(88, 17);
+            this.cbxShowPassWord.Size = new System.Drawing.Size(78, 16);
             this.cbxShowPassWord.TabIndex = 15;
             this.cbxShowPassWord.TabStop = false;
             this.cbxShowPassWord.Text = "显示密码?";
@@ -221,7 +232,7 @@ namespace QuickLogin
             this.cbxRemember.ForeColor = System.Drawing.Color.White;
             this.cbxRemember.Location = new System.Drawing.Point(205, 83);
             this.cbxRemember.Name = "cbxRemember";
-            this.cbxRemember.Size = new System.Drawing.Size(62, 17);
+            this.cbxRemember.Size = new System.Drawing.Size(54, 16);
             this.cbxRemember.TabIndex = 3;
             this.cbxRemember.TabStop = false;
             this.cbxRemember.Text = "记住?";
@@ -268,12 +279,12 @@ namespace QuickLogin
             // 
             // btnLogin
             // 
-            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.btnLogin.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnLogin.Location = new System.Drawing.Point(107, 142);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(109, 37);
             this.btnLogin.TabIndex = 5;
-            this.btnLogin.Text = "登录";
+            this.btnLogin.Text = "32位登陆";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -319,7 +330,7 @@ namespace QuickLogin
             this.lbUrl2.ForeColor = System.Drawing.Color.White;
             this.lbUrl2.Location = new System.Drawing.Point(327, 22);
             this.lbUrl2.Name = "lbUrl2";
-            this.lbUrl2.Size = new System.Drawing.Size(54, 25);
+            this.lbUrl2.Size = new System.Drawing.Size(43, 20);
             this.lbUrl2.TabIndex = 11;
             this.lbUrl2.Tag = "";
             this.lbUrl2.Text = "地址";
@@ -334,7 +345,7 @@ namespace QuickLogin
             this.lbUrl3.ForeColor = System.Drawing.Color.White;
             this.lbUrl3.Location = new System.Drawing.Point(416, 22);
             this.lbUrl3.Name = "lbUrl3";
-            this.lbUrl3.Size = new System.Drawing.Size(54, 25);
+            this.lbUrl3.Size = new System.Drawing.Size(43, 20);
             this.lbUrl3.TabIndex = 12;
             this.lbUrl3.Text = "地址";
             this.lbUrl3.Click += new System.EventHandler(this.lbUrl_Click);
@@ -348,7 +359,7 @@ namespace QuickLogin
             this.lbUrl4.ForeColor = System.Drawing.Color.White;
             this.lbUrl4.Location = new System.Drawing.Point(505, 22);
             this.lbUrl4.Name = "lbUrl4";
-            this.lbUrl4.Size = new System.Drawing.Size(54, 25);
+            this.lbUrl4.Size = new System.Drawing.Size(43, 20);
             this.lbUrl4.TabIndex = 13;
             this.lbUrl4.Text = "地址";
             this.lbUrl4.Click += new System.EventHandler(this.lbUrl_Click);
@@ -362,7 +373,7 @@ namespace QuickLogin
             this.lbUrl5.ForeColor = System.Drawing.Color.White;
             this.lbUrl5.Location = new System.Drawing.Point(594, 22);
             this.lbUrl5.Name = "lbUrl5";
-            this.lbUrl5.Size = new System.Drawing.Size(54, 25);
+            this.lbUrl5.Size = new System.Drawing.Size(43, 20);
             this.lbUrl5.TabIndex = 14;
             this.lbUrl5.Text = "地址";
             this.lbUrl5.Click += new System.EventHandler(this.lbUrl_Click);
@@ -410,7 +421,7 @@ namespace QuickLogin
             this.lbUrl6.ForeColor = System.Drawing.Color.White;
             this.lbUrl6.Location = new System.Drawing.Point(237, 60);
             this.lbUrl6.Name = "lbUrl6";
-            this.lbUrl6.Size = new System.Drawing.Size(54, 25);
+            this.lbUrl6.Size = new System.Drawing.Size(43, 20);
             this.lbUrl6.TabIndex = 15;
             this.lbUrl6.Text = "地址";
             this.lbUrl6.Click += new System.EventHandler(this.lbUrl_Click);
@@ -424,21 +435,10 @@ namespace QuickLogin
             this.lbUrl7.ForeColor = System.Drawing.Color.White;
             this.lbUrl7.Location = new System.Drawing.Point(327, 60);
             this.lbUrl7.Name = "lbUrl7";
-            this.lbUrl7.Size = new System.Drawing.Size(54, 25);
+            this.lbUrl7.Size = new System.Drawing.Size(43, 20);
             this.lbUrl7.TabIndex = 16;
             this.lbUrl7.Text = "地址";
             this.lbUrl7.Click += new System.EventHandler(this.lbUrl_Click);
-            // 
-            // btnLoginX64
-            // 
-            this.btnLoginX64.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.btnLoginX64.Location = new System.Drawing.Point(222, 142);
-            this.btnLoginX64.Name = "btnLoginX64";
-            this.btnLoginX64.Size = new System.Drawing.Size(91, 37);
-            this.btnLoginX64.TabIndex = 17;
-            this.btnLoginX64.Text = "X64";
-            this.btnLoginX64.UseVisualStyleBackColor = true;
-            this.btnLoginX64.Click += new System.EventHandler(this.btnLoginX64_Click);
             // 
             // frmMain
             // 
