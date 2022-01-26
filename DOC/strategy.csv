@@ -1,0 +1,11 @@
+id,name,desc,filename,info
+1,Prove Your Worth,三桶湾,prove_your_worth,
+2,The Pit,矿坑,pit_1,
+3,The Shadow Crypt,幽影墓穴,shadow_crypt_8_gears_fix,进门打完一波怪，进东边，根据所在房间有3种不同的路线（见参考图）
+4,Tomb of the Tormented,不死3老鼠本,Map_TombOfTheTormented_RatPaths,已知可以打到坏老鼠的法术有Sonic Blast（奥术）及Holy Smite（神术）
+5,Sand of Menechtarun,沙漠野外,sand,
+6,The Vault of Night,龙5,von5,"顺序：-1.同Haywire对话拿到Voice-2.西侧杀矮人boss拿戒指/东侧拼图（见攻略图）-3.北侧分路走（拿voice和戒指的人要走左边）北侧终点的转盘各转4下解锁，拿Voice的上去对话。左右两边都需要str25的拉开关。-4.回西边打完构装拿Coffer,Voice跳下去对话-5.东边拼图房对话，同时放Coffer开门，到底打锈蚀怪boss拿钥匙-6.中间开门开喷气开关上楼打boss"
+7,An Invitation to Dinner,晚宴(U37C1),An_invitation_to_dinner_map,Icon和Ally可以同时进行；找完Ally后才能看到Keystone；最后到达Exit完成。Death的Opt非必须。
+8,Sealed in Amber,翡翠神殿(U37C2),amber,1.上层左上角巫妖可以用复原术快速通过，且需要查看密门到达Eva处-2.与Eva对话后可以知道Icon的位置，参见攻略图
+9,Inferno the Damned,不死4地狱,inferno,
+10,The Crucible,巨人炉子,M_maze_crucible,迷宫路线：-图中实心门为初始状态；crest及槽位都是随机的-1.先到I拉开关拿上下两个crest并尝试放东侧槽-2.到K拉开关拿左下的crest并放西侧槽-3.到H拉开关放北侧槽-4.(如果第一步没放成功则放东侧槽）拿中间的道具-注意：I的开关次数应该是奇数次，H的开关次数应是偶数次

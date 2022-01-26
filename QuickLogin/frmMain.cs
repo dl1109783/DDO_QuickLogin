@@ -84,14 +84,12 @@ namespace QuickLogin
                         txtServerInfo.Visible = true;
                         txtServerInfo.Text = p_Value.ToString();
                         btnLogin.Enabled = true;
-                        btnLoginX64.Enabled = true;
                         #endregion
                         break;
                     case ConnectType.LoginFaild:
                         #region
                         MessageBox.Show(p_Value.ToString());
                         btnLogin.Enabled = true;
-                        btnLoginX64.Enabled = true;
                         #endregion
                         break;
                     //报错
@@ -112,7 +110,6 @@ namespace QuickLogin
                             MessageBox.Show(ex.Message);
                         }
                         btnLogin.Enabled = true;
-                        btnLoginX64.Enabled = true;
                         #endregion
                         break;
                     //case ConnectType.GetNewsFaild:
@@ -139,7 +136,6 @@ namespace QuickLogin
             tcServicePanel.Location = new Point(-6, -25);
             tcServicePanel.Appearance = TabAppearance.FlatButtons;
             connThread = new ConnectThread(new CallBackHandler(ConnectThread_OnCallBack));
-            lbVersion.Text = Application.ProductVersion;
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -148,13 +144,13 @@ namespace QuickLogin
             {
                 if (CheckXmlFile())
                 {
-                    BindLableText(lbUrl1, Program.Url1);
-                    BindLableText(lbUrl2, Program.Url2);
-                    BindLableText(lbUrl3, Program.Url3);
-                    BindLableText(lbUrl4, Program.Url4);
-                    BindLableText(lbUrl5, Program.Url5);
-                    BindLableText(lbUrl6, Program.Url6);
-                    BindLableText(lbUrl7, Program.Url7);
+                    //BindLableText(lbUrl1, Program.Url1);
+                    //BindLableText(lbUrl2, Program.Url2);
+                    //BindLableText(lbUrl3, Program.Url3);
+                    //BindLableText(lbUrl4, Program.Url4);
+                    //BindLableText(lbUrl5, Program.Url5);
+                    //BindLableText(lbUrl6, Program.Url6);
+                    //BindLableText(lbUrl7, Program.Url7);
                     //获得服务器状态
                     Thread td = new Thread(connThread.GetDataCenter);
                     td.IsBackground = true;//后台线程,程序关闭自动退出
@@ -263,18 +259,18 @@ namespace QuickLogin
         {
             connThread.isClosed = true;
         }
-        private void lbUrl_Click(object sender, EventArgs e)
-        {
-            OpenUrl(((Label)sender).Tag.ToString());
-        }
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-        private void btnMin_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
+        //private void lbUrl_Click(object sender, EventArgs e)
+        //{
+        //    OpenUrl(((Label)sender).Tag.ToString());
+        //}
+        //private void btnClose_Click(object sender, EventArgs e)
+        //{
+        //    Application.Exit();
+        //}
+        //private void btnMin_Click(object sender, EventArgs e)
+        //{
+        //    this.WindowState = FormWindowState.Minimized;
+        //}
         //界面拖动
         private Point mousePoint;
         private Point formPoint;
@@ -319,32 +315,32 @@ namespace QuickLogin
                 MessageBox.Show(ex.ToString());
             }
         }
-        /// <summary>
-        /// 绑定标签链接和名字
-        /// </summary>
-        /// <param name="label"></param>
-        /// <param name="str"></param>
-        private void BindLableText(Label label, string str)
-        {
-            if (!string.IsNullOrEmpty(str) && str.Contains("|"))
-            {
-                var aryInfo = str.Split('|');
-                if (aryInfo.Length > 1)
-                {
-                    label.Text = aryInfo[0];
-                    label.Tag = aryInfo[1];
-                    return;
-                }
-            }
-            label.Text = string.Empty;
-            label.Tag = string.Empty;
-        }
+        ///// <summary>
+        ///// 绑定标签链接和名字
+        ///// </summary>
+        ///// <param name="label"></param>
+        ///// <param name="str"></param>
+        //private void BindLableText(Label label, string str)
+        //{
+        //    if (!string.IsNullOrEmpty(str) && str.Contains("|"))
+        //    {
+        //        var aryInfo = str.Split('|');
+        //        if (aryInfo.Length > 1)
+        //        {
+        //            label.Text = aryInfo[0];
+        //            label.Tag = aryInfo[1];
+        //            return;
+        //        }
+        //    }
+        //    label.Text = string.Empty;
+        //    label.Tag = string.Empty;
+        //}
 
         bool CheckXmlFile()
         {
             if (!File.Exists(Program.XML_FILE_PATH))
             {
-                CreadNewXml();
+                CreateNewXml();
                 return true;
             }
             else
@@ -367,7 +363,7 @@ namespace QuickLogin
                         else
                         {
                             File.Delete(Program.XML_FILE_PATH);
-                            CreadNewXml();
+                            CreateNewXml();
                             return true;
                         }
                     }
@@ -380,7 +376,7 @@ namespace QuickLogin
             }
 
         }
-        void CreadNewXml()
+        void CreateNewXml()
         {
             XDocument xd = new XDocument(
                   new XElement("Users", new XAttribute("DefaultUser", "Default"),
@@ -390,11 +386,6 @@ namespace QuickLogin
 
         #endregion
 
-        private void btnLoginX64_Click(object sender, EventArgs e)
-        {
-            connThread.clientType = ClientType.X64;
-            Login();
-        }
         /// <summary>
         /// 登录按钮
         /// </summary>
@@ -402,7 +393,14 @@ namespace QuickLogin
         /// <param name="e"></param>
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            connThread.clientType = ClientType.X86;
+            if (cb64Bit.Checked)
+            {
+                connThread.clientType = ClientType.X64;
+            }
+            else
+            {
+                connThread.clientType = ClientType.X86;
+            }
             Login();
         }
         private void Login()
@@ -420,7 +418,6 @@ namespace QuickLogin
                 if (connThread._strPassWord.Trim() != string.Empty && connThread._strUserName.Trim() != string.Empty && connThread._worldSelect != null)
                 {
                     btnLogin.Enabled = false;
-                    btnLoginX64.Enabled = false;
                     new Thread(new ThreadStart(this.connThread.LoginUser)) { IsBackground = true }.Start();
                 }
                 else { MessageBox.Show("请检查用户名,密码,以及服务器是否选择正确!"); }
@@ -429,6 +426,135 @@ namespace QuickLogin
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void cblServerList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            userLists.DefaultUser.WorldName = ((World)cblServerList.SelectedItem).Name;
+        }
+
+        private void lbPublicGroup_Click(object sender, EventArgs e)
+        {
+            if (cblServerList.SelectedItem != null)
+            {
+                OpenUrl("https://www.playeraudit.com/grouping?s=" + ((World)cblServerList.SelectedItem).Name.ToLower());
+            }
+            else
+            {
+                OpenUrl("https://www.playeraudit.com/");
+            }
+        }
+
+        private void 首页ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("http://www.ddo.com/");
+        }
+
+        private void 账号ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("http://myaccount.turbine.com/");
+        }
+
+        private void 首页ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            OpenUrl("http://ddowiki.com/");
+        }
+
+        private void 职业介绍ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://ddowiki.com/page/Classes");
+        }
+
+        private void 种族ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://ddowiki.com/page/Races");
+        }
+
+        private void 天赋ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://ddowiki.com/page/Enhancements");
+        }
+
+        private void 专长ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://ddowiki.com/page/Feats");
+        }
+
+        private void 法术ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://ddowiki.com/page/Spells");
+        }
+
+        private void 天命ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://ddowiki.com/page/Epic_Destinies");
+        }
+
+        private void 声望ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://ddowiki.com/page/Favor");
+        }
+
+        private void 任务ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://ddowiki.com/page/Quests");
+        }
+
+        private void 转生ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://ddowiki.com/page/Reincarnation");
+        }
+
+        private void 贴吧ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://tieba.baidu.com/f?kw=%E9%BE%99%E4%B8%8E%E5%9C%B0%E4%B8%8B%E5%9F%8E&ie=utf-8");
+        }
+
+        private void qQ群ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://shang.qq.com/wpa/qunwpa?idkey=1ac28296d2b07056b37b6ccea5b567e5f3ab64a5efd5b842d0df5e718a7e4590");
+        }
+
+        private void dLCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://store-new.standingstonegames.com/ddo/expansions");
+        }
+
+        private void 注册账号ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://signup.ddo.com/ddo.php");
+        }
+
+        private void 原版ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://gitee.com/dlanny/DDO_QuickLogin");
+        }
+
+        private void 修改版ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("https://gitee.com/vivx97/DDO_QuickLogin");
+        }
+
+        private void 副本图文攻略ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmStrategy fs = new frmStrategy();
+            fs.ShowDialog(this);
+        }
+
+        private void 装备数据ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEquipQuery fe = new frmEquipQuery();
+            fe.ShowDialog(this);
+        }
+
+        private void 解谜ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("http://solver.cubicleninja.com/");
+        }
+
+        private void 天命模拟器ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenUrl("http://dlanny.gitee.io/ddoplanner/");
         }
     }
 }
