@@ -29,7 +29,6 @@ _ReSharper*/
 .vs/
 #Nuget packages folder
 packages/
-*.pdb
 *.db
 
 /dist/UserSettings.xml
