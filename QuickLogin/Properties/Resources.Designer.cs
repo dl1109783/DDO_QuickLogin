@@ -47,8 +47,8 @@ namespace QuickLogin.Properties {
         }
         
         /// <summary>
-        ///   重写当前线程的 CurrentUICulture 属性，对
-        ///   使用此强类型资源类的所有资源查找执行重写。
+        ///   重写当前线程的 CurrentUICulture 属性
+        ///   重写当前线程的 CurrentUICulture 属性。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Globalization.CultureInfo Culture {
@@ -57,36 +57,6 @@ namespace QuickLogin.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap amber {
-            get {
-                object obj = ResourceManager.GetObject("amber", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap An_invitation_to_dinner_map {
-            get {
-                object obj = ResourceManager.GetObject("An_invitation_to_dinner_map", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap cg {
-            get {
-                object obj = ResourceManager.GetObject("cg", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -103,16 +73,6 @@ namespace QuickLogin.Properties {
         internal static string GetDatacenters {
             get {
                 return ResourceManager.GetString("GetDatacenters", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap inferno {
-            get {
-                object obj = ResourceManager.GetObject("inferno", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -147,94 +107,9 @@ namespace QuickLogin.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap M_maze_crucible {
+        internal static System.Drawing.Bitmap MainBackground {
             get {
-                object obj = ResourceManager.GetObject("M_maze_crucible", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap Mainform_background {
-            get {
-                object obj = ResourceManager.GetObject("Mainform_background", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap Map_TombOfTheTormented_RatPaths {
-            get {
-                object obj = ResourceManager.GetObject("Map_TombOfTheTormented_RatPaths", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap pit_1 {
-            get {
-                object obj = ResourceManager.GetObject("pit_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap prove_your_worth {
-            get {
-                object obj = ResourceManager.GetObject("prove_your_worth", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap sand {
-            get {
-                object obj = ResourceManager.GetObject("sand", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap shadow_crypt_8_gears_fix {
-            get {
-                object obj = ResourceManager.GetObject("shadow_crypt_8_gears_fix", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 id,name,desc,filename,info
-        ///1,Prove Your Worth,三桶湾,prove_your_worth,
-        ///2,The Pit,矿坑,pit_1,
-        ///3,The Shadow Crypt,幽影墓穴,shadow_crypt_8_gears_fix,进门打完一波怪，进东边，根据所在房间有3种不同的路线（见参考图）
-        ///4,Tomb of the Tormented,不死3老鼠本,Map_TombOfTheTormented_RatPaths,已知可以打到坏老鼠的法术有Sonic Blast（奥术）及Holy Smite（神术）
-        ///5,Sand of Menechtarun,沙漠野外,sand,
-        ///6,The Vault of Night,龙5,von5,&quot;顺序：-1.同Haywire对话拿到Voice-2.西侧杀矮人boss拿戒指/东侧拼图（见攻略图）-3.北侧分路走（拿voice和戒指的人要走左边）北侧终点的转盘各转4下解锁，拿Voice的上去对话。左右两边都需要str25的拉开关。-4.回西边打完构装拿Coffer,Voice跳下去对话-5.东边拼图房对话，同时放Coffer开 [字符串的其余部分被截断]&quot;; 的本地化字符串。
-        /// </summary>
-        internal static string strategy {
-            get {
-                return ResourceManager.GetString("strategy", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap von5 {
-            get {
-                object obj = ResourceManager.GetObject("von5", resourceCulture);
+                object obj = ResourceManager.GetObject("MainBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -32,13 +32,15 @@ namespace QuickLogin
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            this.lbVersion = new System.Windows.Forms.Label();
+            this.lbUrl1 = new System.Windows.Forms.Label();
+            this.btnMin = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.pnlLogin = new System.Windows.Forms.Panel();
             this.tcServicePanel = new System.Windows.Forms.TabControl();
             this.tpConn = new System.Windows.Forms.TabPage();
             this.rtxtInfo = new System.Windows.Forms.RichTextBox();
             this.tpLogin = new System.Windows.Forms.TabPage();
-            this.cb64Bit = new System.Windows.Forms.CheckBox();
-            this.lbPublicGroup = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.cbxShowPassWord = new System.Windows.Forms.CheckBox();
             this.cbxRemember = new System.Windows.Forms.CheckBox();
@@ -49,88 +51,112 @@ namespace QuickLogin
             this.cblUsername = new System.Windows.Forms.ComboBox();
             this.cblServerList = new System.Windows.Forms.ComboBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.其它ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.贴吧ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.qQ群ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.wikiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.首页ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.职业介绍ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.种族ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.天赋ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.专长ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.法术ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.天命ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.声望ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.任务ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.转生ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.官网ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.首页ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.注册账号ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.账号ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dLCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.源码下载ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.原版ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.修改版ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.副本图片攻略ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.副本图文攻略ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.装备数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.在线解谜ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.解谜ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.天命模拟器ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtServerInfo = new QuickLogin.RichTextBoxEx();
+            this.lbUrl2 = new System.Windows.Forms.Label();
+            this.lbUrl3 = new System.Windows.Forms.Label();
+            this.lbUrl4 = new System.Windows.Forms.Label();
+            this.lbUrl5 = new System.Windows.Forms.Label();
             this.txtInfo = new QuickLogin.RichTextBoxEx();
+            this.txtServerInfo = new QuickLogin.RichTextBoxEx();
+            this.lbUrl6 = new System.Windows.Forms.Label();
+            this.lbUrl7 = new System.Windows.Forms.Label();
+            this.btnLoginX64 = new System.Windows.Forms.Button();
             this.pnlLogin.SuspendLayout();
             this.tcServicePanel.SuspendLayout();
             this.tpConn.SuspendLayout();
             this.tpLogin.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // lbVersion
+            // 
+            this.lbVersion.AutoSize = true;
+            this.lbVersion.BackColor = System.Drawing.Color.Transparent;
+            this.lbVersion.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbVersion.ForeColor = System.Drawing.Color.White;
+            this.lbVersion.Location = new System.Drawing.Point(74, 456);
+            this.lbVersion.Name = "lbVersion";
+            this.lbVersion.Size = new System.Drawing.Size(0, 25);
+            this.lbVersion.TabIndex = 1;
+            // 
+            // lbUrl1
+            // 
+            this.lbUrl1.AutoSize = true;
+            this.lbUrl1.BackColor = System.Drawing.Color.Transparent;
+            this.lbUrl1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbUrl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbUrl1.ForeColor = System.Drawing.Color.White;
+            this.lbUrl1.Location = new System.Drawing.Point(238, 22);
+            this.lbUrl1.Name = "lbUrl1";
+            this.lbUrl1.Size = new System.Drawing.Size(54, 25);
+            this.lbUrl1.TabIndex = 2;
+            this.lbUrl1.Text = "地址";
+            this.lbUrl1.Click += new System.EventHandler(this.lbUrl_Click);
+            // 
+            // btnMin
+            // 
+            this.btnMin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMin.Image = global::QuickLogin.Properties.Resources.M;
+            this.btnMin.Location = new System.Drawing.Point(690, 17);
+            this.btnMin.Name = "btnMin";
+            this.btnMin.Size = new System.Drawing.Size(24, 24);
+            this.btnMin.TabIndex = 7;
+            this.btnMin.UseVisualStyleBackColor = true;
+            this.btnMin.Click += new System.EventHandler(this.btnMin_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.Image = global::QuickLogin.Properties.Resources.X;
+            this.btnClose.Location = new System.Drawing.Point(719, 17);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(24, 24);
+            this.btnClose.TabIndex = 8;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // pnlLogin
             // 
             this.pnlLogin.BackColor = System.Drawing.Color.Transparent;
             this.pnlLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlLogin.Controls.Add(this.tcServicePanel);
-            this.pnlLogin.Location = new System.Drawing.Point(407, 84);
+            this.pnlLogin.Location = new System.Drawing.Point(395, 96);
             this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(328, 190);
+            this.pnlLogin.Size = new System.Drawing.Size(322, 193);
             this.pnlLogin.TabIndex = 10;
             // 
             // tcServicePanel
             // 
             this.tcServicePanel.Controls.Add(this.tpConn);
             this.tcServicePanel.Controls.Add(this.tpLogin);
-            this.tcServicePanel.Location = new System.Drawing.Point(-6, 6);
+            this.tcServicePanel.Location = new System.Drawing.Point(0, -3);
             this.tcServicePanel.Margin = new System.Windows.Forms.Padding(0);
             this.tcServicePanel.Name = "tcServicePanel";
             this.tcServicePanel.SelectedIndex = 0;
-            this.tcServicePanel.Size = new System.Drawing.Size(375, 217);
-            this.tcServicePanel.TabIndex = 2;
+            this.tcServicePanel.Size = new System.Drawing.Size(348, 236);
+            this.tcServicePanel.TabIndex = 1;
             this.tcServicePanel.TabStop = false;
             // 
             // tpConn
             // 
             this.tpConn.BackColor = System.Drawing.Color.Black;
             this.tpConn.Controls.Add(this.rtxtInfo);
-            this.tpConn.Location = new System.Drawing.Point(4, 22);
+            this.tpConn.Location = new System.Drawing.Point(4, 25);
             this.tpConn.Margin = new System.Windows.Forms.Padding(0);
             this.tpConn.Name = "tpConn";
-            this.tpConn.Size = new System.Drawing.Size(367, 191);
+            this.tpConn.Size = new System.Drawing.Size(340, 207);
             this.tpConn.TabIndex = 0;
             this.tpConn.Text = "连接";
             // 
             // rtxtInfo
             // 
             this.rtxtInfo.BackColor = System.Drawing.Color.Black;
-            this.rtxtInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtxtInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtxtInfo.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtxtInfo.ForeColor = System.Drawing.Color.Lime;
             this.rtxtInfo.Location = new System.Drawing.Point(0, 0);
             this.rtxtInfo.Name = "rtxtInfo";
             this.rtxtInfo.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtxtInfo.Size = new System.Drawing.Size(367, 191);
+            this.rtxtInfo.Size = new System.Drawing.Size(340, 207);
             this.rtxtInfo.TabIndex = 10;
             this.rtxtInfo.TabStop = false;
             this.rtxtInfo.Text = "";
@@ -139,8 +165,7 @@ namespace QuickLogin
             // 
             this.tpLogin.BackColor = System.Drawing.Color.Black;
             this.tpLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tpLogin.Controls.Add(this.cb64Bit);
-            this.tpLogin.Controls.Add(this.lbPublicGroup);
+            this.tpLogin.Controls.Add(this.btnLoginX64);
             this.tpLogin.Controls.Add(this.btnUpdate);
             this.tpLogin.Controls.Add(this.cbxShowPassWord);
             this.tpLogin.Controls.Add(this.cbxRemember);
@@ -151,46 +176,17 @@ namespace QuickLogin
             this.tpLogin.Controls.Add(this.cblUsername);
             this.tpLogin.Controls.Add(this.cblServerList);
             this.tpLogin.Controls.Add(this.txtPassword);
-            this.tpLogin.Location = new System.Drawing.Point(4, 22);
+            this.tpLogin.Location = new System.Drawing.Point(4, 25);
             this.tpLogin.Margin = new System.Windows.Forms.Padding(0);
             this.tpLogin.Name = "tpLogin";
-            this.tpLogin.Size = new System.Drawing.Size(367, 191);
+            this.tpLogin.Size = new System.Drawing.Size(340, 207);
             this.tpLogin.TabIndex = 2;
             this.tpLogin.Text = "登录";
             // 
-            // cb64Bit
-            // 
-            this.cb64Bit.AutoSize = true;
-            this.cb64Bit.BackColor = System.Drawing.Color.Transparent;
-            this.cb64Bit.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cb64Bit.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.cb64Bit.ForeColor = System.Drawing.Color.White;
-            this.cb64Bit.Location = new System.Drawing.Point(113, 151);
-            this.cb64Bit.Name = "cb64Bit";
-            this.cb64Bit.Size = new System.Drawing.Size(84, 16);
-            this.cb64Bit.TabIndex = 20;
-            this.cb64Bit.TabStop = false;
-            this.cb64Bit.Text = "64位客户端";
-            this.cb64Bit.UseVisualStyleBackColor = false;
-            // 
-            // lbPublicGroup
-            // 
-            this.lbPublicGroup.AutoSize = true;
-            this.lbPublicGroup.BackColor = System.Drawing.Color.Transparent;
-            this.lbPublicGroup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbPublicGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPublicGroup.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lbPublicGroup.Location = new System.Drawing.Point(242, 16);
-            this.lbPublicGroup.Name = "lbPublicGroup";
-            this.lbPublicGroup.Size = new System.Drawing.Size(36, 17);
-            this.lbPublicGroup.TabIndex = 19;
-            this.lbPublicGroup.Text = "招募";
-            this.lbPublicGroup.Click += new System.EventHandler(this.lbPublicGroup_Click);
-            // 
             // btnUpdate
             // 
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(28, 140);
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.btnUpdate.Location = new System.Drawing.Point(31, 142);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(64, 37);
             this.btnUpdate.TabIndex = 16;
@@ -202,11 +198,12 @@ namespace QuickLogin
             // 
             this.cbxShowPassWord.AutoSize = true;
             this.cbxShowPassWord.BackColor = System.Drawing.Color.Transparent;
+            this.cbxShowPassWord.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cbxShowPassWord.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.cbxShowPassWord.ForeColor = System.Drawing.Color.White;
-            this.cbxShowPassWord.Location = new System.Drawing.Point(242, 103);
+            this.cbxShowPassWord.Location = new System.Drawing.Point(181, 128);
             this.cbxShowPassWord.Name = "cbxShowPassWord";
-            this.cbxShowPassWord.Size = new System.Drawing.Size(78, 16);
+            this.cbxShowPassWord.Size = new System.Drawing.Size(88, 17);
             this.cbxShowPassWord.TabIndex = 15;
             this.cbxShowPassWord.TabStop = false;
             this.cbxShowPassWord.Text = "显示密码?";
@@ -217,13 +214,14 @@ namespace QuickLogin
             // 
             this.cbxRemember.AutoSize = true;
             this.cbxRemember.BackColor = System.Drawing.Color.Transparent;
+            this.cbxRemember.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cbxRemember.Checked = true;
             this.cbxRemember.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbxRemember.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.cbxRemember.ForeColor = System.Drawing.Color.White;
-            this.cbxRemember.Location = new System.Drawing.Point(242, 60);
+            this.cbxRemember.Location = new System.Drawing.Point(205, 83);
             this.cbxRemember.Name = "cbxRemember";
-            this.cbxRemember.Size = new System.Drawing.Size(54, 16);
+            this.cbxRemember.Size = new System.Drawing.Size(62, 17);
             this.cbxRemember.TabIndex = 3;
             this.cbxRemember.TabStop = false;
             this.cbxRemember.Text = "记住?";
@@ -235,7 +233,7 @@ namespace QuickLogin
             this.lbSev.BackColor = System.Drawing.Color.Transparent;
             this.lbSev.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.lbSev.ForeColor = System.Drawing.Color.White;
-            this.lbSev.Location = new System.Drawing.Point(16, 14);
+            this.lbSev.Location = new System.Drawing.Point(39, 16);
             this.lbSev.Name = "lbSev";
             this.lbSev.Size = new System.Drawing.Size(56, 18);
             this.lbSev.TabIndex = 14;
@@ -248,7 +246,7 @@ namespace QuickLogin
             this.lbPWD.BackColor = System.Drawing.Color.Transparent;
             this.lbPWD.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.lbPWD.ForeColor = System.Drawing.Color.White;
-            this.lbPWD.Location = new System.Drawing.Point(15, 101);
+            this.lbPWD.Location = new System.Drawing.Point(38, 103);
             this.lbPWD.Name = "lbPWD";
             this.lbPWD.Size = new System.Drawing.Size(50, 18);
             this.lbPWD.TabIndex = 13;
@@ -261,7 +259,7 @@ namespace QuickLogin
             this.lbID.BackColor = System.Drawing.Color.Transparent;
             this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.lbID.ForeColor = System.Drawing.Color.White;
-            this.lbID.Location = new System.Drawing.Point(16, 58);
+            this.lbID.Location = new System.Drawing.Point(39, 60);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(56, 18);
             this.lbID.TabIndex = 12;
@@ -270,15 +268,13 @@ namespace QuickLogin
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.LightGreen;
-            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnLogin.Location = new System.Drawing.Point(204, 140);
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.btnLogin.Location = new System.Drawing.Point(107, 142);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(68, 37);
+            this.btnLogin.Size = new System.Drawing.Size(109, 37);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "登录";
-            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // cblUsername
@@ -286,7 +282,7 @@ namespace QuickLogin
             this.cblUsername.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cblUsername.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.cblUsername.FormattingEnabled = true;
-            this.cblUsername.Location = new System.Drawing.Point(84, 58);
+            this.cblUsername.Location = new System.Drawing.Point(107, 60);
             this.cblUsername.Name = "cblUsername";
             this.cblUsername.Size = new System.Drawing.Size(152, 20);
             this.cblUsername.TabIndex = 2;
@@ -298,7 +294,7 @@ namespace QuickLogin
             this.cblServerList.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cblServerList.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.cblServerList.FormattingEnabled = true;
-            this.cblServerList.Location = new System.Drawing.Point(84, 14);
+            this.cblServerList.Location = new System.Drawing.Point(107, 16);
             this.cblServerList.Name = "cblServerList";
             this.cblServerList.Size = new System.Drawing.Size(152, 20);
             this.cblServerList.TabIndex = 1;
@@ -307,265 +303,69 @@ namespace QuickLogin
             // 
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassword.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPassword.Location = new System.Drawing.Point(84, 99);
+            this.txtPassword.Location = new System.Drawing.Point(107, 101);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(152, 21);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.WordWrap = false;
             // 
-            // 其它ToolStripMenuItem
+            // lbUrl2
             // 
-            this.其它ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.贴吧ToolStripMenuItem,
-            this.qQ群ToolStripMenuItem});
-            this.其它ToolStripMenuItem.Name = "其它ToolStripMenuItem";
-            this.其它ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.其它ToolStripMenuItem.Text = "其它";
+            this.lbUrl2.AutoSize = true;
+            this.lbUrl2.BackColor = System.Drawing.Color.Transparent;
+            this.lbUrl2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbUrl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbUrl2.ForeColor = System.Drawing.Color.White;
+            this.lbUrl2.Location = new System.Drawing.Point(327, 22);
+            this.lbUrl2.Name = "lbUrl2";
+            this.lbUrl2.Size = new System.Drawing.Size(54, 25);
+            this.lbUrl2.TabIndex = 11;
+            this.lbUrl2.Tag = "";
+            this.lbUrl2.Text = "地址";
+            this.lbUrl2.Click += new System.EventHandler(this.lbUrl_Click);
             // 
-            // 贴吧ToolStripMenuItem
+            // lbUrl3
             // 
-            this.贴吧ToolStripMenuItem.Name = "贴吧ToolStripMenuItem";
-            this.贴吧ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.贴吧ToolStripMenuItem.Text = "百度贴吧";
-            this.贴吧ToolStripMenuItem.Click += new System.EventHandler(this.贴吧ToolStripMenuItem_Click);
+            this.lbUrl3.AutoSize = true;
+            this.lbUrl3.BackColor = System.Drawing.Color.Transparent;
+            this.lbUrl3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbUrl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbUrl3.ForeColor = System.Drawing.Color.White;
+            this.lbUrl3.Location = new System.Drawing.Point(416, 22);
+            this.lbUrl3.Name = "lbUrl3";
+            this.lbUrl3.Size = new System.Drawing.Size(54, 25);
+            this.lbUrl3.TabIndex = 12;
+            this.lbUrl3.Text = "地址";
+            this.lbUrl3.Click += new System.EventHandler(this.lbUrl_Click);
             // 
-            // qQ群ToolStripMenuItem
+            // lbUrl4
             // 
-            this.qQ群ToolStripMenuItem.Name = "qQ群ToolStripMenuItem";
-            this.qQ群ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.qQ群ToolStripMenuItem.Text = "QQ群";
-            this.qQ群ToolStripMenuItem.Click += new System.EventHandler(this.qQ群ToolStripMenuItem_Click);
+            this.lbUrl4.AutoSize = true;
+            this.lbUrl4.BackColor = System.Drawing.Color.Transparent;
+            this.lbUrl4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbUrl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbUrl4.ForeColor = System.Drawing.Color.White;
+            this.lbUrl4.Location = new System.Drawing.Point(505, 22);
+            this.lbUrl4.Name = "lbUrl4";
+            this.lbUrl4.Size = new System.Drawing.Size(54, 25);
+            this.lbUrl4.TabIndex = 13;
+            this.lbUrl4.Text = "地址";
+            this.lbUrl4.Click += new System.EventHandler(this.lbUrl_Click);
             // 
-            // wikiToolStripMenuItem
+            // lbUrl5
             // 
-            this.wikiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.首页ToolStripMenuItem1,
-            this.职业介绍ToolStripMenuItem,
-            this.种族ToolStripMenuItem,
-            this.天赋ToolStripMenuItem,
-            this.专长ToolStripMenuItem,
-            this.法术ToolStripMenuItem,
-            this.天命ToolStripMenuItem,
-            this.声望ToolStripMenuItem,
-            this.任务ToolStripMenuItem,
-            this.转生ToolStripMenuItem});
-            this.wikiToolStripMenuItem.Name = "wikiToolStripMenuItem";
-            this.wikiToolStripMenuItem.Size = new System.Drawing.Size(45, 21);
-            this.wikiToolStripMenuItem.Text = "Wiki";
-            // 
-            // 首页ToolStripMenuItem1
-            // 
-            this.首页ToolStripMenuItem1.Name = "首页ToolStripMenuItem1";
-            this.首页ToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
-            this.首页ToolStripMenuItem1.Text = "首页";
-            this.首页ToolStripMenuItem1.Click += new System.EventHandler(this.首页ToolStripMenuItem1_Click);
-            // 
-            // 职业介绍ToolStripMenuItem
-            // 
-            this.职业介绍ToolStripMenuItem.Name = "职业介绍ToolStripMenuItem";
-            this.职业介绍ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.职业介绍ToolStripMenuItem.Text = "职业";
-            this.职业介绍ToolStripMenuItem.Click += new System.EventHandler(this.职业介绍ToolStripMenuItem_Click);
-            // 
-            // 种族ToolStripMenuItem
-            // 
-            this.种族ToolStripMenuItem.Name = "种族ToolStripMenuItem";
-            this.种族ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.种族ToolStripMenuItem.Text = "种族";
-            this.种族ToolStripMenuItem.Click += new System.EventHandler(this.种族ToolStripMenuItem_Click);
-            // 
-            // 天赋ToolStripMenuItem
-            // 
-            this.天赋ToolStripMenuItem.Name = "天赋ToolStripMenuItem";
-            this.天赋ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.天赋ToolStripMenuItem.Text = "天赋";
-            this.天赋ToolStripMenuItem.Click += new System.EventHandler(this.天赋ToolStripMenuItem_Click);
-            // 
-            // 专长ToolStripMenuItem
-            // 
-            this.专长ToolStripMenuItem.Name = "专长ToolStripMenuItem";
-            this.专长ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.专长ToolStripMenuItem.Text = "专长";
-            this.专长ToolStripMenuItem.Click += new System.EventHandler(this.专长ToolStripMenuItem_Click);
-            // 
-            // 法术ToolStripMenuItem
-            // 
-            this.法术ToolStripMenuItem.Name = "法术ToolStripMenuItem";
-            this.法术ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.法术ToolStripMenuItem.Text = "法术";
-            this.法术ToolStripMenuItem.Click += new System.EventHandler(this.法术ToolStripMenuItem_Click);
-            // 
-            // 天命ToolStripMenuItem
-            // 
-            this.天命ToolStripMenuItem.Name = "天命ToolStripMenuItem";
-            this.天命ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.天命ToolStripMenuItem.Text = "天命";
-            this.天命ToolStripMenuItem.Click += new System.EventHandler(this.天命ToolStripMenuItem_Click);
-            // 
-            // 声望ToolStripMenuItem
-            // 
-            this.声望ToolStripMenuItem.Name = "声望ToolStripMenuItem";
-            this.声望ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.声望ToolStripMenuItem.Text = "声望";
-            this.声望ToolStripMenuItem.Click += new System.EventHandler(this.声望ToolStripMenuItem_Click);
-            // 
-            // 任务ToolStripMenuItem
-            // 
-            this.任务ToolStripMenuItem.Name = "任务ToolStripMenuItem";
-            this.任务ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.任务ToolStripMenuItem.Text = "任务";
-            this.任务ToolStripMenuItem.Click += new System.EventHandler(this.任务ToolStripMenuItem_Click);
-            // 
-            // 转生ToolStripMenuItem
-            // 
-            this.转生ToolStripMenuItem.Name = "转生ToolStripMenuItem";
-            this.转生ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.转生ToolStripMenuItem.Text = "转生";
-            this.转生ToolStripMenuItem.Click += new System.EventHandler(this.转生ToolStripMenuItem_Click);
-            // 
-            // 官网ToolStripMenuItem
-            // 
-            this.官网ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.首页ToolStripMenuItem,
-            this.注册账号ToolStripMenuItem,
-            this.账号ToolStripMenuItem,
-            this.dLCToolStripMenuItem});
-            this.官网ToolStripMenuItem.Name = "官网ToolStripMenuItem";
-            this.官网ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.官网ToolStripMenuItem.Text = "官网";
-            // 
-            // 首页ToolStripMenuItem
-            // 
-            this.首页ToolStripMenuItem.Name = "首页ToolStripMenuItem";
-            this.首页ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.首页ToolStripMenuItem.Text = "首页";
-            this.首页ToolStripMenuItem.Click += new System.EventHandler(this.首页ToolStripMenuItem_Click);
-            // 
-            // 注册账号ToolStripMenuItem
-            // 
-            this.注册账号ToolStripMenuItem.Name = "注册账号ToolStripMenuItem";
-            this.注册账号ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.注册账号ToolStripMenuItem.Text = "注册账号";
-            this.注册账号ToolStripMenuItem.Click += new System.EventHandler(this.注册账号ToolStripMenuItem_Click);
-            // 
-            // 账号ToolStripMenuItem
-            // 
-            this.账号ToolStripMenuItem.Name = "账号ToolStripMenuItem";
-            this.账号ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.账号ToolStripMenuItem.Text = "账号管理";
-            this.账号ToolStripMenuItem.Click += new System.EventHandler(this.账号ToolStripMenuItem_Click);
-            // 
-            // dLCToolStripMenuItem
-            // 
-            this.dLCToolStripMenuItem.Name = "dLCToolStripMenuItem";
-            this.dLCToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.dLCToolStripMenuItem.Text = "DLC";
-            this.dLCToolStripMenuItem.Click += new System.EventHandler(this.dLCToolStripMenuItem_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.其它ToolStripMenuItem,
-            this.源码下载ToolStripMenuItem,
-            this.副本图片攻略ToolStripMenuItem,
-            this.在线解谜ToolStripMenuItem,
-            this.wikiToolStripMenuItem,
-            this.官网ToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 6, 2);
-            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip1.Size = new System.Drawing.Size(780, 25);
-            this.menuStrip1.Stretch = false;
-            this.menuStrip1.TabIndex = 18;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // 源码下载ToolStripMenuItem
-            // 
-            this.源码下载ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.原版ToolStripMenuItem,
-            this.修改版ToolStripMenuItem});
-            this.源码下载ToolStripMenuItem.Name = "源码下载ToolStripMenuItem";
-            this.源码下载ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.源码下载ToolStripMenuItem.Text = "源码下载";
-            // 
-            // 原版ToolStripMenuItem
-            // 
-            this.原版ToolStripMenuItem.Name = "原版ToolStripMenuItem";
-            this.原版ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.原版ToolStripMenuItem.Text = "原版";
-            this.原版ToolStripMenuItem.Click += new System.EventHandler(this.原版ToolStripMenuItem_Click);
-            // 
-            // 修改版ToolStripMenuItem
-            // 
-            this.修改版ToolStripMenuItem.Name = "修改版ToolStripMenuItem";
-            this.修改版ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.修改版ToolStripMenuItem.Text = "修改版";
-            this.修改版ToolStripMenuItem.Click += new System.EventHandler(this.修改版ToolStripMenuItem_Click);
-            // 
-            // 副本图片攻略ToolStripMenuItem
-            // 
-            this.副本图片攻略ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.副本图文攻略ToolStripMenuItem,
-            this.装备数据ToolStripMenuItem});
-            this.副本图片攻略ToolStripMenuItem.Name = "副本图片攻略ToolStripMenuItem";
-            this.副本图片攻略ToolStripMenuItem.Size = new System.Drawing.Size(80, 21);
-            this.副本图片攻略ToolStripMenuItem.Text = "内置攻略库";
-            // 
-            // 副本图文攻略ToolStripMenuItem
-            // 
-            this.副本图文攻略ToolStripMenuItem.Name = "副本图文攻略ToolStripMenuItem";
-            this.副本图文攻略ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.副本图文攻略ToolStripMenuItem.Text = "副本图文攻略";
-            this.副本图文攻略ToolStripMenuItem.Click += new System.EventHandler(this.副本图文攻略ToolStripMenuItem_Click);
-            // 
-            // 装备数据ToolStripMenuItem
-            // 
-            this.装备数据ToolStripMenuItem.Name = "装备数据ToolStripMenuItem";
-            this.装备数据ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.装备数据ToolStripMenuItem.Text = "装备数据";
-            this.装备数据ToolStripMenuItem.Click += new System.EventHandler(this.装备数据ToolStripMenuItem_Click);
-            // 
-            // 在线解谜ToolStripMenuItem
-            // 
-            this.在线解谜ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.解谜ToolStripMenuItem,
-            this.天命模拟器ToolStripMenuItem});
-            this.在线解谜ToolStripMenuItem.Name = "在线解谜ToolStripMenuItem";
-            this.在线解谜ToolStripMenuItem.Size = new System.Drawing.Size(80, 21);
-            this.在线解谜ToolStripMenuItem.Text = "在线模拟器";
-            // 
-            // 解谜ToolStripMenuItem
-            // 
-            this.解谜ToolStripMenuItem.Name = "解谜ToolStripMenuItem";
-            this.解谜ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.解谜ToolStripMenuItem.Text = "解谜";
-            this.解谜ToolStripMenuItem.Click += new System.EventHandler(this.解谜ToolStripMenuItem_Click);
-            // 
-            // 天命模拟器ToolStripMenuItem
-            // 
-            this.天命模拟器ToolStripMenuItem.Name = "天命模拟器ToolStripMenuItem";
-            this.天命模拟器ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.天命模拟器ToolStripMenuItem.Text = "天命模拟器";
-            this.天命模拟器ToolStripMenuItem.Click += new System.EventHandler(this.天命模拟器ToolStripMenuItem_Click);
-            // 
-            // txtServerInfo
-            // 
-            this.txtServerInfo.BackColor = System.Drawing.Color.Black;
-            this.txtServerInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtServerInfo.Font = new System.Drawing.Font("宋体", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtServerInfo.ForeColor = System.Drawing.Color.Lime;
-            this.txtServerInfo.Location = new System.Drawing.Point(93, 104);
-            this.txtServerInfo.Margin = new System.Windows.Forms.Padding(0);
-            this.txtServerInfo.Name = "txtServerInfo";
-            this.txtServerInfo.ReadOnly = true;
-            this.txtServerInfo.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.txtServerInfo.Size = new System.Drawing.Size(241, 429);
-            this.txtServerInfo.TabIndex = 12;
-            this.txtServerInfo.TabStop = false;
-            this.txtServerInfo.Text = "";
-            this.txtServerInfo.Visible = false;
+            this.lbUrl5.AutoSize = true;
+            this.lbUrl5.BackColor = System.Drawing.Color.Transparent;
+            this.lbUrl5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbUrl5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbUrl5.ForeColor = System.Drawing.Color.White;
+            this.lbUrl5.Location = new System.Drawing.Point(594, 22);
+            this.lbUrl5.Name = "lbUrl5";
+            this.lbUrl5.Size = new System.Drawing.Size(54, 25);
+            this.lbUrl5.TabIndex = 14;
+            this.lbUrl5.Text = "地址";
+            this.lbUrl5.Click += new System.EventHandler(this.lbUrl_Click);
             // 
             // txtInfo
             // 
@@ -573,36 +373,102 @@ namespace QuickLogin
             this.txtInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtInfo.Font = new System.Drawing.Font("Verdana", 8F);
             this.txtInfo.ForeColor = System.Drawing.Color.Lime;
-            this.txtInfo.Location = new System.Drawing.Point(407, 283);
+            this.txtInfo.Location = new System.Drawing.Point(284, 311);
             this.txtInfo.Margin = new System.Windows.Forms.Padding(0);
             this.txtInfo.Name = "txtInfo";
             this.txtInfo.ReadOnly = true;
             this.txtInfo.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.txtInfo.Size = new System.Drawing.Size(328, 250);
+            this.txtInfo.Size = new System.Drawing.Size(433, 215);
             this.txtInfo.TabIndex = 11;
             this.txtInfo.TabStop = false;
             this.txtInfo.Text = "";
             this.txtInfo.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.txtInfo_LinkClicked);
             // 
+            // txtServerInfo
+            // 
+            this.txtServerInfo.BackColor = System.Drawing.Color.Black;
+            this.txtServerInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtServerInfo.Font = new System.Drawing.Font("宋体", 12F);
+            this.txtServerInfo.ForeColor = System.Drawing.Color.Lime;
+            this.txtServerInfo.Location = new System.Drawing.Point(45, 96);
+            this.txtServerInfo.Margin = new System.Windows.Forms.Padding(0);
+            this.txtServerInfo.Name = "txtServerInfo";
+            this.txtServerInfo.ReadOnly = true;
+            this.txtServerInfo.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.txtServerInfo.Size = new System.Drawing.Size(235, 360);
+            this.txtServerInfo.TabIndex = 12;
+            this.txtServerInfo.TabStop = false;
+            this.txtServerInfo.Text = "";
+            this.txtServerInfo.Visible = false;
+            // 
+            // lbUrl6
+            // 
+            this.lbUrl6.AutoSize = true;
+            this.lbUrl6.BackColor = System.Drawing.Color.Transparent;
+            this.lbUrl6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbUrl6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbUrl6.ForeColor = System.Drawing.Color.White;
+            this.lbUrl6.Location = new System.Drawing.Point(237, 60);
+            this.lbUrl6.Name = "lbUrl6";
+            this.lbUrl6.Size = new System.Drawing.Size(54, 25);
+            this.lbUrl6.TabIndex = 15;
+            this.lbUrl6.Text = "地址";
+            this.lbUrl6.Click += new System.EventHandler(this.lbUrl_Click);
+            // 
+            // lbUrl7
+            // 
+            this.lbUrl7.AutoSize = true;
+            this.lbUrl7.BackColor = System.Drawing.Color.Transparent;
+            this.lbUrl7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbUrl7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbUrl7.ForeColor = System.Drawing.Color.White;
+            this.lbUrl7.Location = new System.Drawing.Point(327, 60);
+            this.lbUrl7.Name = "lbUrl7";
+            this.lbUrl7.Size = new System.Drawing.Size(54, 25);
+            this.lbUrl7.TabIndex = 16;
+            this.lbUrl7.Text = "地址";
+            this.lbUrl7.Click += new System.EventHandler(this.lbUrl_Click);
+            // 
+            // btnLoginX64
+            // 
+            this.btnLoginX64.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.btnLoginX64.Location = new System.Drawing.Point(222, 142);
+            this.btnLoginX64.Name = "btnLoginX64";
+            this.btnLoginX64.Size = new System.Drawing.Size(91, 37);
+            this.btnLoginX64.TabIndex = 17;
+            this.btnLoginX64.Text = "X64";
+            this.btnLoginX64.UseVisualStyleBackColor = true;
+            this.btnLoginX64.Click += new System.EventHandler(this.btnLoginX64_Click);
+            // 
             // frmMain
             // 
             this.AcceptButton = this.btnLogin;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackgroundImage = global::QuickLogin.Properties.Resources.Mainform_background;
+            this.BackgroundImage = global::QuickLogin.Properties.Resources.MainBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(780, 564);
+            this.CancelButton = this.btnClose;
+            this.ClientSize = new System.Drawing.Size(756, 542);
+            this.ControlBox = false;
+            this.Controls.Add(this.lbUrl7);
+            this.Controls.Add(this.lbUrl6);
             this.Controls.Add(this.txtServerInfo);
             this.Controls.Add(this.txtInfo);
+            this.Controls.Add(this.lbUrl5);
+            this.Controls.Add(this.lbUrl4);
+            this.Controls.Add(this.lbUrl3);
+            this.Controls.Add(this.lbUrl2);
             this.Controls.Add(this.pnlLogin);
-            this.Controls.Add(this.menuStrip1);
-            this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnMin);
+            this.Controls.Add(this.lbUrl1);
+            this.Controls.Add(this.lbVersion);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DDO快速登陆器修改版 v1.0.0 Copyright 2021 by Ancentril QQ: 627471604";
+            this.Text = "快速登陆器";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownEvent);
@@ -612,61 +478,40 @@ namespace QuickLogin
             this.tpConn.ResumeLayout(false);
             this.tpLogin.ResumeLayout(false);
             this.tpLogin.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lbVersion;
+        private System.Windows.Forms.Label lbUrl1;
+        private System.Windows.Forms.Button btnMin;
+        private System.Windows.Forms.Button btnClose;
         private RichTextBoxEx txtInfo;
         private System.Windows.Forms.Panel pnlLogin;
         private RichTextBoxEx txtServerInfo;
-        private TabControl tcServicePanel;
-        private TabPage tpConn;
-        private RichTextBox rtxtInfo;
-        private TabPage tpLogin;
-        private Label lbPublicGroup;
-        private Button btnUpdate;
-        private CheckBox cbxShowPassWord;
-        private CheckBox cbxRemember;
-        private Label lbSev;
-        private Label lbPWD;
-        private Label lbID;
-        private Button btnLogin;
-        private ComboBox cblUsername;
-        private ComboBox cblServerList;
-        private TextBox txtPassword;
-        private CheckBox cb64Bit;
-        private ToolStripMenuItem 其它ToolStripMenuItem;
-        private ToolStripMenuItem 贴吧ToolStripMenuItem;
-        private ToolStripMenuItem qQ群ToolStripMenuItem;
-        private ToolStripMenuItem wikiToolStripMenuItem;
-        private ToolStripMenuItem 首页ToolStripMenuItem1;
-        private ToolStripMenuItem 职业介绍ToolStripMenuItem;
-        private ToolStripMenuItem 种族ToolStripMenuItem;
-        private ToolStripMenuItem 天赋ToolStripMenuItem;
-        private ToolStripMenuItem 专长ToolStripMenuItem;
-        private ToolStripMenuItem 法术ToolStripMenuItem;
-        private ToolStripMenuItem 天命ToolStripMenuItem;
-        private ToolStripMenuItem 声望ToolStripMenuItem;
-        private ToolStripMenuItem 任务ToolStripMenuItem;
-        private ToolStripMenuItem 转生ToolStripMenuItem;
-        private ToolStripMenuItem 官网ToolStripMenuItem;
-        private ToolStripMenuItem 首页ToolStripMenuItem;
-        private ToolStripMenuItem 账号ToolStripMenuItem;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem 源码下载ToolStripMenuItem;
-        private ToolStripMenuItem 在线解谜ToolStripMenuItem;
-        private ToolStripMenuItem dLCToolStripMenuItem;
-        private ToolStripMenuItem 注册账号ToolStripMenuItem;
-        private ToolStripMenuItem 副本图片攻略ToolStripMenuItem;
-        private ToolStripMenuItem 原版ToolStripMenuItem;
-        private ToolStripMenuItem 修改版ToolStripMenuItem;
-        private ToolStripMenuItem 副本图文攻略ToolStripMenuItem;
-        private ToolStripMenuItem 装备数据ToolStripMenuItem;
-        private ToolStripMenuItem 解谜ToolStripMenuItem;
-        private ToolStripMenuItem 天命模拟器ToolStripMenuItem;
+        private System.Windows.Forms.TabControl tcServicePanel;
+        private System.Windows.Forms.TabPage tpConn;
+        private System.Windows.Forms.RichTextBox rtxtInfo;
+        private System.Windows.Forms.TabPage tpLogin;
+        private System.Windows.Forms.CheckBox cbxRemember;
+        private System.Windows.Forms.Label lbSev;
+        private System.Windows.Forms.Label lbPWD;
+        private System.Windows.Forms.Label lbID;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.ComboBox cblUsername;
+        private System.Windows.Forms.ComboBox cblServerList;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label lbUrl2;
+        private System.Windows.Forms.Label lbUrl3;
+        private System.Windows.Forms.Label lbUrl4;
+        private System.Windows.Forms.Label lbUrl5;
+        private System.Windows.Forms.CheckBox cbxShowPassWord;
+        private System.Windows.Forms.Button btnUpdate;
+        private Label lbUrl6;
+        private Label lbUrl7;
+        private Button btnLoginX64;
     }
 }
