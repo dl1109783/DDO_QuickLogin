@@ -58,13 +58,15 @@ namespace QuickLogin.Connect
         }
         public void GetDataCenter()
         {
-            while (true)
+            bool isGetDataCenter = false;
+            while (!isGetDataCenter)
             {
                 try
                 {
                     OnCallBack(ConnectType.Message, "正在获取服务器信息..");
                     _Datacenter = WebServiceComm.GetDatacenter();
                     OnCallBack(ConnectType.GetDataCenterSuccess, _Datacenter.Worlds);
+                    isGetDataCenter = true;
                 }
                 catch (Exception ex)
                 {
@@ -78,7 +80,7 @@ namespace QuickLogin.Connect
                 Thread.Sleep(1000);
             }
         }
-        
+
         private string GetDes(string strKey)
         {
             Hashtable hs = new Hashtable();
@@ -117,7 +119,7 @@ namespace QuickLogin.Connect
 
             hs.Add("XP2_Base", "礼包|XP2基础包");
             hs.Add("XP2_CharacterSlot_Prepurchase_Premium", "礼包|XP2人物栏");
-            
+
             hs.Add("XP2_Legendary_Upgrade", "礼包|XP2传奇升级");
 
             hs.Add("StormreachLimited", "礼包|DDO限定版（旧版）");
@@ -125,7 +127,7 @@ namespace QuickLogin.Connect
             hs.Add("StormreachGuest", "权限|试用");
             hs.Add("StormreachStandard", "权限|标准");
             hs.Add("TREATED_AS_SUBSCRIBER", "权限|订阅用户");
-            
+
             hs.Add("XP2_Premium", "礼包|U20赠品");
             hs.Add("15AnniversaryCloak", "礼包|15周年斗篷");
             hs.Add("EDRevampCloak", "礼包|天命圈斗篷");
@@ -137,20 +139,20 @@ namespace QuickLogin.Connect
             hs.Add("eStore_f2p_anniversary10_bundle_claimed", "礼包|10周年2");
             hs.Add("eStore_f2p_anniversary10_bundle_claimed2", "礼包|10周年3");
 
-            
+
             hs.Add("eStore_Content_Shantokor", "副本包|衫托克大厅(STK)");
-            hs.Add("eStore_Content_TanglerootGorge", "副本包|缠根"); 
-            
+            hs.Add("eStore_Content_TanglerootGorge", "副本包|缠根");
+
             hs.Add("eStore_Content_RuinsOfThrenal", "副本包|司莱诺废墟");
             hs.Add("eStore_Content_SorrowduskIsles", "副本包|哀暮岛");
             hs.Add("eStore_Content_VaultOfNight", "副本包|红龙维拉(VON红龙Raid)");
             hs.Add("eStore_Content_RestlessIsle", "副本包|殒梦岛(泰坦Raid)");
             hs.Add("eStore_Content_SandsOfMenechtarun", "副本包|沙漠(女王Raid)");
-            
+
             hs.Add("eStore_Content_Necropolis", "副本包|不死城1");
             hs.Add("eStore_Content_Necropolis2", "副本包|不死城2");
             hs.Add("eStore_Content_Necropolis3", "副本包|不死城3");
-            
+
             hs.Add("eStore_Content_ValeOfTwilight", "副本包|十二魔法(裹尸布Raid)");
             hs.Add("eStore_Content_ReaversReach", "副本包|水下(SOS)");
             hs.Add("eStore_Content_Shavarath", "副本包|沙瓦雷斯(战场)");

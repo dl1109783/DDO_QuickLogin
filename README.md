@@ -14,6 +14,9 @@
 ### 天赋及天命模拟器
 + GitHub可以存放静态网站, 遂将天赋模拟器汉化版的代码一起上传了, 新版本构思中, 更新随缘.
 + [天赋及天命模拟器(http://dlanny.gitee.io/ddo_quicklogin)](http://dlanny.gitee.io/ddo_quicklogin)
+### V2.5.8 更新
++ 修复BUG:选择其他服务器后会自动选择上一次登陆的服务器.
+
 ### V2.5.7 更新
 + 同步Vivx97维护版本中的副本包描述信息.
 + 精简代码.
