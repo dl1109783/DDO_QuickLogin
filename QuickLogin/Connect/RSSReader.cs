@@ -27,7 +27,9 @@ namespace QuickLogin.Connect
             WarningText = new List<string> { "%", "Bonus", "Down", "Restart" };
             rgExHtml = new Regex("<[^>]*>", RegexOptions.IgnoreCase);
             //新闻链接地址
-            string RSSURL = "http://www.ddo.com/en/launcher-feed.xml";
+            string RSSURL = "https://forums.ddo.com/en/launcher-feed.xml";
+            //20220416 地址修改
+            //string RSSURL = "http://www.ddo.com/en/launcher-feed.xml";
             XDocument xml = XDocument.Load(RSSURL);
             NewsList = (
                 from item in xml.Descendants("item")

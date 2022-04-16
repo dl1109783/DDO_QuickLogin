@@ -140,6 +140,7 @@ namespace QuickLogin
             tcServicePanel.Appearance = TabAppearance.FlatButtons;
             connThread = new ConnectThread(new CallBackHandler(ConnectThread_OnCallBack));
             lbVersion.Text = Application.ProductVersion;
+            //cbxShowPassWord.Visible = false;
         }
 
         private void Main_Load(object sender, EventArgs e)
