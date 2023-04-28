@@ -1,7 +1,7 @@
 ﻿# DDO_QuickLogin
 + Dungeons and Dragons Online Quick Login Client
 + 龙与地下城OL 快速登陆客户端
-+ [下载(QuickLogin.exe)](../../raw/master/dist/QuickLogin.exe)
++ [下载(QuickLogin.exe)](https://github.com/dl1109783/DDO_QuickLogin/releases/download/V2.5.9/QuickLogin.exe)
 + 支持Windows XP ，Windows Server 2003 ，Windows Vista，Windows 7，8，10。
 + 本程序运行需要.NET Framework 支持，不限定特定版本, 如不能运行请安装[.NET Framework 3.5 Service Pack 1（完整程序包）](http://download.microsoft.com/download/2/0/e/20e90413-712f-438c-988e-fdaa79a8ac3d/dotnetfx35.exe)
 + 近日有小伙伴反馈使用个别群里别有用心之人编译的快登版本后出现账号丢失,在这里我提醒大家从官网下载, 在这里我承诺代码安全,不存在任何后门, 并且开源所有代码, 接受大家监督,发行版应用程序永不加壳,不含任何木马,不放心的朋友可以使用C#反编译软件检查,或是下载源码自己编译, DDO快登也有将近10年的使用历史了, 口碑还是有保障的.
